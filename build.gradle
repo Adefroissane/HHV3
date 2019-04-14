@@ -17,7 +17,6 @@ dependencies {
 
 }
 
-test {
-    systemProperty "recherche", System.getProperty("recherche")
-}
+/*test {
+    systemProperty "recherche", System.getProperty("recherche")*/
 
