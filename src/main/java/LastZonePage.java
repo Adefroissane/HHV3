@@ -47,8 +47,8 @@ public class LastZonePage extends HentaiHeroesPage {
     public CombatPage openCombatPage(WebDriver driver)
     {
         WebDriverWait webDriverWait = new WebDriverWait(driver, 10);
-        webDriverWait.until(ExpectedConditions.visibilityOf(affronterJackson));
-        affronterJackson.click();
+        webDriverWait.until(ExpectedConditions.visibilityOf(affrontergrunt));
+        affrontergrunt.click();
         return new CombatPage(driver);
 
     }
