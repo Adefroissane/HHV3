@@ -46,7 +46,7 @@ public class HomePage  extends HentaiHeroesPage{
     @FindBy(css = "#home_missions_bar2 > div > div.backbar.borderbar > div")
     private WebElement missionNonDisponible2;
 
-    @FindBy(xpath = "//*[@id=\"homepage\"]/a[7]/div/span")
+    @FindBy(xpath = "//*[@id=\"homepage\"]/a[8]/div/span")
     private WebElement mission;
 
     @FindBy(xpath = "//*[@id=\"homepage\"]/a[9]/div/span")
