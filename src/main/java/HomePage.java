@@ -84,7 +84,7 @@ public class HomePage  extends HentaiHeroesPage{
         WebDriverWait webDriverWait = new WebDriverWait(driver, 5);
         webDriverWait.until(ExpectedConditions.visibilityOf(harem));
             try {
-                driver.findElement(By.xpath("//*[@id=\"homepage\"]/a[10]/div[2]"));
+                driver.findElement(By.xpath("//*[@id=\"homepage\"]/a[11]/div[2]"));
             } catch (NoSuchElementException e)
             {
                 return false;

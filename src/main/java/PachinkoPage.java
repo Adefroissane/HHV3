@@ -13,9 +13,6 @@ public class PachinkoPage extends HentaiHeroesPage{
         PageFactory.initElements(driver, this);
     }
 
-    @FindBy(css = "#pachinko_left > div.right_part > div:nth-child(2) > button.blue_text_button.left_pck1")
-    private WebElement pachinkoGratuit;
-
     @FindBy(xpath = "//*[@id=\"playzone-replace-info\"]/div[3]/button[1]")
     private WebElement reperePatchinko;
 
