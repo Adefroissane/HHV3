@@ -55,7 +55,6 @@ public class automatisation {
         }
 
     @Test
-    @Ignore
     public void automatisationPachinko()
     {
         InitialisationPage initialisation = new InitialisationPage(driver);
