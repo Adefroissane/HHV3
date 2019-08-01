@@ -46,6 +46,9 @@ public class AventurePage extends HentaiHeroesPage {
     @FindBy(xpath = "//*[@id=\"map\"]/a[12]")
     private WebElement jackson;
 
+    @FindBy(xpath = "//*[@id=\"map\"]/a[7]")
+    private WebElement silvanus;
+
     public LastZonePage openLastZone(WebDriver driver) {
 
         /*WebDriverWait webDriverWait = new WebDriverWait(driver, 5);
