@@ -135,9 +135,12 @@ public class automatisation {
     public void automatisationDefi() {
         InitialisationPage initialisation = new InitialisationPage(driver);
         HomePage homePage = initialisation.openHomePage(driver);
+
+        boolean defiAFaire = homePage.defiAFaire(driver);
+        if (defiAFaire == true) {
         TourDeLaGloirePage tourDeLaGloirePage = homePage.openTourDeLaGloire(driver);
         tourDeLaGloirePage.lancerDefi(driver);
-    }
+        }    }
 
 
 

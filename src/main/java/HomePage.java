@@ -52,6 +52,8 @@ public class HomePage  extends HentaiHeroesPage{
     @FindBy(xpath = "//*[@id=\"homepage\"]/a[9]/div/span")
     private WebElement tourDeLaGloire;
 
+    @FindBy(xpath = "//*[@id=\"homepage\"]/a[9]/div/span/span")
+    private WebElement aFaire;
 
     public HaremPage ouvrirLeHarem(WebDriver driver){
 
@@ -134,5 +136,15 @@ public class HomePage  extends HentaiHeroesPage{
         tourDeLaGloire.click();
         return new TourDeLaGloirePage(driver);
     }
-
+    public boolean defiAFaire(WebDriver driver) {
+        WebDriverWait webDriverWait = new WebDriverWait(driver, 5);
+        webDriverWait.until(ExpectedConditions.visibilityOf(harem));
+        try {
+            driver.findElement(By.xpath("//*[@id=\"homepage\"]/a[9]/div/span/span"));
+        } catch (NoSuchElementException e)
+        {
+            return false;
+        }
+        return true;
+    }
 }

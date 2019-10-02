@@ -52,9 +52,9 @@ public class TourDeLaGloirePage extends HentaiHeroesPage {
 
     public void lancerDefi(WebDriver driver)
     {
-        boolean defiAFaire = defiNecessaire(driver);
+        /*boolean defiAFaire = defiNecessaire(driver);
         if (defiAFaire == true)
-        {
+        {*/
             if (recup.isDisplayed()) {
                 recup.click();
                 ok2.click();
@@ -102,8 +102,8 @@ public class TourDeLaGloirePage extends HentaiHeroesPage {
                 e.printStackTrace();
             }
             ok.click();
-            lancerDefi(driver);
-        }
+            /*lancerDefi(driver);
+        }*/
 
     }
 }
