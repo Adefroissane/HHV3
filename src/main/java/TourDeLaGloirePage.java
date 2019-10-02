@@ -41,7 +41,7 @@ public class TourDeLaGloirePage extends HentaiHeroesPage {
 
     public boolean defiNecessaire(WebDriver driver)
     {
-        WebDriverWait webDriverWait = new WebDriverWait(driver, 5);
+        WebDriverWait webDriverWait = new WebDriverWait(driver, 15);
         webDriverWait.until(ExpectedConditions.visibilityOf(ptdeDefi));
         if (ptdeDefi.getText().equals("0")) {
             return false;
