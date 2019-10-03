@@ -140,7 +140,8 @@ public class automatisation {
         if (defiAFaire == true) {
         TourDeLaGloirePage tourDeLaGloirePage = homePage.openTourDeLaGloire(driver);
         tourDeLaGloirePage.lancerDefi(driver);
-        }    }
+        }
+    }
 
 
 

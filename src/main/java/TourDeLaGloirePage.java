@@ -52,18 +52,18 @@ public class TourDeLaGloirePage extends HentaiHeroesPage {
 
     public void lancerDefi(WebDriver driver)
     {
-        /*boolean defiAFaire = defiNecessaire(driver);
+        boolean defiAFaire = defiNecessaire(driver);
         if (defiAFaire == true)
-        {*/
+        {
         try {
             Thread.sleep(750);
         } catch (InterruptedException ab) {
             ab.printStackTrace();
         }
-        /*if (recup.isDisplayed()) {
+        if (recup.isDisplayed()) {
                 recup.click();
                 ok2.click();
-            }*/
+            }
             List<WebElement> myElements = driver.findElements(By.xpath("//*[@id=\"leagues_middle\"]/div[3]/div[2]/table/tbody/tr[*]/td[4]"));
             System.out.println("nbre ennemis =" + myElements.size());
             JavascriptExecutor js = (JavascriptExecutor) driver;
@@ -107,8 +107,8 @@ public class TourDeLaGloirePage extends HentaiHeroesPage {
                 e.printStackTrace();
             }
             ok.click();
-            /*lancerDefi(driver);
-        }*/
+            lancerDefi(driver);
+        }
 
     }
 }
