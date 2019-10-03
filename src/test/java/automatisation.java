@@ -13,7 +13,7 @@ public class automatisation {
     public void init()
     {
         driver = new ChromeDriver();
-        driver.manage().window().fullscreen();
+        //driver.manage().window().fullscreen();
         driver.get("https://www.hentaiheroes.com/");
     }
 
