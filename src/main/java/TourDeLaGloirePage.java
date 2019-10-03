@@ -55,7 +55,12 @@ public class TourDeLaGloirePage extends HentaiHeroesPage {
         /*boolean defiAFaire = defiNecessaire(driver);
         if (defiAFaire == true)
         {*/
-            if (recup.isDisplayed()) {
+        try {
+            Thread.sleep(750);
+        } catch (InterruptedException ab) {
+            ab.printStackTrace();
+        }
+        if (recup.isDisplayed()) {
                 recup.click();
                 ok2.click();
             }
