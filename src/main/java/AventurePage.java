@@ -51,7 +51,7 @@ public class AventurePage extends HentaiHeroesPage {
 
     public LastZonePage openLastZone(WebDriver driver) {
 
-        /*WebDriverWait webDriverWait = new WebDriverWait(driver, 5);
+        WebDriverWait webDriverWait = new WebDriverWait(driver, 5);
         webDriverWait.until(ExpectedConditions.visibilityOf(precedent));
         precedent.click();
 
@@ -60,11 +60,11 @@ public class AventurePage extends HentaiHeroesPage {
         }
         catch(InterruptedException ae){
             ae.printStackTrace();
-        }*/
+        }
 
         WebDriverWait webDriverWait2 = new WebDriverWait(driver, 5);
-        webDriverWait2.until(ExpectedConditions.visibilityOf(silvanus));
-        silvanus.click();
+        webDriverWait2.until(ExpectedConditions.visibilityOf(darkLord));
+        darkLord.click();
         return new LastZonePage(driver);
 
     }
