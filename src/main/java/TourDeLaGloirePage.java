@@ -7,7 +7,6 @@ import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.openqa.selenium.NoSuchElementException;
-
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
@@ -48,13 +47,6 @@ public class TourDeLaGloirePage extends HentaiHeroesPage {
     {
         WebDriverWait webDriverWait = new WebDriverWait(driver, 15);
         webDriverWait.until(ExpectedConditions.visibilityOf(ptDeDefi2));
-        /*String plif = ptDeDefi2.getText();
-        StringBuffer plouf = new StringBuffer(plif);
-        plouf.delete(1, 3);
-        String plof = plouf.toString();
-        int ptdefi = Integer.parseInt(plof);
-        System.out.println("defi restant = " + ptdefi);*/
-
         if (ptDeDefi2.getText().equals("0/15")) {
             return false;
         } else {
@@ -64,6 +56,10 @@ public class TourDeLaGloirePage extends HentaiHeroesPage {
 
     public void lancerDefi(WebDriver driver)
     {
+        if (recup.isDisplayed()) {
+            recup.click();
+            ok2.click();
+        }
         boolean defiAFaire = defiNecessaire(driver);
         if (defiAFaire == true)
         {
@@ -72,62 +68,55 @@ public class TourDeLaGloirePage extends HentaiHeroesPage {
         } catch (InterruptedException ab) {
             ab.printStackTrace();
         }
-        if (recup.isDisplayed()) {
-                recup.click();
-                ok2.click();
-            }
-            List<WebElement> myElements = driver.findElements(By.xpath("//*[@id=\"leagues_middle\"]/div[3]/div[3]/table/tbody/tr[*]/td[4]"));
-            System.out.println("nbre ennemis =" + myElements.size());
-            JavascriptExecutor js = (JavascriptExecutor) driver;
-            ArrayList combats = new ArrayList<WebElement>();
-            for (WebElement e : myElements) {
-                js.executeScript("arguments[0].scrollIntoView();", e);
-                try {
-                    Thread.sleep(100);
-                } catch (InterruptedException ab) {
-                    ab.printStackTrace();
-                }
-                System.out.println(e.getText());
-                if (e.getText().equals("0/3") || e.getText().equals("1/3") ||e.getText().equals("2/3"))
-                {
-                    combats.add(e);
-                }
-            }
-            int i = combats.size();
 
-            int b = i-1;
-            WebElement adversaire = (WebElement) combats.get(b);
-            js.executeScript("arguments[0].scrollIntoView();", adversaire);
-            WebDriverWait webDriverWait = new WebDriverWait(driver, 5);
-            webDriverWait.until(ExpectedConditions.visibilityOf(adversaire));
-            adversaire.click();
+        List<WebElement> myElements = driver.findElements(By.xpath("//*[@id=\"leagues_middle\"]/div[3]/div[3]/table/tbody/tr[*]/td[4]"));
+        System.out.println("nbre ennemis =" + myElements.size());
+        JavascriptExecutor js = (JavascriptExecutor) driver;
+        ArrayList combats = new ArrayList<WebElement>();
+        for (WebElement e : myElements) {
+            js.executeScript("arguments[0].scrollIntoView();", e);
             try {
                 Thread.sleep(100);
             } catch (InterruptedException ab) {
                 ab.printStackTrace();
             }
-
-            //List<WebElement> numdefi = driver.findElements(By.xpath("//*[@id=\"leagues_middle\"]/div[3]/div[3]/table/tbody/tr[*]/td/div/div[1]/button"));
-
-            WebDriverWait webDriverWait2 = new WebDriverWait(driver, 5);
-            webDriverWait2.until(ExpectedConditions.visibilityOf(defi));
-            //numdefi.get(0).click();
-            defi.click();
-            WebDriverWait webDriverWait3 = new WebDriverWait(driver, 5);
-            webDriverWait3.until(ExpectedConditions.visibilityOf(affronter));
-            affronter.click();
-            WebDriverWait webDriverWait4 = new WebDriverWait(driver, 5);
-            webDriverWait4.until(ExpectedConditions.visibilityOf(passer));
-            passer.click();
-            WebDriverWait webDriverWait5 = new WebDriverWait(driver, 5);
-            webDriverWait5.until(ExpectedConditions.visibilityOf(ok));
-            try {
-                Thread.sleep(750);
-            } catch (InterruptedException e) {
-                e.printStackTrace();
+            System.out.println(e.getText());
+            if (e.getText().equals("0/3") || e.getText().equals("1/3") ||e.getText().equals("2/3"))
+            {
+                combats.add(e);
             }
-            ok.click();
-            lancerDefi(driver);
+        }
+        int i = combats.size();
+
+        int b = i-1;
+        WebElement adversaire = (WebElement) combats.get(b);
+        js.executeScript("arguments[0].scrollIntoView();", adversaire);
+        WebDriverWait webDriverWait = new WebDriverWait(driver, 5);
+        webDriverWait.until(ExpectedConditions.visibilityOf(adversaire));
+        adversaire.click();
+        try {
+            Thread.sleep(100);
+        } catch (InterruptedException ab) {
+            ab.printStackTrace();
+        }
+        WebDriverWait webDriverWait2 = new WebDriverWait(driver, 5);
+        webDriverWait2.until(ExpectedConditions.visibilityOf(defi));
+        defi.click();
+        WebDriverWait webDriverWait3 = new WebDriverWait(driver, 5);
+        webDriverWait3.until(ExpectedConditions.visibilityOf(affronter));
+        affronter.click();
+        WebDriverWait webDriverWait4 = new WebDriverWait(driver, 5);
+        webDriverWait4.until(ExpectedConditions.visibilityOf(passer));
+        passer.click();
+        WebDriverWait webDriverWait5 = new WebDriverWait(driver, 5);
+        webDriverWait5.until(ExpectedConditions.visibilityOf(ok));
+        try {
+            Thread.sleep(750);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+        ok.click();
+        lancerDefi(driver);
         }
 
     }
