@@ -33,7 +33,7 @@ public class TourDeLaGloirePage extends HentaiHeroesPage {
     @FindBy(xpath = "//*[@id=\"leagues_left\"]/div/div[7]/div/div[2]/span[1]")
     private WebElement ptdeDefi;
 
-    @FindBy(xpath = "//*[@id=\"leagues_middle\"]/div[4]/button")//*[@id="rewards_popup"]/button
+    @FindBy(xpath = "//*[@id=\"rewards_popup\"]/button")//*[@id="leagues_middle"]/div[4]/button
     private WebElement recup;
 
     @FindBy(xpath = "//*[@id=\"rewards_popup\"]/div/button")
@@ -56,9 +56,11 @@ public class TourDeLaGloirePage extends HentaiHeroesPage {
 
     public void lancerDefi(WebDriver driver)
     {
-        if (recup.isDisplayed()) {
+        try {
             recup.click();
-            ok2.click();
+            ok2.click();;
+        } catch (NoSuchElementException e)
+        {
         }
         boolean defiAFaire = defiNecessaire(driver);
         if (defiAFaire == true)
