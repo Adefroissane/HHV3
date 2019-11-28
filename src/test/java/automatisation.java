@@ -67,6 +67,18 @@ public class automatisation {
     }
 
     @Test
+    public void automatisationPachinko2()
+    {
+        InitialisationPage initialisation = new InitialisationPage(driver);
+        HomePage homePage = initialisation.openHomePage(driver);
+        boolean pachinkoGratuit2Present = homePage.pachinkoGratuitPresent(driver);
+        if (pachinkoGratuit2Present == true) {
+            PachinkoPage pachinkoPage = homePage.openPachinkoPage(driver);
+            pachinkoPage.collectPachinkoGratuit2(driver);
+        }
+    }
+
+    @Test
     public void automatisationRecoltMission()
     {
         InitialisationPage initialisation = new InitialisationPage(driver);

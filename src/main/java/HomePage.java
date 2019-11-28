@@ -37,6 +37,9 @@ public class HomePage  extends HentaiHeroesPage{
     @FindBy(xpath = "//*[@id=\"homepage\"]/a[11]/div[2]")
     private WebElement pachinkoGratuit;
 
+    @FindBy(xpath = "//*[@id=\"homepage\"]/a[11]/div/span/span")
+    private WebElement pachinkoGratuit2;
+
     @FindBy(xpath = "//*[@id=\"homepage\"]/a[11]/div/span")
     private WebElement pachinko;
 
@@ -95,6 +98,18 @@ public class HomePage  extends HentaiHeroesPage{
                 return false;
             }
             return true;
+    }
+
+    public boolean pachinkoGratuit2Present(WebDriver driver) {
+        WebDriverWait webDriverWait = new WebDriverWait(driver, 5);
+        webDriverWait.until(ExpectedConditions.visibilityOf(harem));
+        try {
+            driver.findElement(By.xpath("//*[@id=\"homepage\"]/a[11]/div/span/span"));
+        } catch (NoSuchElementException e)
+        {
+            return false;
+        }
+        return true;
     }
 
     public PachinkoPage openPachinkoPage (WebDriver driver) {

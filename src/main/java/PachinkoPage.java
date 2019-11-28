@@ -19,6 +19,9 @@ public class PachinkoPage extends HentaiHeroesPage{
     @FindBy(css = "#pachinko_rewards > button")
     private WebElement genial;
 
+    @FindBy(xpath = "//*[@id=\"rewards_popup\"]/div/button")
+    private WebElement ok;
+
     public void collectPachinkoGratuit(WebDriver driver) {
 
         WebDriverWait webDriverWait = new WebDriverWait(driver, 5);
@@ -28,6 +31,18 @@ public class PachinkoPage extends HentaiHeroesPage{
         WebDriverWait webDriverWait2 = new WebDriverWait(driver, 5);
         webDriverWait2.until(ExpectedConditions.visibilityOf(genial));
         genial.click();
+        getHeader().openHomePage(driver);
+    }
+
+    public void collectPachinkoGratuit2(WebDriver driver) {
+
+        WebDriverWait webDriverWait = new WebDriverWait(driver, 5);
+        webDriverWait.until(ExpectedConditions.visibilityOf(reperePatchinko));
+        reperePatchinko.click();
+
+        WebDriverWait webDriverWait2 = new WebDriverWait(driver, 5);
+        webDriverWait2.until(ExpectedConditions.visibilityOf(ok));
+        ok.click();
         getHeader().openHomePage(driver);
     }
 
