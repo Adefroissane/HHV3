@@ -19,11 +19,17 @@ public class ChampionPage extends HentaiHeroesPage {
     @FindBy(xpath = "//*[@id=\"contains_all\"]/section/a[7]/div[2]/span")
     private WebElement portSalut;
 
+    @FindBy(xpath = "//*[@id=\"contains_all\"]/section/a[3]/div[2]/span")
+    private WebElement maisonFiere;
+
     @FindBy(css = "#contains_all > section > a:nth-child(6) > div.champion-lair-name.map-label-link > div")
     private WebElement tempRestantFoyer;
 
     @FindBy(css = "#contains_all > section > a:nth-child(7) > div.champion-lair-name.map-label-link > div")
     private WebElement tempRestantPort;
+
+    @FindBy(css = "#contains_all > section > a:nth-child(3) > div.champion-lair-name.map-label-link > div")
+    private WebElement tempMaisonFiere;
 
     @FindBy(xpath = "//*[@id=\"contains_all\"]/section/div[5]/div/div[2]/div[3]/button[1]/span[1]")
     private WebElement affronter;
@@ -37,7 +43,7 @@ public class ChampionPage extends HentaiHeroesPage {
 
     public boolean championDispo(WebDriver driver) {
         WebDriverWait webDriverWait = new WebDriverWait(driver, 5);
-        webDriverWait.until(ExpectedConditions.visibilityOf(portSalut));
+        webDriverWait.until(ExpectedConditions.visibilityOf(maisonFiere));
         try{
             Thread.sleep(750);
         }
@@ -45,7 +51,7 @@ public class ChampionPage extends HentaiHeroesPage {
             e.printStackTrace();
         }
         try {
-            driver.findElement(By.cssSelector("#contains_all > section > a:nth-child(7) > div.champion-lair-name.map-label-link > div"));
+            driver.findElement(By.cssSelector("#contains_all > section > a:nth-child(3) > div.champion-lair-name.map-label-link > div"));
         } catch (NoSuchElementException e)
         {
             return true;
@@ -56,8 +62,8 @@ public class ChampionPage extends HentaiHeroesPage {
     public void combattreChampion(WebDriver driver){
 
         WebDriverWait webDriverWait = new WebDriverWait(driver, 5);
-        webDriverWait.until(ExpectedConditions.visibilityOf(portSalut));
-        portSalut.click();
+        webDriverWait.until(ExpectedConditions.visibilityOf(maisonFiere));
+        maisonFiere.click();
         WebDriverWait webDriverWait2 = new WebDriverWait(driver, 5);
         webDriverWait2.until(ExpectedConditions.visibilityOf(affronter));
         affronter.click();
