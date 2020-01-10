@@ -28,6 +28,9 @@ public class ChampionPage extends HentaiHeroesPage {
     @FindBy(xpath = "//*[@id=\"contains_all\"]/section/a[4]/div[2]/span")
     private WebElement jardinAuDela;
 
+    @FindBy(xpath = "//*[@id=\"contains_all\"]/section/a[2]/div[2]/span")
+    private WebElement rondinDuBois;
+
     @FindBy(css = "#contains_all > section > a:nth-child(6) > div.champion-lair-name.map-label-link > div")
     private WebElement tempRestantFoyer;
 
@@ -43,6 +46,9 @@ public class ChampionPage extends HentaiHeroesPage {
     @FindBy(css = "#contains_all > section > a:nth-child(4) > div.champion-lair-name.map-label-link > div")
     private WebElement tempJardinAuDela;
 
+    @FindBy(css = "#contains_all > section > a:nth-child(2) > div.champion-lair-name.map-label-link > div")
+    private WebElement tempRondinDuBois;
+
     @FindBy(xpath = "//*[@id=\"contains_all\"]/section/div[5]/div/div[2]/div[3]/button[1]/span[1]")
     private WebElement affronter;
 
@@ -55,7 +61,7 @@ public class ChampionPage extends HentaiHeroesPage {
 
     public boolean championDispo(WebDriver driver) {
         WebDriverWait webDriverWait = new WebDriverWait(driver, 5);
-        webDriverWait.until(ExpectedConditions.visibilityOf(jardinAuDela));
+        webDriverWait.until(ExpectedConditions.visibilityOf(rondinDuBois));
         try{
             Thread.sleep(750);
         }
@@ -63,7 +69,7 @@ public class ChampionPage extends HentaiHeroesPage {
             e.printStackTrace();
         }
         try {
-            driver.findElement(By.cssSelector("#contains_all > section > a:nth-child(4) > div.champion-lair-name.map-label-link > div"));
+            driver.findElement(By.cssSelector("#contains_all > section > a:nth-child(2) > div.champion-lair-name.map-label-link > div"));
         } catch (NoSuchElementException e)
         {
             return true;
@@ -74,8 +80,8 @@ public class ChampionPage extends HentaiHeroesPage {
     public void combattreChampion(WebDriver driver){
 
         WebDriverWait webDriverWait = new WebDriverWait(driver, 5);
-        webDriverWait.until(ExpectedConditions.visibilityOf(jardinAuDela));
-        jardinAuDela.click();
+        webDriverWait.until(ExpectedConditions.visibilityOf(rondinDuBois));
+        rondinDuBois.click();
         WebDriverWait webDriverWait2 = new WebDriverWait(driver, 5);
         webDriverWait2.until(ExpectedConditions.visibilityOf(affronter));
         affronter.click();
