@@ -49,7 +49,7 @@ public class ChampionPage extends HentaiHeroesPage {
     @FindBy(css = "#contains_all > section > a:nth-child(2) > div.champion-lair-name.map-label-link > div")
     private WebElement tempRondinDuBois;
 
-    @FindBy(xpath = "//*[@id=\"contains_all\"]/section/div[5]/div/div[2]/div[3]/button[1]/span[1]")
+    @FindBy(xpath = "//*[@id=\"contains_all\"]/section/div[5]/div/div[2]/div[4]/button/div[1]")
     private WebElement affronter;
 
     @FindBy(xpath = "//*[@id=\"contains_all\"]/section/div[2]/button")
