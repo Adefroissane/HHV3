@@ -58,6 +58,9 @@ public class ChampionPage extends HentaiHeroesPage {
     @FindBy(xpath = "//*[@id=\"rewards_popup\"]/div/button")
     private WebElement ok;
 
+    @FindBy(xpath = "//*[@id=\"contains_all\"]/section/div[5]/div/div[2]/div[4]/button/div[2]")
+    private WebElement performance;
+
 
     public boolean championDispo(WebDriver driver) {
         WebDriverWait webDriverWait = new WebDriverWait(driver, 5);
@@ -83,8 +86,8 @@ public class ChampionPage extends HentaiHeroesPage {
         webDriverWait.until(ExpectedConditions.visibilityOf(universiteElite));
         universiteElite.click();
         WebDriverWait webDriverWait2 = new WebDriverWait(driver, 5);
-        webDriverWait2.until(ExpectedConditions.visibilityOf(affronter));
-        affronter.click();
+        webDriverWait2.until(ExpectedConditions.visibilityOf(performance));
+        performance.click();
         WebDriverWait webDriverWait3 = new WebDriverWait(driver, 30);
         webDriverWait3.until(ExpectedConditions.visibilityOf(passer));
         passer.click();
