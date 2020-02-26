@@ -5,6 +5,7 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
+import java.util.List;
 
 public class InitialisationPage extends HentaiHeroesPage{
 
@@ -28,6 +29,9 @@ public class InitialisationPage extends HentaiHeroesPage{
 
     @FindBy(xpath = "//*[@id=\"starter_offer\"]/close")
     private WebElement pub;
+
+    @FindBy(xpath = "//*[@id=\"confirmation_popup\"]/div/div/button[2]")
+    private WebElement nonMerci;
 
 
     public HomePage openHomePage(WebDriver driver){
@@ -53,14 +57,14 @@ public class InitialisationPage extends HentaiHeroesPage{
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
-
         try
         {
-            driver.findElement(By.xpath("//*[@id=\"starter_offer\"]/close"));
-            if (pub.isDisplayed())
+            driver.findElement(By.xpath("//*[@id=\"confirmation_popup\"]/div/div/button[2]"));
+            if (nonMerci.isDisplayed())
             {
-                pub.click();
+                nonMerci.click();
             }
+
             return new HomePage(driver);
         }
         catch (NoSuchElementException e)
