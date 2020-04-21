@@ -25,7 +25,7 @@ public class CombatPage extends HentaiHeroesPage{
     @FindBy(xpath = "//*[@id=\"battle_middle\"]/button[1]")
     private WebElement affronter;
 
-    @FindBy(css = "#battle_middle > button:nth-child(4)")
+    @FindBy(css = "#battle_middle > button.blue_text_button")
     private WebElement passer2;
 
 
