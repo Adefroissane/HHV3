@@ -142,7 +142,7 @@ public class automatisation {
             }
         }
     }
-    @Ignore
+
     @Test
     public void automatisationDefi() {
         InitialisationPage initialisation = new InitialisationPage(driver);
@@ -169,6 +169,7 @@ public class automatisation {
         }
     }
 
+    @Ignore
     @Test
     public void automatisationChampion() {
         InitialisationPage initialisation = new InitialisationPage(driver);
