@@ -155,8 +155,6 @@ public class automatisation {
         }
     }
 
-
-
     private void Combat(WebDriver driver)
     {
         LastZonePage lastZonePage = new LastZonePage(driver);
