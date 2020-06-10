@@ -20,10 +20,10 @@ public class MissionPage extends HentaiHeroesPage{
     @FindBy(name = "claim")
     private WebElement missionTermine;
 
-    @FindBy(className = "blue_text_button")
+    @FindBy(className = "blue_button_L")
     private WebElement mission;
 
-    @FindBy(css = "#contains_all > section > div.tabs > h4.missions.selected")
+    @FindBy(css = "#activities > div > div.tabs > h4.missions.selected")
     private WebElement repereMission;
 
     @FindBy(xpath = "//*[@id=\"rewards_popup\"]/div/button")
@@ -42,7 +42,7 @@ public class MissionPage extends HentaiHeroesPage{
         catch(InterruptedException e){
             e.printStackTrace();
         }
-        List<WebElement> myElements = driver.findElements(By.className("purple_text_button"));
+        List<WebElement> myElements = driver.findElements(By.className("purple_button_L"));
         System.out.println("Nombre de mission à recolter" + myElements.size());
         if(myElements.size() !=0) {
             for (WebElement e : myElements) {
@@ -87,7 +87,7 @@ public class MissionPage extends HentaiHeroesPage{
             ne.printStackTrace();
         }
         try {
-            List<WebElement> myElements2 = driver.findElements(By.className("blue_text_button"));
+            List<WebElement> myElements2 = driver.findElements(By.className("blue_button_L"));
             System.out.println("Nombre de mission restante" + myElements2.size());
             if (myElements2.size() != 0) {
                 for (WebElement e : myElements2) {
