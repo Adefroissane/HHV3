@@ -40,7 +40,7 @@ public class automatisation {
             haremPage.recolt(driver);
         }
     }
-
+    @Ignore
     @Test
     public void automatisationCombat()
     {
