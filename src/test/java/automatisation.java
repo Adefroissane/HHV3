@@ -178,6 +178,16 @@ public class automatisation {
             championPage.combattreChampion(driver);
         }
     }
+    @Test
+    public void automatisationChampion2() {
+        InitialisationPage initialisation = new InitialisationPage(driver);
+        HomePage homePage = initialisation.openHomePage(driver);
+        ChampionPage championPage = homePage.ouvrirZoneDesChampions(driver);
+        boolean championDispo = championPage.championDispo2(driver);
+        if (championDispo == true) {
+            championPage.combattreChampion2(driver);
+        }
+    }
 }
 
 
