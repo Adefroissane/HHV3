@@ -105,43 +105,44 @@ public class automatisation {
         InitialisationPage initialisation = new InitialisationPage(driver);
         HomePage homePage = initialisation.openHomePage(driver);
         DuelPage duelPage = homePage.openDuelPage(driver);
-        if(duelPage.combat1Fait(driver) == true)
+        /*if(duelPage.combat1Fait(driver) == true)
         {
             if (duelPage.combat1PlusFaible(driver) == true)
-            {
+            {*/
                 CombatPage combatPage = duelPage.duel1(driver);
                 DuelPage duelPage2 = combatPage.combattreDuel(driver);
-            }
+            }/*
         }
-    }
+    }*/
 
     @Test
     public void automatisationDuel2() {
         InitialisationPage initialisation = new InitialisationPage(driver);
         HomePage homePage = initialisation.openHomePage(driver);
         DuelPage duelPage = homePage.openDuelPage(driver);
-        if(duelPage.combat2Fait(driver) == true)
+        /*if(duelPage.combat2Fait(driver) == true)
         {
             if (duelPage.combat2PlusFaible(driver) == true)
-            {
+            {*/
                 CombatPage combatPage = duelPage.duel2(driver);
                 DuelPage duelPage2 = combatPage.combattreDuel(driver);
-            }
+            }/*
         }
-    }
+    }*/
 
     @Test
     public void automatisationDuel3() {
         InitialisationPage initialisation = new InitialisationPage(driver);
         HomePage homePage = initialisation.openHomePage(driver);
         DuelPage duelPage = homePage.openDuelPage(driver);
-        if (duelPage.combat3Fait(driver) == true) {
-            if (duelPage.combat3PlusFaible(driver) == true) {
+        /*if (duelPage.combat3Fait(driver) == true) {
+            if (duelPage.combat3PlusFaible(driver) == true)
+            {*/
                 CombatPage combatPage = duelPage.duel3(driver);
                 DuelPage duelPage2 = combatPage.combattreDuel(driver);
-            }
+            }/*
         }
-    }
+    }*/
 
     @Test
     public void automatisationDefi() {
