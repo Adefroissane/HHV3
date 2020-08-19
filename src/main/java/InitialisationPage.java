@@ -68,18 +68,18 @@ public class InitialisationPage extends HentaiHeroesPage
 
         try
         {
-            driver.navigate().refresh();
+            //driver.navigate().refresh();
             try {
                 Thread.sleep(1000);
             } catch (InterruptedException e) {
                 e.printStackTrace();
             }
-            /*driver.findElement(By.xpath("//*[@id=\"confirmation_popup\"]/div/div/button[2]"));
+            driver.findElement(By.xpath("//*[@id=\"confirmation_popup\"]/div/div/button[2]"));
             if (nonMerci.isDisplayed())
             {
                 nonMerci.click();
 
-            }*/
+            }
 
             return new HomePage(driver);
         }
