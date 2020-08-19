@@ -5,9 +5,13 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
+
+import javax.security.auth.RefreshFailedException;
+import javax.security.auth.Refreshable;
 import java.util.List;
 
-public class InitialisationPage extends HentaiHeroesPage{
+public class InitialisationPage extends HentaiHeroesPage
+{
 
     public InitialisationPage(WebDriver driver)
     {
@@ -33,8 +37,11 @@ public class InitialisationPage extends HentaiHeroesPage{
     @FindBy(xpath = "//*[@id=\"confirmation_popup\"]/div/div/button[2]")
     private WebElement nonMerci;
 
+    @FindBy(xpath = "//*[@id=\"popup_confirm\"]")
+    private WebElement Ok;
 
-    public HomePage openHomePage(WebDriver driver){
+
+    public HomePage openHomePage(WebDriver driver) {
 
         WebDriverWait webDriverWait3 = new WebDriverWait(driver, 5);
         webDriverWait3.until(ExpectedConditions.alertIsPresent());
@@ -53,17 +60,26 @@ public class InitialisationPage extends HentaiHeroesPage{
         jouer.click();
 
         try {
-            Thread.sleep(1000);
+            Thread.sleep(5000);
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
+
+
         try
         {
-            driver.findElement(By.xpath("//*[@id=\"confirmation_popup\"]/div/div/button[2]"));
+            driver.navigate().refresh();
+            try {
+                Thread.sleep(1000);
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
+            /*driver.findElement(By.xpath("//*[@id=\"confirmation_popup\"]/div/div/button[2]"));
             if (nonMerci.isDisplayed())
             {
                 nonMerci.click();
-            }
+
+            }*/
 
             return new HomePage(driver);
         }
