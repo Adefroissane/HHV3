@@ -66,7 +66,18 @@ public class AventurePage extends HentaiHeroesPage {
         }
 
         WebDriverWait webDriverWait2 = new WebDriverWait(driver, 5);
-        webDriverWait2.until(ExpectedConditions.visibilityOf(grunt));
+        webDriverWait2.until(ExpectedConditions.visibilityOf(precedent));
+        precedent.click();
+
+        try{
+            Thread.sleep(750);
+        }
+        catch(InterruptedException ae){
+            ae.printStackTrace();
+        }
+
+        WebDriverWait webDriverWait3 = new WebDriverWait(driver, 5);
+        webDriverWait3.until(ExpectedConditions.visibilityOf(grunt));
         grunt.click();
         return new LastZonePage(driver);
 
