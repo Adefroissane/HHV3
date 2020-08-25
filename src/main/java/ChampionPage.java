@@ -97,7 +97,7 @@ public class ChampionPage extends HentaiHeroesPage {
     }
     public boolean championDispo2(WebDriver driver) {
         WebDriverWait webDriverWait = new WebDriverWait(driver, 5);
-        webDriverWait.until(ExpectedConditions.visibilityOf(foyerDeVizor));
+        webDriverWait.until(ExpectedConditions.visibilityOf(universiteElite));
         try{
             Thread.sleep(750);
         }
@@ -105,7 +105,7 @@ public class ChampionPage extends HentaiHeroesPage {
             e.printStackTrace();
         }
         try {
-            driver.findElement(By.cssSelector("#contains_all > section > a:nth-child(6) > div.champion-lair-name.map-label-link > div"));
+            driver.findElement(By.cssSelector("#contains_all > section > a:nth-child(5) > div.champion-lair-name.map-label-link > div"));
         } catch (NoSuchElementException e)
         {
             return true;
@@ -116,8 +116,8 @@ public class ChampionPage extends HentaiHeroesPage {
     public void combattreChampion2(WebDriver driver){
 
         WebDriverWait webDriverWait = new WebDriverWait(driver, 5);
-        webDriverWait.until(ExpectedConditions.visibilityOf(foyerDeVizor));
-        foyerDeVizor.click();
+        webDriverWait.until(ExpectedConditions.visibilityOf(universiteElite));
+        universiteElite.click();
         WebDriverWait webDriverWait2 = new WebDriverWait(driver, 5);
         webDriverWait2.until(ExpectedConditions.visibilityOf(performance));
         performance.click();
