@@ -201,6 +201,17 @@ public class automatisation {
             championPage.combattreChampion3(driver);
         }
     }
+
+    @Test
+    public void automatisationChampion4() {
+        InitialisationPage initialisation = new InitialisationPage(driver);
+        HomePage homePage = initialisation.openHomePage(driver);
+        ChampionPage championPage = homePage.ouvrirZoneDesChampions(driver);
+        boolean championDispo = championPage.championDispo4(driver);
+        if (championDispo == true) {
+            championPage.combattreChampion4(driver);
+        }
+    }
 }
 
 
