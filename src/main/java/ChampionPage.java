@@ -64,7 +64,7 @@ public class ChampionPage extends HentaiHeroesPage {
 
     public boolean championDispo(WebDriver driver) {
         WebDriverWait webDriverWait = new WebDriverWait(driver, 5);
-        webDriverWait.until(ExpectedConditions.visibilityOf(jardinAuDela));
+        webDriverWait.until(ExpectedConditions.visibilityOf(rondinDuBois));
         try{
             Thread.sleep(750);
         }
@@ -72,7 +72,7 @@ public class ChampionPage extends HentaiHeroesPage {
             e.printStackTrace();
         }
         try {
-            driver.findElement(By.cssSelector("#contains_all > section > a:nth-child(4) > div.champion-lair-name.map-label-link > div"));
+            driver.findElement(By.cssSelector("#contains_all > section > a:nth-child(2) > div.champion-lair-name.map-label-link > div"));
         } catch (NoSuchElementException e)
         {
             return true;
@@ -83,8 +83,8 @@ public class ChampionPage extends HentaiHeroesPage {
     public void combattreChampion(WebDriver driver){
 
         WebDriverWait webDriverWait = new WebDriverWait(driver, 5);
-        webDriverWait.until(ExpectedConditions.visibilityOf(jardinAuDela));
-        jardinAuDela.click();
+        webDriverWait.until(ExpectedConditions.visibilityOf(rondinDuBois));
+        rondinDuBois.click();
         WebDriverWait webDriverWait2 = new WebDriverWait(driver, 5);
         webDriverWait2.until(ExpectedConditions.visibilityOf(performance));
         performance.click();
@@ -96,39 +96,6 @@ public class ChampionPage extends HentaiHeroesPage {
         ok.click();
     }
     public boolean championDispo2(WebDriver driver) {
-        WebDriverWait webDriverWait = new WebDriverWait(driver, 5);
-        webDriverWait.until(ExpectedConditions.visibilityOf(universiteElite));
-        try{
-            Thread.sleep(750);
-        }
-        catch(InterruptedException e){
-            e.printStackTrace();
-        }
-        try {
-            driver.findElement(By.cssSelector("#contains_all > section > a:nth-child(5) > div.champion-lair-name.map-label-link > div"));
-        } catch (NoSuchElementException e)
-        {
-            return true;
-        }
-        return false;
-    }
-
-    public void combattreChampion2(WebDriver driver){
-
-        WebDriverWait webDriverWait = new WebDriverWait(driver, 5);
-        webDriverWait.until(ExpectedConditions.visibilityOf(universiteElite));
-        universiteElite.click();
-        WebDriverWait webDriverWait2 = new WebDriverWait(driver, 5);
-        webDriverWait2.until(ExpectedConditions.visibilityOf(performance));
-        performance.click();
-        WebDriverWait webDriverWait3 = new WebDriverWait(driver, 30);
-        webDriverWait3.until(ExpectedConditions.visibilityOf(passer));
-        passer.click();
-        WebDriverWait webDriverWait4 = new WebDriverWait(driver, 10);
-        webDriverWait4.until(ExpectedConditions.visibilityOf(ok));
-        ok.click();
-    }
-    public boolean championDispo3(WebDriver driver) {
         WebDriverWait webDriverWait = new WebDriverWait(driver, 5);
         webDriverWait.until(ExpectedConditions.visibilityOf(maisonFiere));
         try{
@@ -146,11 +113,44 @@ public class ChampionPage extends HentaiHeroesPage {
         return false;
     }
 
-    public void combattreChampion3(WebDriver driver){
+    public void combattreChampion2(WebDriver driver){
 
         WebDriverWait webDriverWait = new WebDriverWait(driver, 5);
         webDriverWait.until(ExpectedConditions.visibilityOf(maisonFiere));
         maisonFiere.click();
+        WebDriverWait webDriverWait2 = new WebDriverWait(driver, 5);
+        webDriverWait2.until(ExpectedConditions.visibilityOf(performance));
+        performance.click();
+        WebDriverWait webDriverWait3 = new WebDriverWait(driver, 30);
+        webDriverWait3.until(ExpectedConditions.visibilityOf(passer));
+        passer.click();
+        WebDriverWait webDriverWait4 = new WebDriverWait(driver, 10);
+        webDriverWait4.until(ExpectedConditions.visibilityOf(ok));
+        ok.click();
+    }
+    public boolean championDispo3(WebDriver driver) {
+        WebDriverWait webDriverWait = new WebDriverWait(driver, 5);
+        webDriverWait.until(ExpectedConditions.visibilityOf(jardinAuDela));
+        try{
+            Thread.sleep(750);
+        }
+        catch(InterruptedException e){
+            e.printStackTrace();
+        }
+        try {
+            driver.findElement(By.cssSelector("#contains_all > section > a:nth-child(4) > div.champion-lair-name.map-label-link > div"));
+        } catch (NoSuchElementException e)
+        {
+            return true;
+        }
+        return false;
+    }
+
+    public void combattreChampion3(WebDriver driver){
+
+        WebDriverWait webDriverWait = new WebDriverWait(driver, 5);
+        webDriverWait.until(ExpectedConditions.visibilityOf(jardinAuDela));
+        jardinAuDela.click();
         WebDriverWait webDriverWait2 = new WebDriverWait(driver, 5);
         webDriverWait2.until(ExpectedConditions.visibilityOf(performance));
         performance.click();
