@@ -61,6 +61,9 @@ public class HomePage  extends HentaiHeroesPage{
     @FindBy(xpath = "//*[@id=\"homepage\"]/a[5]/div/span")
     private WebElement champion;
 
+    @FindBy(xpath = "//*[@id=\"activities\"]/div/div[2]/h4[3]")
+    private WebElement lieuxDePouvoir;
+
     public HaremPage ouvrirLeHarem(WebDriver driver){
 
         WebDriverWait webDriverWait = new WebDriverWait(driver, 5);
@@ -137,6 +140,17 @@ public class HomePage  extends HentaiHeroesPage{
         webDriverWait.until(ExpectedConditions.visibilityOf(mission));
         mission.click();
         return new MissionPage(driver);
+    }
+
+    public LieuxDePouvoirPage openLieuxDePouvoirPage (WebDriver driver) {
+
+        WebDriverWait webDriverWait = new WebDriverWait(driver, 5);
+        webDriverWait.until(ExpectedConditions.visibilityOf(mission));
+        mission.click();
+        WebDriverWait webDriverWait2 = new WebDriverWait(driver, 5);
+        webDriverWait2.until(ExpectedConditions.visibilityOf(lieuxDePouvoir));
+        lieuxDePouvoir.click();
+        return new LieuxDePouvoirPage(driver);
     }
 
     public DuelPage openDuelPage(WebDriver driver) {
