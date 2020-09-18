@@ -21,12 +21,18 @@ public class LieuxDePouvoirPage extends HentaiHeroesPage {
     @FindBy(xpath = "//*[@id=\"pop\"]/div/div[2]/button[3]")
     private WebElement Commencer;
 
+    @FindBy(xpath = "//*[@id=\"rewards_popup\"]/div/button")
+    private WebElement Ok;
+
     public void LancerMission(WebDriver driver) {
 
         WebDriverWait webDriverWait = new WebDriverWait(driver, 5);
         webDriverWait.until(ExpectedConditions.visibilityOf(Assigner));
         if(Recuperer.isDisplayed()) {
             Recuperer.click();
+            WebDriverWait webDriverWait4= new WebDriverWait(driver, 5);
+            webDriverWait4.until(ExpectedConditions.visibilityOf(Ok));
+            Ok.click();
             WebDriverWait webDriverWait2 = new WebDriverWait(driver, 5);
             webDriverWait2.until(ExpectedConditions.visibilityOf(Commencer));
             Assigner.click();
