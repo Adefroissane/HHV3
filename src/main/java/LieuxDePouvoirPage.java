@@ -36,6 +36,7 @@ public class LieuxDePouvoirPage extends HentaiHeroesPage {
             WebDriverWait webDriverWait2 = new WebDriverWait(driver, 5);
             webDriverWait2.until(ExpectedConditions.visibilityOf(Commencer));
             Assigner.click();
+
             WebDriverWait webDriverWait3 = new WebDriverWait(driver, 5);
             webDriverWait3.until(ExpectedConditions.visibilityOf(Commencer));
             Commencer.click();

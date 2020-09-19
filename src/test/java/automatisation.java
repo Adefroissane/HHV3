@@ -167,7 +167,7 @@ public class automatisation {
             Combat(driver);
         }
     }
-    @Ignore
+
     @Test
     public void LieuxDePouvoir()
     {
