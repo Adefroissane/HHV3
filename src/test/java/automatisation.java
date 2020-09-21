@@ -175,7 +175,16 @@ public class automatisation {
         HomePage homePage = initialisation.openHomePage(driver);
         LieuxDePouvoirPage lieuxDePouvoirPage = homePage.openLieuxDePouvoirPage(driver);
         lieuxDePouvoirPage.LancerMission(driver);
+    }
 
+    @Test
+    public void Achat()
+    {
+        InitialisationPage initialisation = new InitialisationPage(driver);
+        HomePage homePage = initialisation.openHomePage(driver);
+        MarchePage marchePage = homePage.openMarche(driver);
+        marchePage.LancerAchatLivre(driver);
+        marchePage.LancerAchatCadeau(driver);
     }
 
 
