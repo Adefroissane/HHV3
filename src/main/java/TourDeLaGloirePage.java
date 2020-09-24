@@ -21,7 +21,7 @@ public class TourDeLaGloirePage extends HentaiHeroesPage {
     @FindBy(css = "#leagues_middle > div.leagues_table.lead_table > div.lead_table_view > table > tbody > tr.lead_table_default.selected-player-leagues > td > div > div:nth-child(1) > button")
     private WebElement defi;
 
-    @FindBy(xpath = "//*[@id=\"battle_middle\"]/button[1]")
+    @FindBy(xpath = "//*[@id=\"battle_middle\"]/div[3]/button[1]")
     private WebElement affronter;
 
     @FindBy(xpath = "//*[@id=\"battle_middle\"]/button[2]")
