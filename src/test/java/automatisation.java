@@ -198,7 +198,7 @@ public class automatisation {
             championPage.combattreChampion(driver);
         }
     }
-
+    @Ignore
     @Test
     public void automatisationChampion2() {
         InitialisationPage initialisation = new InitialisationPage(driver);
