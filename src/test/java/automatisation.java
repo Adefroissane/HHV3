@@ -167,13 +167,14 @@ public class automatisation {
             Combat(driver);
         }
     }
-    @Ignore
+
     @Test
     public void LieuxDePouvoir()
     {
         InitialisationPage initialisation = new InitialisationPage(driver);
         HomePage homePage = initialisation.openHomePage(driver);
         LieuxDePouvoirPage lieuxDePouvoirPage = homePage.openLieuxDePouvoirPage(driver);
+        lieuxDePouvoirPage.RecoltMission(driver);
         lieuxDePouvoirPage.LancerMission(driver);
     }
 
