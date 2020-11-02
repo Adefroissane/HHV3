@@ -99,7 +99,7 @@ public class automatisation {
             missionPage.lanceMission(driver);
         }
     }
-
+    @Ignore
     @Test
     public void automatisationDuel1() {
         InitialisationPage initialisation = new InitialisationPage(driver);
@@ -114,7 +114,7 @@ public class automatisation {
             }
         }
     }
-
+    @Ignore
     @Test
     public void automatisationDuel2() {
         InitialisationPage initialisation = new InitialisationPage(driver);
@@ -129,7 +129,7 @@ public class automatisation {
             }
         }
     }
-
+    @Ignore
     @Test
     public void automatisationDuel3() {
         InitialisationPage initialisation = new InitialisationPage(driver);
