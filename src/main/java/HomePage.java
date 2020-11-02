@@ -67,6 +67,9 @@ public class HomePage  extends HentaiHeroesPage{
     @FindBy(xpath = "//*[@id=\"homepage\"]/a[4]/div/span")
     private WebElement marche;
 
+    @FindBy(xpath = "//*[@id=\"seasons_tab_container\"]/div[3]/div[1]/a/div")
+    private WebElement trouverUnAdversaire;
+
     public HaremPage ouvrirLeHarem(WebDriver driver){
 
         WebDriverWait webDriverWait = new WebDriverWait(driver, 5);
@@ -169,6 +172,9 @@ public class HomePage  extends HentaiHeroesPage{
         WebDriverWait webDriverWait = new WebDriverWait(driver, 5);
         webDriverWait.until(ExpectedConditions.visibilityOf(arene));
         arene.click();
+        WebDriverWait webDriverWait2 = new WebDriverWait(driver, 5);
+        webDriverWait2.until(ExpectedConditions.visibilityOf(trouverUnAdversaire));
+        trouverUnAdversaire.click();
         return new DuelPage(driver);
     }
 
