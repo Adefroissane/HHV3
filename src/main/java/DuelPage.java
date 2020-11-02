@@ -34,8 +34,44 @@ public class DuelPage extends HentaiHeroesPage {
     @FindBy(xpath = "//*[@id=\"arena\"]/div[3]/div[3]/div[1]/span")
     private WebElement fait3;
 
+    @FindBy(xpath = "//*[@id=\"seasons_tab_container\"]/div[3]/div[1]/a/div")
+    private WebElement trouverUnAdversaire;
 
-    public int PvHeros() {
+    @FindBy(xpath = "//*[@id=\"season-arena\"]/div[1]/div[5]/div[1]/span/span")
+    private WebElement monAt;
+
+    @FindBy(xpath = "//*[@id=\"season-arena\"]/div[1]/div[5]/div[2]/span/span")
+    private WebElement maDef;
+
+    @FindBy(xpath = "//*[@id=\"season-arena\"]/div[2]/div[2]/div/div[4]/div[1]/span[2]")
+    private WebElement atAdversaire1;
+
+    @FindBy(xpath = "//*[@id=\"season-arena\"]/div[2]/div[2]/div/div[4]/div[2]/span[2]")
+    private WebElement defAdversaire1;
+
+    @FindBy(xpath = "//*[@id=\"season-arena\"]/div[2]/div[4]/div/div[4]/div[1]/span[2]")
+    private WebElement atAdversaire2;
+
+    @FindBy(xpath = "//*[@id=\"season-arena\"]/div[2]/div[4]/div/div[4]/div[2]/span[2]")
+    private WebElement defAdversaire2;
+
+    @FindBy(xpath = "//*[@id=\"season-arena\"]/div[2]/div[6]/div/div[4]/div[1]/span[2]")
+    private WebElement atAdversaire3;
+
+    @FindBy(xpath = "//*[@id=\"season-arena\"]/div[2]/div[6]/div/div[4]/div[2]/span[2]")
+    private WebElement defAdversaire3;
+
+    @FindBy(xpath = "//*[@id=\"season-arena\"]/div[2]/div[3]/button")
+    private WebElement affronter1;
+
+    @FindBy(xpath = "//*[@id=\"season-arena\"]/div[2]/div[5]/button")
+    private WebElement affronter2;
+
+    @FindBy(xpath = "//*[@id=\"season-arena\"]/div[2]/div[7]/button")
+    private WebElement affronter3;
+
+
+    /*public int PvHeros() {
 
         String plif = mesPV.getText();
         String plaf = plif.replaceAll("\\s", "");
@@ -45,9 +81,125 @@ public class DuelPage extends HentaiHeroesPage {
         int pvHeros = Integer.parseInt(plof);
         System.out.println("PV = " + pvHeros);
         return pvHeros;
+    }*/
+
+    public int AtHeros() {
+
+        String plif = monAt.getText();
+        String plaf = plif.replaceAll("\\s", "");
+        StringBuffer plouf = new StringBuffer(plaf);
+        plouf.delete(5, 10);
+        String plof = plouf.toString();
+        int atHeros = Integer.parseInt(plof);
+        System.out.println("At = " + atHeros);
+        return atHeros;
     }
 
-    public boolean combat1Fait(WebDriver driver)
+    public int DefHeros() {
+
+        String plif = maDef.getText();
+        String plaf = plif.replaceAll("\\s", "");
+        StringBuffer plouf = new StringBuffer(plaf);
+        plouf.delete(5, 10);
+        String plof = plouf.toString();
+        int defHeros = Integer.parseInt(plof);
+        System.out.println("Def = " + defHeros);
+        return defHeros;
+    }
+
+    public int AtAdversaire1() {
+
+        String plif = atAdversaire1.getText();
+        String plaf = plif.replaceAll("\\s", "");
+        StringBuffer plouf = new StringBuffer(plaf);
+        plouf.delete(5, 10);
+        String plof = plouf.toString();
+        int atAdv1 = Integer.parseInt(plof);
+        System.out.println("At = " + atAdv1);
+        return atAdv1;
+    }
+
+    public int DefAdversaire1() {
+
+        String plif = defAdversaire1.getText();
+        String plaf = plif.replaceAll("\\s", "");
+        StringBuffer plouf = new StringBuffer(plaf);
+        plouf.delete(5, 10);
+        String plof = plouf.toString();
+        int defAdv1 = Integer.parseInt(plof);
+        System.out.println("Def = " + defAdv1);
+        return defAdv1;
+    }
+
+    public int AtAdversaire2() {
+
+        String plif = atAdversaire2.getText();
+        String plaf = plif.replaceAll("\\s", "");
+        StringBuffer plouf = new StringBuffer(plaf);
+        plouf.delete(5, 10);
+        String plof = plouf.toString();
+        int atAdv2 = Integer.parseInt(plof);
+        System.out.println("At = " + atAdv2);
+        return atAdv2;
+    }
+
+    public int DefAdversaire2() {
+
+        String plif = defAdversaire2.getText();
+        String plaf = plif.replaceAll("\\s", "");
+        StringBuffer plouf = new StringBuffer(plaf);
+        plouf.delete(5, 10);
+        String plof = plouf.toString();
+        int defAdv2 = Integer.parseInt(plof);
+        System.out.println("Def = " + defAdv2);
+        return defAdv2;
+    }
+
+    public int AtAdversaire3() {
+
+        String plif = atAdversaire3.getText();
+        String plaf = plif.replaceAll("\\s", "");
+        StringBuffer plouf = new StringBuffer(plaf);
+        plouf.delete(5, 10);
+        String plof = plouf.toString();
+        int atAdv3 = Integer.parseInt(plof);
+        System.out.println("At = " + atAdv3);
+        return atAdv3;
+    }
+
+    public int DefAdversaire3() {
+
+        String plif = defAdversaire3.getText();
+        String plaf = plif.replaceAll("\\s", "");
+        StringBuffer plouf = new StringBuffer(plaf);
+        plouf.delete(5, 10);
+        String plof = plouf.toString();
+        int defAdv3 = Integer.parseInt(plof);
+        System.out.println("Def = " + defAdv3);
+        return defAdv3;
+    }
+
+    public int PuissanceHeros() {
+        int puissanceHeros = AtHeros()-DefHeros();
+        return puissanceHeros;
+    }
+
+    public int PuissanceAdversaire1() {
+        int puissanceAdversaire1 = AtAdversaire1()-DefAdversaire1();
+        return puissanceAdversaire1;
+    }
+
+    public int PuissanceAdversaire2() {
+        int puissanceAdversaire2 = AtAdversaire2()-DefAdversaire2();
+        return puissanceAdversaire2;
+    }
+
+    public int PuissanceAdversaire3() {
+        int puissanceAdversaire3 = AtAdversaire3()-DefAdversaire3();;
+        return puissanceAdversaire3;
+    }
+
+    /*public boolean combat1Fait(WebDriver driver)
     {
         try
         {
@@ -62,22 +214,17 @@ public class DuelPage extends HentaiHeroesPage {
             return true;
         }
         return true;
-    }
+    }*/
 
     public boolean combat1PlusFaible (WebDriver driver)
     {
         WebDriverWait webDriverWait = new WebDriverWait(driver, 5);
-        webDriverWait.until(ExpectedConditions.visibilityOf(mesPV));
-        int pvHeros = PvHeros();
-        String plif2 = pVAdversaire1.getText();
-        String plaf2 = plif2.replaceAll("\\s", "");
-        StringBuffer plouf2 = new StringBuffer(plaf2);
-        plouf2.delete(0, 3);
-        String plof2 = plouf2.toString();
-        int pvDuMechant1 = Integer.parseInt(plof2);
-        System.out.println("PV = " + pvDuMechant1);
-        if (pVAdversaire1.isDisplayed()) {
-            if (pvHeros >= pvDuMechant1)
+        webDriverWait.until(ExpectedConditions.visibilityOf(monAt));
+        int puissanceHeros = PuissanceHeros();
+        int puissanceAdversaire1 = PuissanceAdversaire1();
+
+        if (atAdversaire1.isDisplayed()) {
+            if (puissanceHeros >= puissanceAdversaire1)
             {
                 return true;
             }
@@ -87,11 +234,11 @@ public class DuelPage extends HentaiHeroesPage {
 
     public CombatPage duel1(WebDriver driver)
     {
-        pVAdversaire1.click();
+        affronter1.click();
         return new CombatPage(driver);
     }
 
-    public boolean combat2Fait(WebDriver driver)
+    /*public boolean combat2Fait(WebDriver driver)
     {
         try
         {
@@ -106,22 +253,17 @@ public class DuelPage extends HentaiHeroesPage {
             return true;
         }
         return true;
-    }
+    }*/
 
     public boolean combat2PlusFaible (WebDriver driver)
     {
         WebDriverWait webDriverWait = new WebDriverWait(driver, 5);
-        webDriverWait.until(ExpectedConditions.visibilityOf(mesPV));
-        int pvHeros = PvHeros();
-        String plif2 = pVAdversaire2.getText();
-        String plaf2 = plif2.replaceAll("\\s", "");
-        StringBuffer plouf2 = new StringBuffer(plaf2);
-        plouf2.delete(0, 3);
-        String plof2 = plouf2.toString();
-        int pvDuMechant1 = Integer.parseInt(plof2);
-        System.out.println("PV = " + pvDuMechant1);
-        if (pVAdversaire2.isDisplayed()) {
-            if (pvHeros >= pvDuMechant1)
+        webDriverWait.until(ExpectedConditions.visibilityOf(monAt));
+        int puissanceHeros = PuissanceHeros();
+        int puissanceAdversaire2 = PuissanceAdversaire2();
+
+        if (atAdversaire2.isDisplayed()) {
+            if (puissanceHeros >= puissanceAdversaire2)
             {
                 return true;
             }
@@ -131,11 +273,11 @@ public class DuelPage extends HentaiHeroesPage {
 
     public CombatPage duel2(WebDriver driver)
     {
-        pVAdversaire2.click();
+        affronter2.click();
         return new CombatPage(driver);
     }
 
-    public boolean combat3Fait(WebDriver driver)
+    /*public boolean combat3Fait(WebDriver driver)
     {
         try
         {
@@ -150,22 +292,17 @@ public class DuelPage extends HentaiHeroesPage {
             return true;
         }
         return true;
-    }
+    }*/
 
     public boolean combat3PlusFaible (WebDriver driver)
     {
         WebDriverWait webDriverWait = new WebDriverWait(driver, 5);
-        webDriverWait.until(ExpectedConditions.visibilityOf(mesPV));
-        int pvHeros = PvHeros();
-        String plif2 = pVAdversaire3.getText();
-        String plaf2 = plif2.replaceAll("\\s", "");
-        StringBuffer plouf2 = new StringBuffer(plaf2);
-        plouf2.delete(0, 3);
-        String plof2 = plouf2.toString();
-        int pvDuMechant1 = Integer.parseInt(plof2);
-        System.out.println("PV = " + pvDuMechant1);
-        if (pVAdversaire3.isDisplayed()) {
-            if (pvHeros >= pvDuMechant1)
+        webDriverWait.until(ExpectedConditions.visibilityOf(monAt));
+        int puissanceHeros = PuissanceHeros();
+        int puissanceAdversaire3 = PuissanceAdversaire3();
+
+        if (atAdversaire3.isDisplayed()) {
+            if (puissanceHeros >= puissanceAdversaire3)
             {
                 return true;
             }
@@ -175,7 +312,7 @@ public class DuelPage extends HentaiHeroesPage {
 
     public CombatPage duel3(WebDriver driver) {
 
-        pVAdversaire3.click();
+        affronter3.click();
         return new CombatPage(driver);
 
     }
