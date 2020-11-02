@@ -70,6 +70,9 @@ public class DuelPage extends HentaiHeroesPage {
     @FindBy(xpath = "//*[@id=\"season-arena\"]/div[2]/div[7]/button")
     private WebElement affronter3;
 
+    @FindBy(xpath = "//*[@id=\"current_kisses\"]")
+    private WebElement nbrCombat;
+
 
     /*public int PvHeros() {
 
@@ -83,6 +86,16 @@ public class DuelPage extends HentaiHeroesPage {
         return pvHeros;
     }*/
 
+    public boolean DuelPossible(WebDriver driver) {
+        WebDriverWait webDriverWait = new WebDriverWait(driver, 5);
+        webDriverWait.until(ExpectedConditions.visibilityOf(nbrCombat));
+        if (nbrCombat.getText().equals("0")) {
+            return false;
+        } else {
+            return true;
+        }
+
+    }
     public int AtHeros() {
 
         String plif = monAt.getText();
