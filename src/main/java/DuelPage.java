@@ -113,7 +113,7 @@ public class DuelPage extends HentaiHeroesPage {
         String plif = maDef.getText();
         String plaf = plif.replaceAll("\\s", "");
         StringBuffer plouf = new StringBuffer(plaf);
-        plouf.delete(5, 10);
+        plouf.delete(0, 5);
         String plof = plouf.toString();
         int defHeros = Integer.parseInt(plof);
         System.out.println("Def = " + defHeros);
@@ -125,7 +125,7 @@ public class DuelPage extends HentaiHeroesPage {
         String plif = atAdversaire1.getText();
         String plaf = plif.replaceAll("\\s", "");
         StringBuffer plouf = new StringBuffer(plaf);
-        plouf.delete(5, 10);
+        plouf.delete(0, 5);
         String plof = plouf.toString();
         int atAdv1 = Integer.parseInt(plof);
         System.out.println("At = " + atAdv1);
@@ -137,7 +137,7 @@ public class DuelPage extends HentaiHeroesPage {
         String plif = defAdversaire1.getText();
         String plaf = plif.replaceAll("\\s", "");
         StringBuffer plouf = new StringBuffer(plaf);
-        plouf.delete(5, 10);
+        plouf.delete(0, 5);
         String plof = plouf.toString();
         int defAdv1 = Integer.parseInt(plof);
         System.out.println("Def = " + defAdv1);
@@ -149,7 +149,7 @@ public class DuelPage extends HentaiHeroesPage {
         String plif = atAdversaire2.getText();
         String plaf = plif.replaceAll("\\s", "");
         StringBuffer plouf = new StringBuffer(plaf);
-        plouf.delete(5, 10);
+        plouf.delete(0, 5);
         String plof = plouf.toString();
         int atAdv2 = Integer.parseInt(plof);
         System.out.println("At = " + atAdv2);
@@ -161,7 +161,7 @@ public class DuelPage extends HentaiHeroesPage {
         String plif = defAdversaire2.getText();
         String plaf = plif.replaceAll("\\s", "");
         StringBuffer plouf = new StringBuffer(plaf);
-        plouf.delete(5, 10);
+        plouf.delete(0, 5);
         String plof = plouf.toString();
         int defAdv2 = Integer.parseInt(plof);
         System.out.println("Def = " + defAdv2);
@@ -173,7 +173,7 @@ public class DuelPage extends HentaiHeroesPage {
         String plif = atAdversaire3.getText();
         String plaf = plif.replaceAll("\\s", "");
         StringBuffer plouf = new StringBuffer(plaf);
-        plouf.delete(5, 10);
+        plouf.delete(0, 5);
         String plof = plouf.toString();
         int atAdv3 = Integer.parseInt(plof);
         System.out.println("At = " + atAdv3);
@@ -185,7 +185,7 @@ public class DuelPage extends HentaiHeroesPage {
         String plif = defAdversaire3.getText();
         String plaf = plif.replaceAll("\\s", "");
         StringBuffer plouf = new StringBuffer(plaf);
-        plouf.delete(5, 10);
+        plouf.delete(0, 5);
         String plof = plouf.toString();
         int defAdv3 = Integer.parseInt(plof);
         System.out.println("Def = " + defAdv3);
@@ -193,22 +193,22 @@ public class DuelPage extends HentaiHeroesPage {
     }
 
     public int PuissanceHeros() {
-        int puissanceHeros = AtHeros()-DefHeros();
+        int puissanceHeros = AtHeros()+DefHeros();
         return puissanceHeros;
     }
 
     public int PuissanceAdversaire1() {
-        int puissanceAdversaire1 = AtAdversaire1()-DefAdversaire1();
+        int puissanceAdversaire1 = AtAdversaire1()+DefAdversaire1();
         return puissanceAdversaire1;
     }
 
     public int PuissanceAdversaire2() {
-        int puissanceAdversaire2 = AtAdversaire2()-DefAdversaire2();
+        int puissanceAdversaire2 = AtAdversaire2()+DefAdversaire2();
         return puissanceAdversaire2;
     }
 
     public int PuissanceAdversaire3() {
-        int puissanceAdversaire3 = AtAdversaire3()-DefAdversaire3();;
+        int puissanceAdversaire3 = AtAdversaire3()+DefAdversaire3();;
         return puissanceAdversaire3;
     }
 

@@ -31,10 +31,7 @@ public class CombatPage extends HentaiHeroesPage{
 
     public DuelPage combattreDuel(WebDriver driver)
     {
-        WebDriverWait webDriverWait = new WebDriverWait(driver, 5);
-        webDriverWait.until(ExpectedConditions.visibilityOf(affronter));
-        affronter.click();
-        WebDriverWait webDriverWait2 = new WebDriverWait(driver, 30);
+        WebDriverWait webDriverWait2 = new WebDriverWait(driver, 5);
         webDriverWait2.until(ExpectedConditions.visibilityOf(passer2));
         passer2.click();
         WebDriverWait webDriverWait3 = new WebDriverWait(driver, 5);
