@@ -101,7 +101,7 @@ public class DuelPage extends HentaiHeroesPage {
         String plif = monAt.getText();
         String plaf = plif.replaceAll("\\s", "");
         StringBuffer plouf = new StringBuffer(plaf);
-        plouf.delete(5, 10);
+        plouf.delete(0, 5);
         String plof = plouf.toString();
         int atHeros = Integer.parseInt(plof);
         System.out.println("At = " + atHeros);
