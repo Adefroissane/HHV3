@@ -10,16 +10,14 @@ public class automatisation {
     WebDriver driver;
 
     @Before
-    public void init()
-    {
+    public void init() {
         driver = new ChromeDriver();
         //driver.manage().window().fullscreen();
         driver.get("https://www.hentaiheroes.com/");
     }
 
     @After
-    public void teardown()
-    {
+    public void teardown() {
         try {
             Thread.sleep(500);
         } catch (InterruptedException e) {
@@ -29,8 +27,7 @@ public class automatisation {
     }
 
     @Test
-    public void automatisationHarem()
-    {
+    public void automatisationHarem() {
         InitialisationPage initialisation = new InitialisationPage(driver);
         HomePage homePage = initialisation.openHomePage(driver);
 
@@ -42,21 +39,20 @@ public class automatisation {
     }
 
     @Test
-    public void automatisationCombat()
-    {
+    public void automatisationCombat() {
         InitialisationPage initialisation = new InitialisationPage(driver);
         HomePage homePage = initialisation.openHomePage(driver);
 
         boolean combatNonNull = homePage.getHeader().combatNecessaire(driver);
-        if (combatNonNull == true) { AventurePage aventurePage = homePage.openAventure(driver);
-                LastZonePage lastZonePage = aventurePage.openLastZone(driver);
-                Combat(driver);
-            }
+        if (combatNonNull == true) {
+            AventurePage aventurePage = homePage.openAventure(driver);
+            LastZonePage lastZonePage = aventurePage.openLastZone(driver);
+            Combat(driver);
         }
+    }
 
     @Test
-    public void automatisationPachinko()
-    {
+    public void automatisationPachinko() {
         InitialisationPage initialisation = new InitialisationPage(driver);
         HomePage homePage = initialisation.openHomePage(driver);
         boolean pachinkoGratuitPresent = homePage.pachinkoGratuitPresent(driver);
@@ -67,8 +63,7 @@ public class automatisation {
     }
 
     @Test
-    public void automatisationPachinko2()
-    {
+    public void automatisationPachinko2() {
         InitialisationPage initialisation = new InitialisationPage(driver);
         HomePage homePage = initialisation.openHomePage(driver);
         boolean pachinkoGratuit2Present = homePage.pachinkoGratuit2Present(driver);
@@ -79,8 +74,7 @@ public class automatisation {
     }
 
     @Test
-    public void automatisationRecoltMission()
-    {
+    public void automatisationRecoltMission() {
         InitialisationPage initialisation = new InitialisationPage(driver);
         HomePage homePage = initialisation.openHomePage(driver);
         MissionPage missionPage = homePage.openMissionPage(driver);
@@ -88,8 +82,7 @@ public class automatisation {
     }
 
     @Test
-    public void automatisationLancementMission()
-    {
+    public void automatisationLancementMission() {
         InitialisationPage initialisation = new InitialisationPage(driver);
         HomePage homePage = initialisation.openHomePage(driver);
         boolean missionDispo = homePage.missionDisponible(driver);
@@ -105,17 +98,25 @@ public class automatisation {
         InitialisationPage initialisation = new InitialisationPage(driver);
         HomePage homePage = initialisation.openHomePage(driver);
         DuelPage duelPage = homePage.openDuelPage(driver);
+        boolean combatNonNull = homePage.getHeader().combatNecessaire(driver);
         if (duelPage.DuelPossible(driver) == true) {
-            if (duelPage.combat1PlusFaible(driver) == true) {
-                CombatPage combatPage = duelPage.duel1(driver);
-                DuelPage duelPage2 = combatPage.combattreDuel(driver);
-            } else if (duelPage.combat2PlusFaible(driver) == true) {
-                CombatPage combatPage = duelPage.duel2(driver);
-                DuelPage duelPage2 = combatPage.combattreDuel(driver);
-            } else if (duelPage.combat3PlusFaible(driver) == true) {
-                CombatPage combatPage = duelPage.duel3(driver);
-                DuelPage duelPage2 = combatPage.combattreDuel(driver);
-            }
+            Duel(driver);
+        }
+    }
+
+
+    private void Duel(WebDriver driver)
+    {
+        DuelPage duelPage = new DuelPage(driver);
+        if (duelPage.combat1PlusFaible(driver) == true) {
+            CombatPage combatPage = duelPage.duel1(driver);
+            DuelPage duelPage2 = combatPage.combattreDuel(driver);
+        } else if (duelPage.combat2PlusFaible(driver) == true) {
+            CombatPage combatPage = duelPage.duel2(driver);
+            DuelPage duelPage2 = combatPage.combattreDuel(driver);
+        } else if (duelPage.combat3PlusFaible(driver) == true) {
+            CombatPage combatPage = duelPage.duel3(driver);
+            DuelPage duelPage2 = combatPage.combattreDuel(driver);
         }
     }
 
