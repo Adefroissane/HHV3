@@ -92,32 +92,13 @@ public class automatisation {
             missionPage.lanceMission(driver);
         }
     }
-    @Ignore
+
     @Test
     public void automatisationDuel() {
         InitialisationPage initialisation = new InitialisationPage(driver);
         HomePage homePage = initialisation.openHomePage(driver);
         DuelPage duelPage = homePage.openDuelPage(driver);
-        boolean combatNonNull = homePage.getHeader().combatNecessaire(driver);
-        if (duelPage.DuelPossible(driver) == true) {
-            Duel(driver);
-        }
-    }
-
-
-    private void Duel(WebDriver driver)
-    {
-        DuelPage duelPage = new DuelPage(driver);
-        if (duelPage.combat1PlusFaible(driver) == true) {
-            CombatPage combatPage = duelPage.duel1(driver);
-            DuelPage duelPage2 = combatPage.combattreDuel(driver);
-        } else if (duelPage.combat2PlusFaible(driver) == true) {
-            CombatPage combatPage = duelPage.duel2(driver);
-            DuelPage duelPage2 = combatPage.combattreDuel(driver);
-        } else if (duelPage.combat3PlusFaible(driver) == true) {
-            CombatPage combatPage = duelPage.duel3(driver);
-            DuelPage duelPage2 = combatPage.combattreDuel(driver);
-        }
+        duelPage.Duel(driver);
     }
 
 

@@ -329,4 +329,35 @@ public class DuelPage extends HentaiHeroesPage {
         return new CombatPage(driver);
 
     }
+
+    public void Duel(WebDriver driver)
+    {
+        while (DuelPossible(driver) == true)
+        {
+            if (combat1PlusFaible(driver) == true) {
+                duel1(driver);
+            } else if (combat2PlusFaible(driver) == true) {
+                duel2(driver);
+            } else if (combat3PlusFaible(driver) == true) {
+                duel3(driver);
+            } else
+            {
+                if (PuissanceAdversaire1() <= PuissanceAdversaire2())
+                {
+                    if (PuissanceAdversaire1() <= PuissanceAdversaire3())
+                    {
+                        duel1(driver);
+                    } else
+                    {
+                        duel3(driver);
+                    }
+                } else
+                {
+                    duel2(driver);
+                }
+            }
+            CombatPage combat = new CombatPage(driver);
+            combat.combattreDuel(driver);
+        }
+    }
 }
