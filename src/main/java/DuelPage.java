@@ -86,7 +86,7 @@ public class DuelPage extends HentaiHeroesPage {
         return pvHeros;
     }*/
 
-    public boolean DuelPossible(WebDriver driver) {
+    public boolean DuelPossible() {
         WebDriverWait webDriverWait = new WebDriverWait(driver, 5);
         webDriverWait.until(ExpectedConditions.visibilityOf(nbrCombat));
         if (nbrCombat.getText().equals("0")) {
@@ -229,7 +229,7 @@ public class DuelPage extends HentaiHeroesPage {
         return true;
     }*/
 
-    public boolean combat1PlusFaible (WebDriver driver)
+    public boolean combat1PlusFaible ()
     {
         WebDriverWait webDriverWait = new WebDriverWait(driver, 5);
         webDriverWait.until(ExpectedConditions.visibilityOf(monAt));
@@ -268,7 +268,7 @@ public class DuelPage extends HentaiHeroesPage {
         return true;
     }*/
 
-    public boolean combat2PlusFaible (WebDriver driver)
+    public boolean combat2PlusFaible ()
     {
         WebDriverWait webDriverWait = new WebDriverWait(driver, 5);
         webDriverWait.until(ExpectedConditions.visibilityOf(monAt));
@@ -307,7 +307,7 @@ public class DuelPage extends HentaiHeroesPage {
         return true;
     }*/
 
-    public boolean combat3PlusFaible (WebDriver driver)
+    public boolean combat3PlusFaible ()
     {
         WebDriverWait webDriverWait = new WebDriverWait(driver, 5);
         webDriverWait.until(ExpectedConditions.visibilityOf(monAt));
@@ -332,13 +332,13 @@ public class DuelPage extends HentaiHeroesPage {
 
     public void Duel(WebDriver driver)
     {
-        while (DuelPossible(driver) == true)
+        while (DuelPossible() == true)
         {
-            if (combat1PlusFaible(driver) == true) {
+            if (combat1PlusFaible() == true) {
                 duel1(driver);
-            } else if (combat2PlusFaible(driver) == true) {
+            } else if (combat2PlusFaible() == true) {
                 duel2(driver);
-            } else if (combat3PlusFaible(driver) == true) {
+            } else if (combat3PlusFaible() == true) {
                 duel3(driver);
             } else
             {
