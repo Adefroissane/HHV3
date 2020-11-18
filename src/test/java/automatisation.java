@@ -190,7 +190,7 @@ public class automatisation {
             championPage.combattreChampion4(driver);
         }
     }
-
+    @Ignore
     @Test
     public void automatisationChampion5() {
         InitialisationPage initialisation = new InitialisationPage(driver);
