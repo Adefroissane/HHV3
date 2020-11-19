@@ -101,7 +101,7 @@ public class automatisation {
         duelPage.Duel(driver);
     }
 
-    @Ignore
+
     @Test
     public void automatisationDefi() {
         InitialisationPage initialisation = new InitialisationPage(driver);
