@@ -193,7 +193,7 @@ public class automatisation {
             championPage.combattreChampion4(driver);
         }
     }
-
+    @Ignore
     @Test
     public void automatisationChampion5() {
         InitialisationPage initialisation = new InitialisationPage(driver);
@@ -204,7 +204,7 @@ public class automatisation {
             championPage.combattreChampion5(driver);
         }
     }
-
+    @Ignore
     @Test
     public void automatisationChampion6() {
         InitialisationPage initialisation = new InitialisationPage(driver);
