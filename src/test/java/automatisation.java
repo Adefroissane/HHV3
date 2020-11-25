@@ -92,7 +92,7 @@ public class automatisation {
             missionPage.lanceMission(driver);
         }
     }
-    @Ignore
+
     @Test
     public void automatisationDuel() {
         InitialisationPage initialisation = new InitialisationPage(driver);
