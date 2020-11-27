@@ -37,7 +37,7 @@ public class automatisation {
             haremPage.recolt(driver);
         }
     }
-    @Ignore
+
     @Test
     public void automatisationCombat() {
         InitialisationPage initialisation = new InitialisationPage(driver);
@@ -92,7 +92,7 @@ public class automatisation {
             missionPage.lanceMission(driver);
         }
     }
-
+    @Ignore
     @Test
     public void automatisationDuel() {
         InitialisationPage initialisation = new InitialisationPage(driver);
@@ -101,7 +101,7 @@ public class automatisation {
         duelPage.Duel(driver);
     }
 
-
+    @Ignore
     @Test
     public void automatisationDefi() {
         InitialisationPage initialisation = new InitialisationPage(driver);
@@ -158,7 +158,7 @@ public class automatisation {
         }
     }
 
-    @Ignore
+
     @Test
     public void automatisationChampion2() {
         InitialisationPage initialisation = new InitialisationPage(driver);
@@ -170,7 +170,7 @@ public class automatisation {
         }
     }
 
-    @Ignore
+
     @Test
     public void automatisationChampion3() {
         InitialisationPage initialisation = new InitialisationPage(driver);
@@ -182,7 +182,7 @@ public class automatisation {
         }
     }
 
-    @Ignore
+
     @Test
     public void automatisationChampion4() {
         InitialisationPage initialisation = new InitialisationPage(driver);
