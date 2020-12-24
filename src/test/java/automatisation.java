@@ -92,7 +92,7 @@ public class automatisation {
             missionPage.lanceMission(driver);
         }
     }
-
+    @Ignore
     @Test
     public void automatisationDuel() {
         InitialisationPage initialisation = new InitialisationPage(driver);
@@ -101,7 +101,7 @@ public class automatisation {
         duelPage.Duel(driver);
     }
 
-
+    @Ignore
     @Test
     public void automatisationDefi() {
         InitialisationPage initialisation = new InitialisationPage(driver);
