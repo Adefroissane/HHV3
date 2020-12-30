@@ -37,7 +37,7 @@ public class automatisation {
             haremPage.recolt(driver);
         }
     }
-    @Ignore
+
     @Test
     public void automatisationCombat() {
         InitialisationPage initialisation = new InitialisationPage(driver);
