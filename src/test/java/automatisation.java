@@ -128,12 +128,20 @@ public class automatisation {
     }
 
     @Test
-    public void LieuxDePouvoir()
+    public void LieuxDePouvoirRecolt()
     {
         InitialisationPage initialisation = new InitialisationPage(driver);
         HomePage homePage = initialisation.openHomePage(driver);
         LieuxDePouvoirPage lieuxDePouvoirPage = homePage.openLieuxDePouvoirPage(driver);
         lieuxDePouvoirPage.RecoltMission(driver);
+    }
+
+    @Test
+    public void LieuxDePouvoirLancement()
+    {
+        InitialisationPage initialisation = new InitialisationPage(driver);
+        HomePage homePage = initialisation.openHomePage(driver);
+        LieuxDePouvoirPage lieuxDePouvoirPage = homePage.openLieuxDePouvoirPage(driver);
         lieuxDePouvoirPage.LancerMission(driver);
     }
 
