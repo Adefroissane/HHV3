@@ -49,6 +49,7 @@ public class LieuxDePouvoirPage extends HentaiHeroesPage {
                     WebDriverWait webDriverWait3 = new WebDriverWait(driver, 5);
                     webDriverWait3.until(ExpectedConditions.visibilityOf(Ok));
                     Ok.click();
+                    RecoltMission(driver);
                 }
                 else
                     {
@@ -98,6 +99,7 @@ public class LieuxDePouvoirPage extends HentaiHeroesPage {
                 WebDriverWait webDriverWait4 = new WebDriverWait(driver, 5);
                 webDriverWait4.until(ExpectedConditions.visibilityOf(retour));
                 retour.click();
+                LancerMission(driver);
             }
             i=i+1;
         }
