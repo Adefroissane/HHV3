@@ -22,7 +22,7 @@ public class LieuxDePouvoirPage extends HentaiHeroesPage {
     @FindBy(xpath = "//*[@id=\"rewards_popup\"]/div/button")
     private WebElement Ok;
 
-    @FindBy(xpath = "//*[@id=\"pop_info\"]/div[3]/div[1]/div[1]/img")
+    @FindBy(xpath = "//*[@id=\"pop_info\"]/div[3]/div[1]/div[1]/div[1]/img")
     private WebElement repere;
 
     @FindBy(xpath = "//*[@id=\"pop_info\"]/div[5]/a/span")
@@ -33,12 +33,12 @@ public class LieuxDePouvoirPage extends HentaiHeroesPage {
 
         WebDriverWait webDriverWait = new WebDriverWait(driver, 5);
         webDriverWait.until(ExpectedConditions.visibilityOf(repere));
-        //JavascriptExecutor js = (JavascriptExecutor) driver;
+        JavascriptExecutor js = (JavascriptExecutor) driver;
         List<WebElement> myElements = driver.findElements(By.className("purple_button_L"));
         System.out.println("Nombre de mission fini =" + myElements.size());
         try {
             for (WebElement e : myElements) {
-                //js.executeScript("arguments[0].scrollIntoView();", e);
+                js.executeScript("arguments[0].scrollIntoView();", e);
                 try {
                     Thread.sleep(1000);
                 } catch (InterruptedException ab) {
@@ -49,6 +49,10 @@ public class LieuxDePouvoirPage extends HentaiHeroesPage {
                     WebDriverWait webDriverWait3 = new WebDriverWait(driver, 5);
                     webDriverWait3.until(ExpectedConditions.visibilityOf(Ok));
                     Ok.click();
+
+                }
+                else
+                    {
 
                 }
             }
@@ -68,6 +72,7 @@ public class LieuxDePouvoirPage extends HentaiHeroesPage {
         }
         JavascriptExecutor js = (JavascriptExecutor) driver;
         List<WebElement> myElements = driver.findElements(By.xpath("//*[@id=\"pop_info\"]/div[3]/div[1]/div[*]/div[1]/button[2]"));
+        List<WebElement> myElements2 = driver.findElements(By.xpath("//*[@id=\"pop_info\"]/div[3]/div[1]/div[*]/div[1]/div[2]"));
         System.out.println("nombre de mission =" + myElements.size());
         int i=0;
         for (WebElement e : myElements)
@@ -77,7 +82,6 @@ public class LieuxDePouvoirPage extends HentaiHeroesPage {
             } catch (InterruptedException ab) {
                 ab.printStackTrace();
             }
-            List<WebElement> myElements2 = driver.findElements(By.xpath("//*[@id=\"pop_info\"]/div[3]/div[1]/div[*]/div[1]/div[2]"));
             js.executeScript("arguments[0].scrollIntoView();", myElements2.get(i));
             if (myElements2.get(i).isDisplayed()) {
 
@@ -97,7 +101,6 @@ public class LieuxDePouvoirPage extends HentaiHeroesPage {
                 retour.click();
             }
             i=i+1;
-
         }
     }
 }
