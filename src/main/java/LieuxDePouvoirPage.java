@@ -38,18 +38,17 @@ public class LieuxDePouvoirPage extends HentaiHeroesPage {
         System.out.println("Nombre de mission fini =" + myElements.size());
         try {
             for (WebElement e : myElements) {
-                js.executeScript("arguments[0].scrollIntoView();", e);
-                try {
+                                try {
                     Thread.sleep(1000);
                 } catch (InterruptedException ab) {
                     ab.printStackTrace();
                 }
+                js.executeScript("arguments[0].scrollIntoView();", e);
                 if (e.isDisplayed()) {
                     e.click();
                     WebDriverWait webDriverWait3 = new WebDriverWait(driver, 5);
                     webDriverWait3.until(ExpectedConditions.visibilityOf(Ok));
                     Ok.click();
-
                 }
                 else
                     {
