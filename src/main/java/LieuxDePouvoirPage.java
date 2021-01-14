@@ -66,7 +66,8 @@ public class LieuxDePouvoirPage extends HentaiHeroesPage {
         } catch (InterruptedException ab) {
             ab.printStackTrace();
         }
-        List<WebElement> myElements = driver.findElements(By.xpath("//*[@id=\"pop_info\"]/div[3]/div[*]/div[1]/button"));
+        JavascriptExecutor js = (JavascriptExecutor) driver;
+        List<WebElement> myElements = driver.findElements(By.xpath("//*[@id=\"pop_info\"]/div[3]/div[1]/div[*]/div[1]/button[2]"));
         System.out.println("nombre de mission =" + myElements.size());
         int i=0;
         for (WebElement e : myElements)
@@ -76,7 +77,8 @@ public class LieuxDePouvoirPage extends HentaiHeroesPage {
             } catch (InterruptedException ab) {
                 ab.printStackTrace();
             }
-            List<WebElement> myElements2 = driver.findElements(By.xpath("//*[@id=\"pop_info\"]/div[3]/div[*]/div[1]/div[2]"));
+            List<WebElement> myElements2 = driver.findElements(By.xpath("//*[@id=\"pop_info\"]/div[3]/div[1]/div[*]/div[1]/div[2]"));
+            js.executeScript("arguments[0].scrollIntoView();", myElements2.get(i));
             if (myElements2.get(i).isDisplayed()) {
 
             }
@@ -96,6 +98,85 @@ public class LieuxDePouvoirPage extends HentaiHeroesPage {
             }
             i=i+1;
 
+        }
+    }
+
+    public void LancerMission3(WebDriver driver) {
+
+        WebDriverWait webDriverWait = new WebDriverWait(driver, 5);
+        webDriverWait.until(ExpectedConditions.visibilityOf(repere));
+        JavascriptExecutor js = (JavascriptExecutor) driver;
+        List<WebElement> myElements = driver.findElements(By.className("blue_button_L"));
+        System.out.println("Nombre de mission =" + myElements.size());
+        int i=0;
+        for (WebElement e : myElements)
+        {
+            try {
+                Thread.sleep(1000);
+            } catch (InterruptedException ab) {
+                ab.printStackTrace();
+            }
+            List<WebElement> myElements2 = driver.findElements(By.xpath("//*[@id=\"pop_info\"]/div[3]/div[1]/div[*]/div[1]/div[2]"));
+            if (myElements2.get(i).isDisplayed()) {
+
+            }
+            else {
+                WebDriverWait webDriverWait2 = new WebDriverWait(driver, 5);
+                webDriverWait2.until(ExpectedConditions.visibilityOf(e));
+                e.click();
+                WebDriverWait webDriverWait3 = new WebDriverWait(driver, 5);
+                webDriverWait3.until(ExpectedConditions.visibilityOf(assigner));
+                assigner.click();
+                WebDriverWait webDriverWait4 = new WebDriverWait(driver, 5);
+                webDriverWait4.until(ExpectedConditions.visibilityOf(commencer));
+                commencer.click();
+                WebDriverWait webDriverWait5 = new WebDriverWait(driver, 5);
+                webDriverWait5.until(ExpectedConditions.visibilityOf(retour));
+                retour.click();
+            }
+            i=i+1;
+        }
+
+    }
+    public void LancerMission2(WebDriver driver)
+    {
+        try {
+            Thread.sleep(1000);
+        } catch (InterruptedException ab) {
+            ab.printStackTrace();
+        }
+        JavascriptExecutor js = (JavascriptExecutor) driver;
+        List<WebElement> visiter = driver.findElements(By.xpath("//*[@id=\"pop_info\"]/div[3]/div[1]/div[*]/div[1]/button[2]"));
+        List<WebElement> temps = driver.findElements(By.xpath("//*[@id=\"pop_info\"]/div[3]/div[1]/div[*]/div[2]"));
+        int i=0;
+        for (WebElement e : visiter)
+        {
+            try {
+                Thread.sleep(1000);
+            } catch (InterruptedException ab) {
+                ab.printStackTrace();
+            }
+            js.executeScript("arguments[0].scrollIntoView();", temps.get(i));
+            if (temps.get(i).isDisplayed())
+            {
+
+            }
+            else {
+
+                WebDriverWait webDriverWait = new WebDriverWait(driver, 5);
+                webDriverWait.until(ExpectedConditions.visibilityOf(e));
+                e.click();
+                WebDriverWait webDriverWait2 = new WebDriverWait(driver, 5);
+                webDriverWait2.until(ExpectedConditions.visibilityOf(assigner));
+                assigner.click();
+                WebDriverWait webDriverWait3 = new WebDriverWait(driver, 5);
+                webDriverWait3.until(ExpectedConditions.visibilityOf(commencer));
+                commencer.click();
+                WebDriverWait webDriverWait4 = new WebDriverWait(driver, 5);
+                webDriverWait4.until(ExpectedConditions.visibilityOf(retour));
+                retour.click();
+            }
+            i = i + 1;
         }
     }
 }
