@@ -8,6 +8,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 import javax.security.auth.RefreshFailedException;
 import javax.security.auth.Refreshable;
+import javax.swing.*;
 import java.util.List;
 
 public class InitialisationPage extends HentaiHeroesPage
@@ -22,14 +23,17 @@ public class InitialisationPage extends HentaiHeroesPage
     @FindBy(css = "#contains_all > header > div > a:nth-child(1) > img")
     private WebElement connexion;
 
-    @FindBy(css = "#popup_login_form > form > div > input[type=\"text\"]:nth-child(2)")
+    @FindBy(xpath = "//*[@id=\"auth-email\"]")
     private WebElement mail;
 
-    @FindBy(css = "#popup_login_form > form > div > input[type=\"password\"]:nth-child(5)")
+    @FindBy(xpath = "//*[@id=\"auth-password\"]")
     private WebElement password;
 
-    @FindBy(css = "#popup_login_form > form > div > div:nth-child(14) > button")
-    private WebElement jouer;
+    @FindBy(xpath = "//*[@id=\"submit-authenticate\"]")
+    private WebElement seConnecterVert;
+
+    @FindBy(css = "#submit-authenticate")
+    private WebElement seConnecterBleu;
 
     @FindBy(xpath = "//*[@id=\"starter_offer\"]/close")
     private WebElement pub;
@@ -55,9 +59,12 @@ public class InitialisationPage extends HentaiHeroesPage
         webDriverWait.until(ExpectedConditions.visibilityOf(connexion));
         connexion.click();
 
+        driver.switchTo().frame("authentication-iframe");
+        WebDriverWait webDriverWait2 = new WebDriverWait(driver, 5);
+        webDriverWait2.until(ExpectedConditions.visibilityOf(seConnecterBleu));
         mail.sendKeys("adefroissane@hotmail.fr");
         password.sendKeys("gegegege");
-        jouer.click();
+        seConnecterVert.click();
 
         try {
             Thread.sleep(5000);
@@ -68,12 +75,7 @@ public class InitialisationPage extends HentaiHeroesPage
 
         try
         {
-            //driver.navigate().refresh();
-            try {
-                Thread.sleep(1000);
-            } catch (InterruptedException e) {
-                e.printStackTrace();
-            }
+            driver.switchTo().frame("hh_game");
             driver.findElement(By.xpath("//*[@id=\"confirmation_popup\"]/div/div/button[2]"));
             if (nonMerci.isDisplayed())
             {
