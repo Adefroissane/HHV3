@@ -179,7 +179,7 @@ public class automatisation {
         }
     }
 
-    @Ignore
+
     @Test
     public void automatisationChampion3() {
         InitialisationPage initialisation = new InitialisationPage(driver);
