@@ -32,11 +32,14 @@ public class ClubPage extends HentaiHeroesPage {
     @FindBy(xpath = "//*[@id=\"rewards_popup\"]/div/button")
     private WebElement ok;
 
-    public void vaincreBossDeClub(WebDriver driver) {
+    public void pageBoss(WebDriver driver) {
 
         WebDriverWait webDriverWait = new WebDriverWait(driver, 5);
         webDriverWait.until(ExpectedConditions.visibilityOf(ChampionClub));
         ChampionClub.click();
+    }
+
+    public void vaincreBossDeClub(WebDriver driver) {
 
         WebDriverWait webDriverWait2 = new WebDriverWait(driver, 5);
         webDriverWait2.until(ExpectedConditions.visibilityOf(defier));
