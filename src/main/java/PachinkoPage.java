@@ -31,7 +31,7 @@ public class PachinkoPage extends HentaiHeroesPage{
         WebDriverWait webDriverWait2 = new WebDriverWait(driver, 5);
         webDriverWait2.until(ExpectedConditions.visibilityOf(genial));
         genial.click();
-        getHeader().openHomePage(driver);
+        //getHeader().openHomePage(driver);
     }
 
     public void collectPachinkoGratuit2(WebDriver driver) {
@@ -43,7 +43,7 @@ public class PachinkoPage extends HentaiHeroesPage{
         WebDriverWait webDriverWait2 = new WebDriverWait(driver, 5);
         webDriverWait2.until(ExpectedConditions.visibilityOf(ok));
         ok.click();
-        getHeader().openHomePage(driver);
+        //getHeader().openHomePage(driver);
     }
 
 }
