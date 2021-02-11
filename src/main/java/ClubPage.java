@@ -49,7 +49,7 @@ public class ClubPage extends HentaiHeroesPage {
         webDriverWait3.until(ExpectedConditions.visibilityOf(performance));
         performance.click();
 
-        WebDriverWait webDriverWait4 = new WebDriverWait(driver, 5);
+        WebDriverWait webDriverWait4 = new WebDriverWait(driver, 30);
         webDriverWait4.until(ExpectedConditions.visibilityOf(passer));
         passer.click();
 
