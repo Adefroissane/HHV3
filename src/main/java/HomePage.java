@@ -70,6 +70,9 @@ public class HomePage  extends HentaiHeroesPage{
     @FindBy(xpath = "//*[@id=\"seasons_tab_container\"]/div[3]/div[1]/a/div")
     private WebElement trouverUnAdversaire;
 
+    @FindBy(xpath = "//*[@id=\"homepage\"]/a[6]/div/span")
+    private WebElement club;
+
     public HaremPage ouvrirLeHarem(WebDriver driver){
 
         WebDriverWait webDriverWait = new WebDriverWait(driver, 5);
@@ -185,6 +188,15 @@ public class HomePage  extends HentaiHeroesPage{
         tourDeLaGloire.click();
         return new TourDeLaGloirePage(driver);
     }
+
+    public ClubPage openClubPage (WebDriver driver) {
+
+        WebDriverWait webDriverWait = new WebDriverWait(driver, 5);
+        webDriverWait.until(ExpectedConditions.visibilityOf(club));
+        club.click();
+        return new ClubPage(driver);
+    }
+
     public boolean defiAFaire(WebDriver driver) {
         WebDriverWait webDriverWait = new WebDriverWait(driver, 5);
         webDriverWait.until(ExpectedConditions.visibilityOf(harem));

@@ -226,6 +226,18 @@ public class automatisation {
             championPage.combattreChampion6(driver);
         }
     }
+
+    @Ignore
+    @Test
+    public void automatisationChampionClub() {
+        InitialisationPage initialisation = new InitialisationPage(driver);
+        HomePage homePage = initialisation.openHomePage(driver);
+        ClubPage clubPage = homePage.openClubPage(driver);
+        boolean bossDispo = clubPage.bossDispo(driver);
+        if (bossDispo == true) {
+            clubPage.vaincreBossDeClub(driver);
+        }
+    }
 }
 
 
