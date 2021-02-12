@@ -167,7 +167,7 @@ public class automatisation {
         }
     }
 
-    @Ignore
+
     @Test
     public void automatisationChampion2() {
         InitialisationPage initialisation = new InitialisationPage(driver);
