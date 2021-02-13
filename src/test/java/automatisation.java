@@ -155,7 +155,7 @@ public class automatisation {
         marchePage.LancerAchatCadeau(driver);
     }
 
-    @Ignore
+    /*@Ignore
     @Test
     public void automatisationChampion() {
         InitialisationPage initialisation = new InitialisationPage(driver);
@@ -225,7 +225,7 @@ public class automatisation {
         if (championDispo == true) {
             championPage.combattreChampion6(driver);
         }
-    }
+    }*/
 
 
     @Test
