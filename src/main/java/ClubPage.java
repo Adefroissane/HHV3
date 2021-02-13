@@ -20,6 +20,9 @@ public class ClubPage extends HentaiHeroesPage {
     @FindBy(css = "#club_whole > div > div > div > div.club_details > div.club_champions_details_container > div:nth-child(3) > div.club_champions_buttons_container > div.team_rest_container > div > div.backbar")
     private WebElement tempRestantBoss;
 
+    @FindBy(css = "//*[@id=\"club_whole\"]/div/div/div/div[1]/div[3]/div[3]/div[3]/div[1]/div/div[2]/div")
+    private WebElement tempRestantBoss2;
+
     @FindBy(xpath = "//*[@id=\"club_champion_challenge_btn\"]")
     private WebElement defier;
 
@@ -68,7 +71,7 @@ public class ClubPage extends HentaiHeroesPage {
             e.printStackTrace();
         }
         try {
-            driver.findElement(By.cssSelector("#club_whole > div > div > div > div.club_details > div.club_champions_details_container > div:nth-child(3) > div.club_champions_buttons_container > div.team_rest_container > div > div.backbar"));
+            driver.findElement(By.xpath("//*[@id=\"club_whole\"]/div/div/div/div[1]/div[3]/div[3]/div[3]/div[1]/div/div[2]/div"));
         } catch (NoSuchElementException e)
         {
             return true;
