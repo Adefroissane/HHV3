@@ -68,7 +68,7 @@ public class automatisation {
         InitialisationPage initialisation = new InitialisationPage(driver);
         HomePage homePage = initialisation.openHomePage(driver);
         boolean pachinkoGratuit2Present = homePage.pachinkoGratuit2Present(driver);
-        if (pachinkoGratuit2Present == true) {
+        if (pachinkoGratuit2Present) {
             PachinkoPage pachinkoPage = homePage.openPachinkoPage(driver);
             pachinkoPage.collectPachinkoGratuit2(driver);
         }
