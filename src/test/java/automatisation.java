@@ -164,6 +164,77 @@ public class automatisation {
             clubPage.vaincreBossDeClub(driver);
         }
     }
+
+    @Test
+    public void automatisationChampion() {
+        InitialisationPage initialisation = new InitialisationPage(driver);
+        HomePage homePage = initialisation.openHomePage(driver);
+        ChampionPage championPage = homePage.ouvrirZoneDesChampions(driver);
+        boolean championDispo = championPage.championDispo(driver);
+        if (championDispo == true) {
+            championPage.combattreChampion(driver);
+        }
+    }
+
+
+    @Test
+    public void automatisationChampion2() {
+        InitialisationPage initialisation = new InitialisationPage(driver);
+        HomePage homePage = initialisation.openHomePage(driver);
+        ChampionPage championPage = homePage.ouvrirZoneDesChampions(driver);
+        boolean championDispo = championPage.championDispo2(driver);
+        if (championDispo == true) {
+            championPage.combattreChampion2(driver);
+        }
+    }
+
+
+    @Test
+    public void automatisationChampion3() {
+        InitialisationPage initialisation = new InitialisationPage(driver);
+        HomePage homePage = initialisation.openHomePage(driver);
+        ChampionPage championPage = homePage.ouvrirZoneDesChampions(driver);
+        boolean championDispo = championPage.championDispo3(driver);
+        if (championDispo == true) {
+            championPage.combattreChampion3(driver);
+        }
+    }
+
+
+    @Test
+    public void automatisationChampion4() {
+        InitialisationPage initialisation = new InitialisationPage(driver);
+        HomePage homePage = initialisation.openHomePage(driver);
+        ChampionPage championPage = homePage.ouvrirZoneDesChampions(driver);
+        boolean championDispo = championPage.championDispo4(driver);
+        if (championDispo == true) {
+            championPage.combattreChampion4(driver);
+        }
+    }
+
+
+    @Test
+    public void automatisationChampion5() {
+        InitialisationPage initialisation = new InitialisationPage(driver);
+        HomePage homePage = initialisation.openHomePage(driver);
+        ChampionPage championPage = homePage.ouvrirZoneDesChampions(driver);
+        boolean championDispo = championPage.championDispo5(driver);
+        if (championDispo == true) {
+            championPage.combattreChampion5(driver);
+        }
+    }
+
+
+    @Test
+    public void automatisationChampion6() {
+        InitialisationPage initialisation = new InitialisationPage(driver);
+        HomePage homePage = initialisation.openHomePage(driver);
+        ChampionPage championPage = homePage.ouvrirZoneDesChampions(driver);
+        boolean championDispo = championPage.championDispo6(driver);
+        if (championDispo == true) {
+            championPage.combattreChampion6(driver);
+        }
+    }
 }
 
 
