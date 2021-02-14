@@ -156,7 +156,7 @@ public class automatisation {
     }
 
     /*@Ignore
-
+    @Test
     public void automatisationChampion() {
         InitialisationPage initialisation = new InitialisationPage(driver);
         HomePage homePage = initialisation.openHomePage(driver);
@@ -165,10 +165,10 @@ public class automatisation {
         if (championDispo == true) {
             championPage.combattreChampion(driver);
         }
-    }
+    }*/
 
-    @Ignore
-
+    /*@Ignore
+    @Test
     public void automatisationChampion2() {
         InitialisationPage initialisation = new InitialisationPage(driver);
         HomePage homePage = initialisation.openHomePage(driver);
@@ -177,10 +177,10 @@ public class automatisation {
         if (championDispo == true) {
             championPage.combattreChampion2(driver);
         }
-    }
+    }*/
 
-    @Ignore
-
+    /*@Ignore
+    @Test
     public void automatisationChampion3() {
         InitialisationPage initialisation = new InitialisationPage(driver);
         HomePage homePage = initialisation.openHomePage(driver);
@@ -189,10 +189,10 @@ public class automatisation {
         if (championDispo == true) {
             championPage.combattreChampion3(driver);
         }
-    }
+    }*/
 
-    @Ignore
-
+    /*@Ignore
+    @Test
     public void automatisationChampion4() {
         InitialisationPage initialisation = new InitialisationPage(driver);
         HomePage homePage = initialisation.openHomePage(driver);
@@ -201,10 +201,10 @@ public class automatisation {
         if (championDispo == true) {
             championPage.combattreChampion4(driver);
         }
-    }
+    }*/
 
-    @Ignore
-
+   /*@Ignore
+    @Test
     public void automatisationChampion5() {
         InitialisationPage initialisation = new InitialisationPage(driver);
         HomePage homePage = initialisation.openHomePage(driver);
@@ -213,10 +213,10 @@ public class automatisation {
         if (championDispo == true) {
             championPage.combattreChampion5(driver);
         }
-    }
+    }*/
 
-    @Ignore
-
+    /*@Ignore
+    @Test
     public void automatisationChampion6() {
         InitialisationPage initialisation = new InitialisationPage(driver);
         HomePage homePage = initialisation.openHomePage(driver);
