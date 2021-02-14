@@ -86,24 +86,30 @@ public class MissionPage extends HentaiHeroesPage{
         catch(InterruptedException ne){
             ne.printStackTrace();
         }
-        try {
-            List<WebElement> myElements2 = driver.findElements(By.className("blue_button_L"));
-            System.out.println("Nombre de mission restante" + myElements2.size());
-            if (myElements2.size() != 0) {
-                for (WebElement e : myElements2) {
-                    try{
-                        Thread.sleep(750);
-                    }
-                    catch(InterruptedException ae){
-                        ae.printStackTrace();
-                    }
-                    if (e.isDisplayed()) {
-                        e.click();
+        if (retour.isDisplayed()){
+
+        }
+        else {
+            try {
+                List<WebElement> myElements2 = driver.findElements(By.className("blue_button_L"));
+                System.out.println("Nombre de mission restante" + myElements2.size());
+                if (myElements2.size() != 0) {
+                    for (WebElement e : myElements2) {
+                        try{
+                            Thread.sleep(750);
+                        }
+                        catch(InterruptedException ae){
+                            ae.printStackTrace();
+                        }
+                        if (e.isDisplayed()) {
+                            e.click();
+                        }
                     }
                 }
             }
+            catch(NoSuchElementException ne){}
         }
-        catch(NoSuchElementException ne){}
+
     }
 
 }
