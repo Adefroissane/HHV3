@@ -86,12 +86,10 @@ public class automatisation {
     public void automatisationLancementMission() {
         InitialisationPage initialisation = new InitialisationPage(driver);
         HomePage homePage = initialisation.openHomePage(driver);
-        /*boolean missionDispo = homePage.missionDisponible(driver);
-        System.out.println(missionDispo);
-        if (missionDispo == true) {*/
+
             MissionPage missionPage = homePage.openMissionPage(driver);
             missionPage.lanceMission(driver);
-        //}
+
     }
 
     @Test
