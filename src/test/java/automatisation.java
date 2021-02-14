@@ -176,7 +176,7 @@ public class automatisation {
         }
     }*/
 
-
+    /*@Ignore
     @Test
     public void automatisationChampion2() {
         InitialisationPage initialisation = new InitialisationPage(driver);
@@ -186,7 +186,7 @@ public class automatisation {
         if (championDispo == true) {
             championPage.combattreChampion2(driver);
         }
-    }
+    }*/
 
 
     @Test
