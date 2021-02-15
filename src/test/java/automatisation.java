@@ -164,26 +164,7 @@ public class automatisation {
             clubPage.vaincreBossDeClub(driver);
         }
     }
-    @Test
-    public void automatisationChampion() {
-        InitialisationPage initialisation = new InitialisationPage(driver);
-        HomePage homePage = initialisation.openHomePage(driver);
-        ChampionPage championPage = homePage.ouvrirZoneDesChampions(driver);
-        boolean championDispo = championPage.championDispo(driver);
-        if (championDispo == true) {
-            championPage.combattreChampion(driver);
-        }
-    }
-    @Test
-    public void automatisationChampion6() {
-        InitialisationPage initialisation = new InitialisationPage(driver);
-        HomePage homePage = initialisation.openHomePage(driver);
-        ChampionPage championPage = homePage.ouvrirZoneDesChampions(driver);
-        boolean championDispo = championPage.championDispo6(driver);
-        if (championDispo == true) {
-            championPage.combattreChampion6(driver);
-        }
-    }
+
 }
 
 
