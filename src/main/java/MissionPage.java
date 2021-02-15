@@ -23,7 +23,7 @@ public class MissionPage extends HentaiHeroesPage{
     @FindBy(className = "blue_button_L")
     private WebElement mission;
 
-    @FindBy(css = "#activities > div > div.tabs > h4.missions.selected")
+    @FindBy(xpath = "//*[@id=\"activities\"]/div/div[2]/h4[1]")
     private WebElement repereMission;
 
     @FindBy(xpath = "//*[@id=\"rewards_popup\"]/div/button")
@@ -34,6 +34,9 @@ public class MissionPage extends HentaiHeroesPage{
 
     @FindBy(xpath ="//*[@id=\"missions\"]/div/div[1]/a")
     private WebElement retour;
+
+    @FindBy(className ="orange_button_L")
+    private WebElement missionEnCour;
 
     public void collectMission(WebDriver driver) {
         try{
@@ -77,8 +80,6 @@ public class MissionPage extends HentaiHeroesPage{
     }
 
     public void lanceMission(WebDriver driver){
-        WebDriverWait webDriverWait = new WebDriverWait(driver, 5);
-        webDriverWait.until(ExpectedConditions.visibilityOf(repereMission));
         System.out.println("Passe");
         try{
             Thread.sleep(750);
@@ -86,30 +87,41 @@ public class MissionPage extends HentaiHeroesPage{
         catch(InterruptedException ne){
             ne.printStackTrace();
         }
-        if (retour.isDisplayed()){
-
-        }
-        else {
-            try {
-                List<WebElement> myElements2 = driver.findElements(By.className("blue_button_L"));
-                System.out.println("Nombre de mission restante" + myElements2.size());
-                if (myElements2.size() != 0) {
-                    for (WebElement e : myElements2) {
-                        try{
-                            Thread.sleep(750);
-                        }
-                        catch(InterruptedException ae){
-                            ae.printStackTrace();
-                        }
-                        if (e.isDisplayed()) {
-                            e.click();
-                        }
-                    }
+        List<WebElement> myElements2 = driver.findElements(By.className("blue_button_L"));
+        System.out.println("Nombre de mission restante" + myElements2.size());
+        if (myElements2.size() != 0) {
+            for (WebElement e : myElements2) {
+                try{
+                    Thread.sleep(750);
+                }
+                catch(InterruptedException ae){
+                    ae.printStackTrace();
+                }
+                if (e.isDisplayed()) {
+                    e.click();
                 }
             }
-            catch(NoSuchElementException ne){}
         }
+    }
 
+    public boolean plusDeMission(WebDriver driver) {
+
+        try {
+            driver.findElement(By.xpath("//*[@id=\"missions\"]/div/div[1]/a"));
+        } catch (NoSuchElementException e) {
+            return true;
+        }
+        return false;
+    }
+
+    public boolean missionEnCour(WebDriver driver) {
+
+        try {
+            driver.findElement(By.className("orange_button_L"));
+        } catch (NoSuchElementException e) {
+            return true;
+        }
+        return false;
     }
 
 }
