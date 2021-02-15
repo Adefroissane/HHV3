@@ -88,7 +88,7 @@ public class automatisation {
         HomePage homePage = initialisation.openHomePage(driver);
         MissionPage missionPage = homePage.openMissionPage(driver);
         boolean plusDeMission = missionPage.plusDeMission(driver);
-        if (plusDeMission == true ){
+        if (plusDeMission){
             missionPage.lanceMission(driver);
         }
     }
