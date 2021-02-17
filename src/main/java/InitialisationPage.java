@@ -44,24 +44,31 @@ public class InitialisationPage extends HentaiHeroesPage
     @FindBy(xpath = "//*[@id=\"popup_confirm\"]")
     private WebElement Ok;
 
+    @FindBy(xpath = "//*[@id=\"popup_confirm\"]")
+    private WebElement confirme;
+
+
 
     public HomePage openHomePage(WebDriver driver) {
 
-        WebDriverWait webDriverWait3 = new WebDriverWait(driver, 5);
-        webDriverWait3.until(ExpectedConditions.alertIsPresent());
-
-        Alert alert = driver.switchTo().alert();
-        alert.accept();
-        driver.switchTo().defaultContent();
-
         driver.switchTo().frame("hh_game");
         WebDriverWait webDriverWait = new WebDriverWait(driver, 5);
-        webDriverWait.until(ExpectedConditions.visibilityOf(connexion));
+        webDriverWait.until(ExpectedConditions.visibilityOf(confirme));
+        confirme.click();
+
+        //WebDriverWait webDriverWait4 = new WebDriverWait(driver, 5);
+        //webDriverWait4.until(ExpectedConditions.alertIsPresent());
+        //Alert alert = driver.switchTo().alert();
+        //alert.accept();
+        //driver.switchTo().defaultContent();
+        //driver.switchTo().frame("hh_game");
+        WebDriverWait webDriverWait2 = new WebDriverWait(driver, 5);
+        webDriverWait2.until(ExpectedConditions.visibilityOf(connexion));
         connexion.click();
 
         driver.switchTo().frame("authentication-iframe");
-        WebDriverWait webDriverWait2 = new WebDriverWait(driver, 5);
-        webDriverWait2.until(ExpectedConditions.visibilityOf(seConnecterBleu));
+        WebDriverWait webDriverWait3 = new WebDriverWait(driver, 5);
+        webDriverWait3.until(ExpectedConditions.visibilityOf(seConnecterBleu));
         mail.sendKeys("adefroissane@hotmail.fr");
         password.sendKeys("gegegege");
         seConnecterVert.click();
