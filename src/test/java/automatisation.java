@@ -38,7 +38,7 @@ public class automatisation {
         }
     }
 
-    @Ignore
+
     @Test
     public void automatisationCombat() {
         InitialisationPage initialisation = new InitialisationPage(driver);
