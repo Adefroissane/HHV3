@@ -154,7 +154,7 @@ public class automatisation {
         marchePage.LancerAchatCadeau(driver);
     }
 
-    @Ignore
+
     @Test
     public void automatisationChampionClub() {
         InitialisationPage initialisation = new InitialisationPage(driver);
