@@ -38,7 +38,7 @@ public class automatisation {
         }
     }
 
-
+    @Ignore
     @Test
     public void automatisationCombat() {
         InitialisationPage initialisation = new InitialisationPage(driver);
@@ -51,7 +51,7 @@ public class automatisation {
             Combat(driver);
         }
     }
-
+    @Ignore
     @Test
     public void automatisationPachinko() {
         InitialisationPage initialisation = new InitialisationPage(driver);
@@ -62,7 +62,7 @@ public class automatisation {
             pachinkoPage.collectPachinkoGratuit(driver);
         }
     }
-
+    @Ignore
     @Test
     public void automatisationPachinko2() {
         InitialisationPage initialisation = new InitialisationPage(driver);
@@ -143,7 +143,7 @@ public class automatisation {
         LieuxDePouvoirPage lieuxDePouvoirPage = homePage.openLieuxDePouvoirPage(driver);
         lieuxDePouvoirPage.LancerMission(driver);
     }
-
+    @Ignore
     @Test
     public void Achat()
     {
