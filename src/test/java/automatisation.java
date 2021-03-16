@@ -38,82 +38,6 @@ public class automatisation {
         }
     }
 
-    @Ignore
-    @Test
-    public void automatisationCombat() {
-        InitialisationPage initialisation = new InitialisationPage(driver);
-        HomePage homePage = initialisation.openHomePage(driver);
-
-        boolean combatNonNull = homePage.getHeader().combatNecessaire(driver);
-        if (combatNonNull == true) {
-            AventurePage aventurePage = homePage.openAventure(driver);
-            LastZonePage lastZonePage = aventurePage.openLastZone(driver);
-            Combat(driver);
-        }
-    }
-    @Ignore
-    @Test
-    public void automatisationPachinko() {
-        InitialisationPage initialisation = new InitialisationPage(driver);
-        HomePage homePage = initialisation.openHomePage(driver);
-        boolean pachinkoGratuitPresent = homePage.pachinkoGratuitPresent(driver);
-        if (pachinkoGratuitPresent == true) {
-            PachinkoPage pachinkoPage = homePage.openPachinkoPage(driver);
-            pachinkoPage.collectPachinkoGratuit(driver);
-        }
-    }
-    @Ignore
-    @Test
-    public void automatisationPachinko2() {
-        InitialisationPage initialisation = new InitialisationPage(driver);
-        HomePage homePage = initialisation.openHomePage(driver);
-        boolean pachinkoGratuit2Present = homePage.pachinkoGratuit2Present(driver);
-        if (pachinkoGratuit2Present) {
-            PachinkoPage pachinkoPage = homePage.openPachinkoPage(driver);
-            pachinkoPage.collectPachinkoGratuit2(driver);
-        }
-    }
-
-    @Test
-    public void automatisationRecoltMission() {
-        InitialisationPage initialisation = new InitialisationPage(driver);
-        HomePage homePage = initialisation.openHomePage(driver);
-        MissionPage missionPage = homePage.openMissionPage(driver);
-        missionPage.collectMission(driver);
-    }
-
-    @Test
-    public void automatisationLancementMission() {
-        InitialisationPage initialisation = new InitialisationPage(driver);
-        HomePage homePage = initialisation.openHomePage(driver);
-        MissionPage missionPage = homePage.openMissionPage(driver);
-        boolean plusDeMission = missionPage.plusDeMission(driver);
-        if (plusDeMission){
-            missionPage.lanceMission(driver);
-        }
-    }
-
-    @Test
-    public void automatisationDuel() {
-        InitialisationPage initialisation = new InitialisationPage(driver);
-        HomePage homePage = initialisation.openHomePage(driver);
-        DuelPage duelPage = homePage.openDuelPage(driver);
-        duelPage.Duel(driver);
-    }
-
-
-    @Test
-    public void automatisationDefi() {
-        InitialisationPage initialisation = new InitialisationPage(driver);
-        HomePage homePage = initialisation.openHomePage(driver);
-
-        boolean defiAFaire = homePage.defiAFaire(driver);
-        if (defiAFaire == true) {
-        TourDeLaGloirePage tourDeLaGloirePage = homePage.openTourDeLaGloire(driver);
-        tourDeLaGloirePage.lancerDefi(driver);
-        }
-    }
-
     private void Combat(WebDriver driver)
     {
         LastZonePage lastZonePage = new LastZonePage(driver);
@@ -143,7 +67,7 @@ public class automatisation {
         LieuxDePouvoirPage lieuxDePouvoirPage = homePage.openLieuxDePouvoirPage(driver);
         lieuxDePouvoirPage.LancerMission(driver);
     }
-    @Ignore
+
     @Test
     public void Achat()
     {
@@ -152,19 +76,6 @@ public class automatisation {
         MarchePage marchePage = homePage.openMarche(driver);
         marchePage.LancerAchatLivre(driver);
         marchePage.LancerAchatCadeau(driver);
-    }
-
-
-    @Test
-    public void automatisationChampionClub() {
-        InitialisationPage initialisation = new InitialisationPage(driver);
-        HomePage homePage = initialisation.openHomePage(driver);
-        ClubPage clubPage = homePage.openClubPage(driver);
-        clubPage.pageBoss(driver);
-        boolean bossDispo = clubPage.bossDispo(driver);
-        if (bossDispo == true) {
-            clubPage.vaincreBossDeClub(driver);
-        }
     }
 }
 
