@@ -69,14 +69,24 @@ public class automatisation {
     }
 
     @Test
-    public void Achat()
-    {
+    public void automatisationRecoltMission() {
         InitialisationPage initialisation = new InitialisationPage(driver);
         HomePage homePage = initialisation.openHomePage(driver);
-        MarchePage marchePage = homePage.openMarche(driver);
-        marchePage.LancerAchatLivre(driver);
-        marchePage.LancerAchatCadeau(driver);
+        MissionPage missionPage = homePage.openMissionPage(driver);
+        missionPage.collectMission(driver);
     }
+
+    @Test
+    public void automatisationLancementMission() {
+        InitialisationPage initialisation = new InitialisationPage(driver);
+        HomePage homePage = initialisation.openHomePage(driver);
+        MissionPage missionPage = homePage.openMissionPage(driver);
+        boolean plusDeMission = missionPage.plusDeMission(driver);
+        if (plusDeMission){
+            missionPage.lanceMission(driver);
+        }
+    }
+
 }
 
 
