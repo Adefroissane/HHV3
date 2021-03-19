@@ -69,15 +69,7 @@ public class automatisation {
     }
 
     @Test
-    public void automatisationRecoltMission() {
-        InitialisationPage initialisation = new InitialisationPage(driver);
-        HomePage homePage = initialisation.openHomePage(driver);
-        MissionPage missionPage = homePage.openMissionPage(driver);
-        missionPage.collectMission(driver);
-    }
-
-    @Test
-    public void automatisationLancementMission() {
+    public void automatisationtMission() {
         InitialisationPage initialisation = new InitialisationPage(driver);
         HomePage homePage = initialisation.openHomePage(driver);
         MissionPage missionPage = homePage.openMissionPage(driver);
@@ -85,7 +77,9 @@ public class automatisation {
         if (plusDeMission){
             missionPage.lanceMission(driver);
         }
+        missionPage.collectMission(driver);
     }
+
     @Test
     public void automatisationChampion() {
         InitialisationPage initialisation = new InitialisationPage(driver);
