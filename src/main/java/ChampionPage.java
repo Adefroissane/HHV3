@@ -61,6 +61,9 @@ public class ChampionPage extends HentaiHeroesPage {
     @FindBy(xpath = "//*[@id=\"contains_all\"]/section/div[5]/div/div[2]/div[4]/button/div[2]")
     private WebElement performance;
 
+    @FindBy(xpath = "//*[@id=\"contains_all\"]/section/div[2]/div/a/img")
+    private WebElement retour;
+
 
     public boolean championDispo(WebDriver driver) {
         WebDriverWait webDriverWait = new WebDriverWait(driver, 5);
@@ -94,6 +97,9 @@ public class ChampionPage extends HentaiHeroesPage {
         WebDriverWait webDriverWait4 = new WebDriverWait(driver, 10);
         webDriverWait4.until(ExpectedConditions.visibilityOf(ok));
         ok.click();
+        WebDriverWait webDriverWait5 = new WebDriverWait(driver, 10);
+        webDriverWait5.until(ExpectedConditions.visibilityOf(retour));
+        retour.click();
     }
     public boolean championDispo2(WebDriver driver) {
         WebDriverWait webDriverWait = new WebDriverWait(driver, 5);
@@ -127,6 +133,9 @@ public class ChampionPage extends HentaiHeroesPage {
         WebDriverWait webDriverWait4 = new WebDriverWait(driver, 10);
         webDriverWait4.until(ExpectedConditions.visibilityOf(ok));
         ok.click();
+        WebDriverWait webDriverWait5 = new WebDriverWait(driver, 10);
+        webDriverWait5.until(ExpectedConditions.visibilityOf(retour));
+        retour.click();
     }
     public boolean championDispo3(WebDriver driver) {
         WebDriverWait webDriverWait = new WebDriverWait(driver, 5);
@@ -160,6 +169,9 @@ public class ChampionPage extends HentaiHeroesPage {
         WebDriverWait webDriverWait4 = new WebDriverWait(driver, 10);
         webDriverWait4.until(ExpectedConditions.visibilityOf(ok));
         ok.click();
+        WebDriverWait webDriverWait5 = new WebDriverWait(driver, 10);
+        webDriverWait5.until(ExpectedConditions.visibilityOf(retour));
+        retour.click();
     }
 
     public boolean championDispo4(WebDriver driver) {
@@ -194,6 +206,9 @@ public class ChampionPage extends HentaiHeroesPage {
         WebDriverWait webDriverWait4 = new WebDriverWait(driver, 10);
         webDriverWait4.until(ExpectedConditions.visibilityOf(ok));
         ok.click();
+        WebDriverWait webDriverWait5 = new WebDriverWait(driver, 10);
+        webDriverWait5.until(ExpectedConditions.visibilityOf(retour));
+        retour.click();
     }
 
     public boolean championDispo5(WebDriver driver) {
@@ -228,6 +243,9 @@ public class ChampionPage extends HentaiHeroesPage {
         WebDriverWait webDriverWait4 = new WebDriverWait(driver, 10);
         webDriverWait4.until(ExpectedConditions.visibilityOf(ok));
         ok.click();
+        WebDriverWait webDriverWait5 = new WebDriverWait(driver, 10);
+        webDriverWait5.until(ExpectedConditions.visibilityOf(retour));
+        retour.click();
     }
 
     public boolean championDispo6(WebDriver driver) {
@@ -262,5 +280,8 @@ public class ChampionPage extends HentaiHeroesPage {
         WebDriverWait webDriverWait4 = new WebDriverWait(driver, 10);
         webDriverWait4.until(ExpectedConditions.visibilityOf(ok));
         ok.click();
+        WebDriverWait webDriverWait5 = new WebDriverWait(driver, 10);
+        webDriverWait5.until(ExpectedConditions.visibilityOf(retour));
+        retour.click();
     }
 }

@@ -86,7 +86,36 @@ public class automatisation {
             missionPage.lanceMission(driver);
         }
     }
-
+    @Test
+    public void automatisationChampion() {
+        InitialisationPage initialisation = new InitialisationPage(driver);
+        HomePage homePage = initialisation.openHomePage(driver);
+        ChampionPage championPage = homePage.ouvrirZoneDesChampions(driver);
+        boolean championDispo = championPage.championDispo(driver);
+        if (championDispo == true) {
+            championPage.combattreChampion(driver);
+        }
+        boolean championDispo2 = championPage.championDispo2(driver);
+        if (championDispo2 == true) {
+            championPage.combattreChampion2(driver);
+        }
+        boolean championDispo3 = championPage.championDispo3(driver);
+        if (championDispo3 == true) {
+            championPage.combattreChampion3(driver);
+        }
+        boolean championDispo4 = championPage.championDispo4(driver);
+        if (championDispo4 == true) {
+            championPage.combattreChampion4(driver);
+        }
+        boolean championDispo5 = championPage.championDispo5(driver);
+        if (championDispo5 == true) {
+            championPage.combattreChampion5(driver);
+        }
+        boolean championDispo6 = championPage.championDispo6(driver);
+        if (championDispo6 == true) {
+            championPage.combattreChampion6(driver);
+        }
+    }
 }
 
 
