@@ -76,7 +76,7 @@ public class automatisation {
     }
 
     @Test
-    public void automatisationtMission() {
+    public void automatisationMission() {
         InitialisationPage initialisation = new InitialisationPage(driver);
         HomePage homePage = initialisation.openHomePage(driver);
         MissionPage missionPage = homePage.openMissionPage(driver);
@@ -88,7 +88,7 @@ public class automatisation {
     }
 
     @Test
-    public void automatisationtDuelDefi() {
+    public void automatisationDuelDefi() {
         InitialisationPage initialisation = new InitialisationPage(driver);
         HomePage homePage = initialisation.openHomePage(driver);
         DuelPage duelPage = homePage.openDuelPage(driver);

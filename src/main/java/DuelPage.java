@@ -73,8 +73,11 @@ public class DuelPage extends HentaiHeroesPage {
     @FindBy(xpath = "//*[@id=\"season_battle_user_block_kiss_energy\"]/div/div[2]/div[2]/div/span[1]")
     private WebElement nbrCombat;
 
-    @FindBy(xpath = "//*[@id=\"tower_of_fame\"]/div/div[1]/div/a/img")
+    @FindBy(xpath = "//*[@id=\"season-arena\"]/div[2]/a/img")
     private WebElement retour;
+
+    @FindBy(xpath = "//*[@id=\"tower_of_fame\"]/div/div[1]/div/a/img")
+    private WebElement retour2;
 
 
     /*public int PvHeros() {
@@ -362,6 +365,11 @@ public class DuelPage extends HentaiHeroesPage {
             CombatPage combat = new CombatPage(driver);
             combat.combattreDuel(driver);
         }
+        WebDriverWait webDriverWait = new WebDriverWait(driver, 30);
+        webDriverWait.until(ExpectedConditions.visibilityOf(retour));
         retour.click();
+        WebDriverWait webDriverWait2 = new WebDriverWait(driver, 30);
+        webDriverWait2.until(ExpectedConditions.visibilityOf(retour2));
+        retour2.click();
     }
 }
