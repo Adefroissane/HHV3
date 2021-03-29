@@ -76,7 +76,7 @@ public class DuelPage extends HentaiHeroesPage {
     @FindBy(xpath = "//*[@id=\"season-arena\"]/div[2]/a/img")
     private WebElement retour;
 
-    @FindBy(xpath = "//*[@id=\"tower_of_fame\"]/div/div[1]/div/a/img")
+    @FindBy(xpath = "//*[@id=\"seasons_main_container\"]/a/img")
     private WebElement retour2;
 
 
