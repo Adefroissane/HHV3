@@ -42,6 +42,8 @@ public class HaremPage extends HentaiHeroesPage{
         {
 
         }
+        WebDriverWait webDriverWait2 = new WebDriverWait(driver, 5);
+        webDriverWait2.until(ExpectedConditions.visibilityOf(retour));
         retour.click();
     }
 
