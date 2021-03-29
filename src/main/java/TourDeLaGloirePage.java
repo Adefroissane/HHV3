@@ -123,6 +123,8 @@ public class TourDeLaGloirePage extends HentaiHeroesPage {
         ok.click();
         lancerDefi(driver);
         }
+        WebDriverWait webDriverWait6 = new WebDriverWait(driver, 5);
+        webDriverWait6.until(ExpectedConditions.visibilityOf(retour));
         retour.click();
     }
 }
