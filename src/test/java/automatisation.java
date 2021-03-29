@@ -80,21 +80,7 @@ public class automatisation {
         missionPage.collectMission(driver);
     }
 
-    @Test
-    public void automatisationChampion() {
-        InitialisationPage initialisation = new InitialisationPage(driver);
-        HomePage homePage = initialisation.openHomePage(driver);
-        ChampionPage championPage = homePage.ouvrirZoneDesChampions(driver);
-        boolean championDispo = championPage.championDispo(driver);
-        if (championDispo == true) {
-            championPage.combattreChampion(driver);
-        }
-        boolean championDispo2 = championPage.championDispo2(driver);
-        if (championDispo2 == true) {
-            championPage.combattreChampion2(driver);
-        }
 
-    }
 }
 
 
