@@ -27,7 +27,7 @@ public class automatisation {
     }
 
     @Test
-    public void automatisationHarem() {
+    public void automatisationHaremCombat() {
         InitialisationPage initialisation = new InitialisationPage(driver);
         HomePage homePage = initialisation.openHomePage(driver);
 
@@ -35,6 +35,13 @@ public class automatisation {
         if (recoltNecessaire == true) {
             HaremPage haremPage = homePage.ouvrirLeHarem(driver);
             haremPage.recolt(driver);
+        }
+
+        boolean combatNonNull = homePage.getHeader().combatNecessaire(driver);
+        if (combatNonNull == true) {
+            AventurePage aventurePage = homePage.openAventure(driver);
+            LastZonePage lastZonePage = aventurePage.openLastZone(driver);
+            Combat(driver);
         }
     }
 
@@ -80,8 +87,17 @@ public class automatisation {
         missionPage.collectMission(driver);
     }
 
+    @Test
+    public void automatisationtDuelDefi() {
+        InitialisationPage initialisation = new InitialisationPage(driver);
+        HomePage homePage = initialisation.openHomePage(driver);
+        DuelPage duelPage = homePage.openDuelPage(driver);
+        duelPage.Duel(driver);
 
+        boolean defiAFaire = homePage.defiAFaire(driver);
+        if (defiAFaire == true) {
+            TourDeLaGloirePage tourDeLaGloirePage = homePage.openTourDeLaGloire(driver);
+            tourDeLaGloirePage.lancerDefi(driver);
+        }
+    }
 }
-
-
- 
