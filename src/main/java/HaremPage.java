@@ -16,8 +16,10 @@ public class HaremPage extends HentaiHeroesPage{
     @FindBy(css = "#harem_left > div.girls_list > div:nth-child(7) > div > div.left > img")
     private WebElement repere;
 
-    public void recolt(WebDriver driver){
+    @FindBy(xpath = "//*[@id=\"harem_whole\"]/div/div/div/a/img")
+    private WebElement retour;
 
+    public void recolt(WebDriver driver){
         WebDriverWait webDriverWait = new WebDriverWait(driver, 5);
         webDriverWait.until(ExpectedConditions.visibilityOf(repere));
         List<WebElement> myElements = driver.findElements(By.className("collect_money"));
@@ -40,6 +42,7 @@ public class HaremPage extends HentaiHeroesPage{
         {
 
         }
-
+        retour.click();
     }
+
 }
