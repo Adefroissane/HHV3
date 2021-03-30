@@ -37,6 +37,11 @@ public class automatisation {
             haremPage.recolt(driver);
         }
 
+        try {
+            Thread.sleep(500);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
         boolean combatNonNull = homePage.getHeader().combatNecessaire(driver);
         if (combatNonNull == true) {
             AventurePage aventurePage = homePage.openAventure(driver);
