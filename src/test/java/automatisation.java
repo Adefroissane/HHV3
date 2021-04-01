@@ -105,4 +105,16 @@ public class automatisation {
             tourDeLaGloirePage.lancerDefi(driver);
         }
     }
+
+    @Test
+    public void automatisationChampionClub() {
+        InitialisationPage initialisation = new InitialisationPage(driver);
+        HomePage homePage = initialisation.openHomePage(driver);
+        ClubPage clubPage = homePage.openClubPage(driver);
+        clubPage.pageBoss(driver);
+        boolean bossDispo = clubPage.bossDispo(driver);
+        if (bossDispo == true) {
+            clubPage.vaincreBossDeClub(driver);
+        }
+    }
 }
