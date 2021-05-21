@@ -117,7 +117,7 @@ public class automatisation {
             clubPage.vaincreBossDeClub(driver);
         }
     }
-    @Ignore
+
     @Test
     public void automatisationChampion() {
         InitialisationPage initialisation = new InitialisationPage(driver);
