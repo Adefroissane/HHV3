@@ -22,10 +22,10 @@ public class HomePage  extends HentaiHeroesPage{
     @FindBy(className = "orange_button_L")
     private WebElement toutCollecter;
 
-    @FindBy(xpath = "//*[@id=\"homepage\"]/a[7]/div/span")
+    @FindBy(xpath = "//*[@id=\"homepage\"]/a[9]/div/span")
     private WebElement activite;
 
-    @FindBy(xpath = "//*[@id=\"homepage\"]/a[7]/div/span")
+    @FindBy(xpath = "//*[@id=\"homepage\"]/a[8]/div/span")
     private WebElement arene;
 
     @FindBy(xpath = "//*[@id=\"homepage\"]/a[2]/div/span")
@@ -40,7 +40,7 @@ public class HomePage  extends HentaiHeroesPage{
     @FindBy(xpath = "//*[@id=\"homepage\"]/a[11]/div/span/span")
     private WebElement pachinkoGratuit2;
 
-    @FindBy(xpath = "//*[@id=\"homepage\"]/a[11]/div/span")
+    @FindBy(xpath = "//*[@id=\"homepage\"]/a[12]/div/span")
     private WebElement pachinko;
 
     @FindBy(css = "#home_missions_bar1 > div > div.text")
@@ -49,31 +49,31 @@ public class HomePage  extends HentaiHeroesPage{
     @FindBy(css = "#home_missions_bar2 > div > div.backbar.borderbar > div")
     private WebElement missionNonDisponible2;
 
-    @FindBy(xpath = "//*[@id=\"homepage\"]/a[8]/div/span")
+    @FindBy(xpath = "//*[@id=\"activities\"]/div/div[2]/h4[1]")
     private WebElement mission;
 
-    @FindBy(xpath = "//*[@id=\"homepage\"]/a[9]/div/span")
+    @FindBy(xpath = "//*[@id=\"homepage\"]/a[10]/div/span")
     private WebElement tourDeLaGloire;
 
     @FindBy(xpath = "//*[@id=\"homepage\"]/a[9]/div/span/span")
     private WebElement aFaire;
 
-    @FindBy(xpath = "//*[@id=\"homepage\"]/a[5]/div/span")
+    @FindBy(xpath = "//*[@id=\"homepage\"]/a[6]/div/span")
     private WebElement champion;
 
     @FindBy(xpath = "//*[@id=\"activities\"]/div/div[2]/h4[3]")
     private WebElement lieuxDePouvoir;
 
-    @FindBy(xpath = "//*[@id=\"homepage\"]/a[4]/div/span")
+    @FindBy(xpath = "//*[@id=\"homepage\"]/a[5]/div/span")
     private WebElement marche;
 
     @FindBy(xpath = "//*[@id=\"seasons_tab_container\"]/div[3]/div[1]/a/div")
     private WebElement trouverUnAdversaire;
 
-    @FindBy(xpath = "//*[@id=\"homepage\"]/a[6]/div/span")
+    @FindBy(xpath = "//*[@id=\"homepage\"]/a[7]/div/span")
     private WebElement club;
 
-    @FindBy(xpath = "//*[@id=\"activities\"]/div/div[2]/h4[1]")
+    @FindBy(xpath = "//*[@id=\"homepage\"]/a[9]/div/span/span")
     private WebElement repereMission;
 
     public HaremPage ouvrirLeHarem(WebDriver driver){
@@ -157,20 +157,20 @@ public class HomePage  extends HentaiHeroesPage{
     public MissionPage openMissionPage (WebDriver driver) {
 
         WebDriverWait webDriverWait = new WebDriverWait(driver, 5);
-        webDriverWait.until(ExpectedConditions.visibilityOf(mission));
+        webDriverWait.until(ExpectedConditions.visibilityOf(activite));
+        activite.click();
+        WebDriverWait webDriverWait2 = new WebDriverWait(driver, 10);
+        webDriverWait2.until(ExpectedConditions.visibilityOf(mission));
         mission.click();
-        WebDriverWait webDriverWait2 = new WebDriverWait(driver, 5);
-        webDriverWait2.until(ExpectedConditions.visibilityOf(repereMission));
-        repereMission.click();
         return new MissionPage(driver);
     }
 
     public LieuxDePouvoirPage openLieuxDePouvoirPage (WebDriver driver) {
 
         WebDriverWait webDriverWait = new WebDriverWait(driver, 5);
-        webDriverWait.until(ExpectedConditions.visibilityOf(mission));
-        mission.click();
-        WebDriverWait webDriverWait2 = new WebDriverWait(driver, 5);
+        webDriverWait.until(ExpectedConditions.visibilityOf(activite));
+        activite.click();
+        WebDriverWait webDriverWait2 = new WebDriverWait(driver, 10);
         webDriverWait2.until(ExpectedConditions.visibilityOf(lieuxDePouvoir));
         lieuxDePouvoir.click();
         return new LieuxDePouvoirPage(driver);
@@ -181,7 +181,7 @@ public class HomePage  extends HentaiHeroesPage{
         WebDriverWait webDriverWait = new WebDriverWait(driver, 5);
         webDriverWait.until(ExpectedConditions.visibilityOf(arene));
         arene.click();
-        WebDriverWait webDriverWait2 = new WebDriverWait(driver, 5);
+        WebDriverWait webDriverWait2 = new WebDriverWait(driver, 10);
         webDriverWait2.until(ExpectedConditions.visibilityOf(trouverUnAdversaire));
         trouverUnAdversaire.click();
         return new DuelPage(driver);
