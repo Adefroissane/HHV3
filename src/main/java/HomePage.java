@@ -159,11 +159,7 @@ public class HomePage  extends HentaiHeroesPage{
         WebDriverWait webDriverWait = new WebDriverWait(driver, 5);
         webDriverWait.until(ExpectedConditions.visibilityOf(activite));
         activite.click();
-        try {
-            Thread.sleep(1000);
-        } catch (InterruptedException ab) {
-            ab.printStackTrace();
-        }
+
         WebDriverWait webDriverWait2 = new WebDriverWait(driver, 15);
         webDriverWait2.until(ExpectedConditions.visibilityOf(mission));
         mission.click();
@@ -175,11 +171,7 @@ public class HomePage  extends HentaiHeroesPage{
         WebDriverWait webDriverWait = new WebDriverWait(driver, 5);
         webDriverWait.until(ExpectedConditions.visibilityOf(activite));
         activite.click();
-        try {
-            Thread.sleep(1000);
-        } catch (InterruptedException ab) {
-            ab.printStackTrace();
-        }
+
         WebDriverWait webDriverWait2 = new WebDriverWait(driver, 15);
         webDriverWait2.until(ExpectedConditions.visibilityOf(lieuxDePouvoir));
         lieuxDePouvoir.click();
@@ -190,11 +182,7 @@ public class HomePage  extends HentaiHeroesPage{
         WebDriverWait webDriverWait = new WebDriverWait(driver, 5);
         webDriverWait.until(ExpectedConditions.visibilityOf(arene));
         arene.click();
-        try {
-            Thread.sleep(1000);
-        } catch (InterruptedException ab) {
-            ab.printStackTrace();
-        }
+
         WebDriverWait webDriverWait2 = new WebDriverWait(driver, 15);
         webDriverWait2.until(ExpectedConditions.visibilityOf(trouverUnAdversaire));
         trouverUnAdversaire.click();
