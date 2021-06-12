@@ -38,7 +38,7 @@ public class LieuxDePouvoirPage extends HentaiHeroesPage {
         System.out.println("Nombre de mission fini =" + myElements.size());
         try {
             for (WebElement e : myElements) {
-                                try {
+                try {
                     Thread.sleep(1000);
                 } catch (InterruptedException ab) {
                     ab.printStackTrace();
