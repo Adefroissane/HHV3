@@ -19,7 +19,7 @@ public class PachinkoPage extends HentaiHeroesPage{
     @FindBy(css = "#pachinko_rewards > button")
     private WebElement genial;
 
-    @FindBy(xpath = "//*[@id=\"rewards_popup\"]/div/button")
+    @FindBy(xpath = "//*[@id=\"rewards_popup\"]/div/div[3]/button[1]")
     private WebElement ok;
 
     public void collectPachinkoGratuit(WebDriver driver) {

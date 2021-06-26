@@ -19,7 +19,7 @@ public class LieuxDePouvoirPage extends HentaiHeroesPage {
     @FindBy(xpath = "//*[@id=\"pop_info\"]/div[4]/button[3]")
     private WebElement commencer;
 
-    @FindBy(xpath = "//*[@id=\"rewards_popup\"]/div/button")
+    @FindBy(xpath = "//*[@id=\"rewards_popup\"]/div/div[3]/button[1]")
     private WebElement Ok;
 
     @FindBy(xpath = "//*[@id=\"pop_info\"]/div[3]/div[1]/div[1]/div[1]/img")

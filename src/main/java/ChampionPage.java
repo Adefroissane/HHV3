@@ -55,7 +55,7 @@ public class ChampionPage extends HentaiHeroesPage {
     @FindBy(xpath = "//*[@id=\"contains_all\"]/section/div[2]/button")
     private WebElement passer;
 
-    @FindBy(xpath = "//*[@id=\"rewards_popup\"]/div/button")
+    @FindBy(xpath = "//*[@id=\"rewards_popup\"]/div/div[3]/button[1]")
     private WebElement ok;
 
     @FindBy(xpath = "//*[@id=\"contains_all\"]/section/div[5]/div/div[2]/div[4]/button/div[2]")
