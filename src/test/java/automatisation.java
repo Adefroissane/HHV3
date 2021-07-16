@@ -92,7 +92,7 @@ public class automatisation {
         missionPage.collectMission(driver);
     }
 
-    @Ignore
+
     @Test
     public void automatisationDuelDefi() {
         InitialisationPage initialisation = new InitialisationPage(driver);
@@ -119,6 +119,7 @@ public class automatisation {
         }
     }
 
+    @Ignore
     @Test
     public void automatisationChampion() {
         InitialisationPage initialisation = new InitialisationPage(driver);
