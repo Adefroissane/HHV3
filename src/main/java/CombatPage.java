@@ -13,7 +13,7 @@ public class CombatPage extends HentaiHeroesPage{
         PageFactory.initElements(driver, this);
     }
 
-    @FindBy(xpath = "//*[@id=\"battle_middle\"]/div[2]/button[2]")
+    @FindBy(xpath = "//*[@id=\"pre-battle\"]/div[2]/div[2]/a")
     private WebElement affronterx1;
 
     @FindBy(xpath = "//*[@id=\"battle_middle\"]/div[3]/button[3]")
