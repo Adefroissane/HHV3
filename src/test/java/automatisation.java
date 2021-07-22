@@ -50,21 +50,18 @@ public class automatisation {
         }
     }
 
-    private void Combat(WebDriver driver)
-    {
+    private void Combat(WebDriver driver) {
         LastZonePage lastZonePage = new LastZonePage(driver);
         CombatPage combatPage = lastZonePage.openCombatPage(driver);
         LastZonePage lastZonePage2 = combatPage.combattreBoss(driver);
         boolean combatNonNull = lastZonePage2.getHeader().combatNecessaire(driver);
-        if (combatNonNull == true)
-        {
+        if (combatNonNull == true) {
             Combat(driver);
         }
     }
 
     @Test
-    public void LieuxDePouvoirRecolt()
-    {
+    public void LieuxDePouvoirRecolt() {
         InitialisationPage initialisation = new InitialisationPage(driver);
         HomePage homePage = initialisation.openHomePage(driver);
         LieuxDePouvoirPage lieuxDePouvoirPage = homePage.openLieuxDePouvoirPage(driver);
@@ -72,8 +69,7 @@ public class automatisation {
     }
 
     @Test
-    public void LieuxDePouvoirLancement()
-    {
+    public void LieuxDePouvoirLancement() {
         InitialisationPage initialisation = new InitialisationPage(driver);
         HomePage homePage = initialisation.openHomePage(driver);
         LieuxDePouvoirPage lieuxDePouvoirPage = homePage.openLieuxDePouvoirPage(driver);
@@ -86,7 +82,7 @@ public class automatisation {
         HomePage homePage = initialisation.openHomePage(driver);
         MissionPage missionPage = homePage.openMissionPage(driver);
         boolean plusDeMission = missionPage.plusDeMission(driver);
-        if (plusDeMission){
+        if (plusDeMission) {
             missionPage.lanceMission(driver);
         }
         missionPage.collectMission(driver);
@@ -106,6 +102,7 @@ public class automatisation {
             tourDeLaGloirePage.lancerDefi(driver);
         }
     }
+
     @Ignore
     @Test
     public void automatisationChampionClub() {
@@ -150,4 +147,13 @@ public class automatisation {
             championPage.combattreChampion6(driver);
         }
     }
+    /*@Ignore
+    @Test
+    public void automatisationChampionRepetition() {
+        InitialisationPage initialisation = new InitialisationPage(driver);
+        HomePage homePage = initialisation.openHomePage(driver);
+        ChampionPage championPage = homePage.ouvrirZoneDesChampions(driver);
+        championPage.combattreChampion7(driver);
+    }*/
 }
+

@@ -64,6 +64,14 @@ public class ChampionPage extends HentaiHeroesPage {
     @FindBy(xpath = "//*[@id=\"contains_all\"]/section/div[2]/div/a/img")
     private WebElement retour;
 
+    @FindBy(xpath = "//*[@id=\"contains_all\"]/header/div[5]/div[2]")
+    private WebElement repere;
+
+    @FindBy(xpath = "//*[@id=\"contains_all\"]/section/div[5]/div/div[2]/button")
+    private WebElement pasDeRepos;
+
+    @FindBy(xpath = "//*[@id=\"confirm_HC\"]/button")
+    private WebElement okOrange;
 
     public boolean championDispo(WebDriver driver) {
         WebDriverWait webDriverWait = new WebDriverWait(driver, 5);
@@ -283,5 +291,31 @@ public class ChampionPage extends HentaiHeroesPage {
         WebDriverWait webDriverWait5 = new WebDriverWait(driver, 10);
         webDriverWait5.until(ExpectedConditions.visibilityOf(retour));
         retour.click();
+    }
+
+    public void combattreChampion7(WebDriver driver){
+        while (repere.isEnabled()){
+            WebDriverWait webDriverWait = new WebDriverWait(driver, 5);
+            webDriverWait.until(ExpectedConditions.visibilityOf(portSalut));
+            portSalut.click();
+            WebDriverWait webDriverWait2 = new WebDriverWait(driver, 5);
+            webDriverWait2.until(ExpectedConditions.visibilityOf(pasDeRepos));
+            pasDeRepos.click();
+            WebDriverWait webDriverWait3 = new WebDriverWait(driver, 5);
+            webDriverWait3.until(ExpectedConditions.visibilityOf(okOrange));
+            okOrange.click();
+            WebDriverWait webDriverWait4 = new WebDriverWait(driver, 5);
+            webDriverWait4.until(ExpectedConditions.visibilityOf(performance));
+            performance.click();
+            WebDriverWait webDriverWait5 = new WebDriverWait(driver, 30);
+            webDriverWait5.until(ExpectedConditions.visibilityOf(passer));
+            passer.click();
+            WebDriverWait webDriverWait6 = new WebDriverWait(driver, 10);
+            webDriverWait6.until(ExpectedConditions.visibilityOf(ok));
+            ok.click();
+            WebDriverWait webDriverWait7 = new WebDriverWait(driver, 10);
+            webDriverWait7.until(ExpectedConditions.visibilityOf(retour));
+            retour.click();
+        }
     }
 }
