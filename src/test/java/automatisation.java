@@ -116,7 +116,7 @@ public class automatisation {
         }
     }
 
-
+    @Ignore
     @Test
     public void automatisationChampion() {
         InitialisationPage initialisation = new InitialisationPage(driver);
@@ -147,6 +147,13 @@ public class automatisation {
             championPage.combattreChampion6(driver);
         }
     }
-
+    @Ignore
+    @Test
+    public void automatisationChampionRepetition() {
+        InitialisationPage initialisation = new InitialisationPage(driver);
+        HomePage homePage = initialisation.openHomePage(driver);
+        ChampionPage championPage = homePage.ouvrirZoneDesChampions(driver);
+        championPage.combattreChampion7(driver);
+    }
 }
 
