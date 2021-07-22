@@ -11,6 +11,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
 
+
 public class TourDeLaGloirePage extends HentaiHeroesPage {
 
     public TourDeLaGloirePage(WebDriver driver) {
@@ -47,7 +48,13 @@ public class TourDeLaGloirePage extends HentaiHeroesPage {
     {
         WebDriverWait webDriverWait = new WebDriverWait(driver, 15);
         webDriverWait.until(ExpectedConditions.visibilityOf(ptDeDefi2));
-        if (ptDeDefi2.getText().equals("0/15")) {
+        String plif = ptDeDefi2.getText();
+        StringBuffer plaf = new StringBuffer(plif);
+        plaf.delete(1, 3);
+        String plof = plaf.toString();
+        int combatRestant = Integer.parseInt(plof);
+        //if (ptDeDefi2.getText().equals("0/15")) {
+        if (combatRestant <= 10) {
             return false;
         } else {
             return true;
