@@ -46,15 +46,15 @@ public class automatisation {
         if (combatNonNull == true) {
             AventurePage aventurePage = homePage.openAventure(driver);
             LastZonePage lastZonePage = aventurePage.openLastZone(driver);
+            CombatPage combatPage = lastZonePage.openCombatPage(driver);
             Combat(driver);
         }
     }
 
     private void Combat(WebDriver driver) {
-        LastZonePage lastZonePage = new LastZonePage(driver);
-        CombatPage combatPage = lastZonePage.openCombatPage(driver);
-        LastZonePage lastZonePage2 = combatPage.combattreBoss(driver);
-        boolean combatNonNull = lastZonePage2.getHeader().combatNecessaire(driver);
+        CombatPage combatPage = new CombatPage(driver);
+        combatPage.combattreBoss(driver);
+        boolean combatNonNull = combatPage.getHeader().combatNecessaire(driver);
         if (combatNonNull == true) {
             Combat(driver);
         }
