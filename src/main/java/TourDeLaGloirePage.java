@@ -22,13 +22,13 @@ public class TourDeLaGloirePage extends HentaiHeroesPage {
     @FindBy(xpath = "//*[@id=\"battle_middle\"]/div[2]/button[1]")
     private WebElement affronter;
 
-    @FindBy(xpath = "//*[@id=\"battle_middle\"]/div[2]/button[2]")
+    @FindBy(xpath = "//*[@id=\"new-battle-skip-btn\"]")
     private WebElement passer;
 
     @FindBy(xpath = "//*[@id=\"rewards_popup\"]/div/div[3]/button[1]")
     private WebElement ok;
 
-    @FindBy(xpath = "//*[@id=\"leagues_left\"]/div/div[7]/div/div[2]/span[1]")
+    @FindBy(xpath = "//*[@id=\"leagues_left\"]/div/div[5]/div/div[2]/span[1]")
     private WebElement ptdeDefi;
 
     @FindBy(xpath = "//*[@id=\"leagues_middle\"]/div[4]/button")
@@ -50,7 +50,7 @@ public class TourDeLaGloirePage extends HentaiHeroesPage {
         webDriverWait.until(ExpectedConditions.visibilityOf(ptDeDefi2));
         String plif = ptDeDefi2.getText();
         StringBuffer plaf = new StringBuffer(plif);
-        plaf.delete(1, 3);
+        //plaf.delete(1, 3);
         String plof = plaf.toString();
         int combatRestant = Integer.parseInt(plof);
         //if (ptDeDefi2.getText().equals("0/15")) {
