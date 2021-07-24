@@ -88,7 +88,6 @@ public class automatisation {
         missionPage.collectMission(driver);
     }
 
-
     @Test
     public void automatisationDuelDefi() {
         InitialisationPage initialisation = new InitialisationPage(driver);
