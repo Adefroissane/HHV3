@@ -28,7 +28,7 @@ public class TourDeLaGloirePage extends HentaiHeroesPage {
     @FindBy(xpath = "//*[@id=\"rewards_popup\"]/div/div[3]/button[1]")
     private WebElement ok;
 
-    @FindBy(xpath = "//*[@id=\"leagues_left\"]/div/div[5]/div/div[2]/span[1]")
+    @FindBy(xpath = "//*[@id=\"leagues_middle\"]/div[3]/div[2]/div[2]/div[2]/span[1]")
     private WebElement ptdeDefi;
 
     @FindBy(xpath = "//*[@id=\"leagues_middle\"]/div[4]/button")
@@ -48,11 +48,15 @@ public class TourDeLaGloirePage extends HentaiHeroesPage {
     {
         WebDriverWait webDriverWait = new WebDriverWait(driver, 15);
         webDriverWait.until(ExpectedConditions.visibilityOf(ptDeDefi2));
+
+
         String plif = ptDeDefi2.getText();
-        StringBuffer plaf = new StringBuffer(plif);
-        //plaf.delete(1, 3);
-        String plof = plaf.toString();
-        int combatRestant = Integer.parseInt(plof);
+        StringBuffer plouf = new StringBuffer(plif);
+        plouf.delete(2, 4);
+        String plof = plouf.toString();
+        String plaf = plof.replaceAll("/", "");
+        int combatRestant = Integer.parseInt(plaf);
+
         //if (ptDeDefi2.getText().equals("0/15")) {
         if (combatRestant <= 10) {
             return false;
@@ -106,9 +110,9 @@ public class TourDeLaGloirePage extends HentaiHeroesPage {
                 ab.printStackTrace();
             }
             driver.findElement(By.className("blue_button_L")).click();
-            WebDriverWait webDriverWait3 = new WebDriverWait(driver, 15);
+            /*WebDriverWait webDriverWait3 = new WebDriverWait(driver, 15);
             webDriverWait3.until(ExpectedConditions.visibilityOf(affronter));
-            affronter.click();
+            affronter.click();*/
             WebDriverWait webDriverWait4 = new WebDriverWait(driver, 5);
             webDriverWait4.until(ExpectedConditions.visibilityOf(passer));
             passer.click();
