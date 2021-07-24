@@ -48,8 +48,6 @@ public class TourDeLaGloirePage extends HentaiHeroesPage {
     {
         WebDriverWait webDriverWait = new WebDriverWait(driver, 15);
         webDriverWait.until(ExpectedConditions.visibilityOf(ptDeDefi2));
-
-
         String plif = ptDeDefi2.getText();
         StringBuffer plouf = new StringBuffer(plif);
         plouf.delete(2, 4);

@@ -95,7 +95,13 @@ public class DuelPage extends HentaiHeroesPage {
     public boolean DuelPossible() {
         WebDriverWait webDriverWait = new WebDriverWait(driver, 5);
         webDriverWait.until(ExpectedConditions.visibilityOf(nbrCombat));
-        if (nbrCombat.getText().equals("0")) {
+        String plif = nbrCombat.getText();
+        StringBuffer plouf = new StringBuffer(plif);
+        plouf.delete(2, 4);
+        String plof = plouf.toString();
+        String plaf = plof.replaceAll("/", "");
+        int nombreCombat = Integer.parseInt(plaf);
+        if (nombreCombat <= 8) {
             return false;
         } else {
             return true;
