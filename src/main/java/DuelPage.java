@@ -70,7 +70,7 @@ public class DuelPage extends HentaiHeroesPage {
     @FindBy(xpath = "//*[@id=\"season-arena\"]/div[2]/div[7]/button")
     private WebElement affronter3;
 
-    @FindBy(xpath = "//*[@id=\"season_battle_user_block_kiss_energy\"]/div/div[2]/div[2]/div/span[1]")
+    @FindBy(xpath = "//*[@id=\"season_tab_kiss_energy\"]/div/div[2]/div[2]/div/span[1]")
     private WebElement nbrCombat;
 
     @FindBy(xpath = "//*[@id=\"season-arena\"]/div[2]/a/img")
@@ -97,7 +97,7 @@ public class DuelPage extends HentaiHeroesPage {
         webDriverWait.until(ExpectedConditions.visibilityOf(nbrCombat));
         String plif = nbrCombat.getText();
         StringBuffer plouf = new StringBuffer(plif);
-        plouf.delete(2, 4);
+        //plouf.delete(2, 4);
         String plof = plouf.toString();
         String plaf = plof.replaceAll("/", "");
         int nombreCombat = Integer.parseInt(plaf);
