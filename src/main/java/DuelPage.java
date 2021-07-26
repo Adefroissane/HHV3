@@ -70,7 +70,7 @@ public class DuelPage extends HentaiHeroesPage {
     @FindBy(xpath = "//*[@id=\"season-arena\"]/div[2]/div[7]/button")
     private WebElement affronter3;
 
-    @FindBy(xpath = "//*[@id=\"season_tab_kiss_energy\"]/div/div[2]/div[2]/div/span[1]")
+    @FindBy(xpath = "//*[@id=\"season_battle_user_block_kiss_energy\"]/div/div[2]/div[2]/div/span[1]")
     private WebElement nbrCombat;
 
     @FindBy(xpath = "//*[@id=\"season-arena\"]/div[2]/a/img")
