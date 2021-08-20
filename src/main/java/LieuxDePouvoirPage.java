@@ -22,7 +22,7 @@ public class LieuxDePouvoirPage extends HentaiHeroesPage {
     @FindBy(xpath = "//*[@id=\"rewards_popup\"]/div/div[3]/button[1]")
     private WebElement Ok;
 
-    @FindBy(xpath = "//*[@id=\"pop_info\"]/div[3]/div[1]/div[1]/div[1]/img")
+    @FindBy(xpath = "//*[@id=\"pop_info\"]/div[3]/div[2]/div[1]/div[1]/img")
     private WebElement repere;
 
     @FindBy(xpath = "//*[@id=\"pop_info\"]/div[5]/a/span")
@@ -71,8 +71,8 @@ public class LieuxDePouvoirPage extends HentaiHeroesPage {
             ab.printStackTrace();
         }
         JavascriptExecutor js = (JavascriptExecutor) driver;
-        List<WebElement> myElements = driver.findElements(By.xpath("//*[@id=\"pop_info\"]/div[3]/div[1]/div[*]/div[1]/button[2]"));
-        List<WebElement> myElements2 = driver.findElements(By.xpath("//*[@id=\"pop_info\"]/div[3]/div[1]/div[*]/div[1]/div[2]"));
+        List<WebElement> myElements = driver.findElements(By.xpath("//*[@id=\"pop_info\"]/div[3]/div[2]/div[*]/div[1]/button[2]"));
+        List<WebElement> myElements2 = driver.findElements(By.xpath("//*[@id=\"pop_info\"]/div[3]/div[2]/div[*]/div[1]/div[2]"));
         System.out.println("nombre de mission =" + myElements.size());
         int i=0;
         for (WebElement e : myElements)
