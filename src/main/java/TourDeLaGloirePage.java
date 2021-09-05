@@ -107,7 +107,10 @@ public class TourDeLaGloirePage extends HentaiHeroesPage {
             } catch (InterruptedException ab) {
                 ab.printStackTrace();
             }
-            driver.findElement(By.className("blue_button_L")).click();
+            List<WebElement> myElements2 = driver.findElements(By.className("blue_button_L"));
+            System.out.println("nbre de bouton =" + myElements2.size());
+            myElements2.get(2).click();
+            //driver.findElement(By.className("blue_button_L")).click();
             /*WebDriverWait webDriverWait3 = new WebDriverWait(driver, 15);
             webDriverWait3.until(ExpectedConditions.visibilityOf(affronter));
             affronter.click();*/
