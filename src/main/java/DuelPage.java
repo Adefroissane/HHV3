@@ -101,6 +101,7 @@ public class DuelPage extends HentaiHeroesPage {
         String plof = plouf.toString();
         String plaf = plof.replaceAll("/", "");
         int nombreCombat = Integer.parseInt(plaf);
+        System.out.println("nbre de combat =" + nombreCombat);
         if (nombreCombat <= 8) {
             return false;
         } else {
