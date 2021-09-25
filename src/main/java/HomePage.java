@@ -76,6 +76,12 @@ public class HomePage  extends HentaiHeroesPage{
     @FindBy(xpath = "//*[@id=\"homepage\"]/a[9]/div/span/span")
     private WebElement repereMission;
 
+    @FindBy(xpath = "//*[@id=\"contains_all\"]/nav/div[1]/span")
+    private WebElement menu;
+
+    @FindBy(xpath = "//*[@id=\"contains_all\"]/nav/div[2]/div/a[11]/div/span")
+    private WebElement activite2;
+
     public HaremPage ouvrirLeHarem(WebDriver driver){
 
         WebDriverWait webDriverWait = new WebDriverWait(driver, 5);
@@ -157,11 +163,15 @@ public class HomePage  extends HentaiHeroesPage{
     public MissionPage openMissionPage (WebDriver driver) {
 
         WebDriverWait webDriverWait = new WebDriverWait(driver, 5);
-        webDriverWait.until(ExpectedConditions.visibilityOf(activite));
-        activite.click();
+        webDriverWait.until(ExpectedConditions.visibilityOf(menu));
+        menu.click();
 
-        WebDriverWait webDriverWait2 = new WebDriverWait(driver, 15);
-        webDriverWait2.until(ExpectedConditions.visibilityOf(mission));
+        WebDriverWait webDriverWait2 = new WebDriverWait(driver, 5);
+        webDriverWait2.until(ExpectedConditions.visibilityOf(activite2));
+        activite2.click();
+
+        WebDriverWait webDriverWait3 = new WebDriverWait(driver, 15);
+        webDriverWait3.until(ExpectedConditions.visibilityOf(mission));
         mission.click();
         return new MissionPage(driver);
     }
@@ -169,11 +179,15 @@ public class HomePage  extends HentaiHeroesPage{
     public LieuxDePouvoirPage openLieuxDePouvoirPage (WebDriver driver) {
 
         WebDriverWait webDriverWait = new WebDriverWait(driver, 5);
-        webDriverWait.until(ExpectedConditions.visibilityOf(activite));
-        activite.click();
+        webDriverWait.until(ExpectedConditions.visibilityOf(menu));
+        menu.click();
 
-        WebDriverWait webDriverWait2 = new WebDriverWait(driver, 15);
-        webDriverWait2.until(ExpectedConditions.visibilityOf(lieuxDePouvoir));
+        WebDriverWait webDriverWait2 = new WebDriverWait(driver, 5);
+        webDriverWait2.until(ExpectedConditions.visibilityOf(activite2));
+        activite2.click();
+
+        WebDriverWait webDriverWait3 = new WebDriverWait(driver, 15);
+        webDriverWait3.until(ExpectedConditions.visibilityOf(lieuxDePouvoir));
         lieuxDePouvoir.click();
         return new LieuxDePouvoirPage(driver);
     }
