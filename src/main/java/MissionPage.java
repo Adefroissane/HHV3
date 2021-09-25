@@ -38,6 +38,9 @@ public class MissionPage extends HentaiHeroesPage{
     @FindBy(className ="orange_button_L")
     private WebElement missionEnCour;
 
+    @FindBy(xpath ="//*[@id=\"rewards_popup\"]/div/div[3]/button[1]")
+    private WebElement ok;
+
     public void collectMission(WebDriver driver) {
         try{
             Thread.sleep(750);
@@ -54,13 +57,13 @@ public class MissionPage extends HentaiHeroesPage{
 
                     try {
                         WebDriverWait webDriverWait2 = new WebDriverWait(driver, 5);
-                        webDriverWait2.until(ExpectedConditions.visibilityOf(validerRecompense));
+                        webDriverWait2.until(ExpectedConditions.visibilityOf(ok));
                         try {
                             Thread.sleep(750);
                         } catch (InterruptedException ab) {
                             ab.printStackTrace();
                         }
-                        validerRecompense.click();
+                        ok.click();
                     } catch (NoSuchElementException nf) {}
                 }
             }
