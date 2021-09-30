@@ -20,7 +20,7 @@ public class InitialisationPage extends HentaiHeroesPage
         PageFactory.initElements(driver, this);
     }
 
-    @FindBy(css = "#contains_all > header > div > a:nth-child(1) > img")
+    @FindBy(xpath = "//*[@id=\"contains_all\"]/header/div/a[1]/div/img")
     private WebElement connexion;
 
     @FindBy(xpath = "//*[@id=\"auth-email\"]")
