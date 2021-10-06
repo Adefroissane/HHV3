@@ -137,14 +137,14 @@ public class automatisation {
         if (championDispo4 == true) {
             championPage.combattreChampion4(driver);
         }
-        boolean championDispo5 = championPage.championDispo5(driver);
+        /*boolean championDispo5 = championPage.championDispo5(driver);
         if (championDispo5 == true) {
             championPage.combattreChampion5(driver);
         }
         boolean championDispo6 = championPage.championDispo6(driver);
         if (championDispo6 == true) {
             championPage.combattreChampion6(driver);
-        }
+        }*/
     }
 
 }
