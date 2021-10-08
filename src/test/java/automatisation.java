@@ -129,7 +129,7 @@ public class automatisation {
         if (championDispo2 == true) {
             championPage.combattreChampion2(driver);
         }
-        boolean championDispo3 = championPage.championDispo3(driver);
+        /*boolean championDispo3 = championPage.championDispo3(driver);
         if (championDispo3 == true) {
             championPage.combattreChampion3(driver);
         }
@@ -137,7 +137,7 @@ public class automatisation {
         if (championDispo4 == true) {
             championPage.combattreChampion4(driver);
         }
-        /*boolean championDispo5 = championPage.championDispo5(driver);
+        boolean championDispo5 = championPage.championDispo5(driver);
         if (championDispo5 == true) {
             championPage.combattreChampion5(driver);
         }
