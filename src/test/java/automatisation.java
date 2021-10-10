@@ -115,7 +115,7 @@ public class automatisation {
         }
     }
 
-
+    @Ignore
     @Test
     public void automatisationChampion() {
         InitialisationPage initialisation = new InitialisationPage(driver);
@@ -125,7 +125,7 @@ public class automatisation {
         if (championDispo == true) {
             championPage.combattreChampion(driver);
         }
-        /*boolean championDispo2 = championPage.championDispo2(driver);
+        boolean championDispo2 = championPage.championDispo2(driver);
         if (championDispo2 == true) {
             championPage.combattreChampion2(driver);
         }
@@ -144,7 +144,7 @@ public class automatisation {
         boolean championDispo6 = championPage.championDispo6(driver);
         if (championDispo6 == true) {
             championPage.combattreChampion6(driver);
-        }*/
+        }
     }
 
 }
