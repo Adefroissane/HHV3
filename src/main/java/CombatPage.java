@@ -28,6 +28,9 @@ public class CombatPage extends HentaiHeroesPage{
     @FindBy(xpath = "//*[@id=\"new-battle-skip-btn\"]")
     private WebElement passer2;
 
+    @FindBy(xpath = "//*[@id=\"new-battle-skip-btn\"]")
+    private WebElement perform;
+
 
     public DuelPage combattreDuel(WebDriver driver)
     {
@@ -67,5 +70,25 @@ public class CombatPage extends HentaiHeroesPage{
         oki.click();
         return new LastZonePage(driver);
 
+    }
+
+    public EscaliersPage combattreEscalier(WebDriver driver)
+    {
+        WebDriverWait webDriverWait = new WebDriverWait(driver, 5);
+        webDriverWait.until(ExpectedConditions.visibilityOf(perform));
+        perform.click();
+        /*WebDriverWait webDriverWait2 = new WebDriverWait(driver, 30);
+        webDriverWait2.until(ExpectedConditions.visibilityOf(passer2));
+        passer2.click();*/
+        WebDriverWait webDriverWait3 = new WebDriverWait(driver, 5);
+        webDriverWait3.until(ExpectedConditions.visibilityOf(oki));
+        try{
+            Thread.sleep(750);
+        }
+        catch(InterruptedException e){
+            e.printStackTrace();
+        }
+        oki.click();
+        return new EscaliersPage(driver);
     }
 }

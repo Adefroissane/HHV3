@@ -147,5 +147,18 @@ public class automatisation {
         }
     }
 
+    @Ignore
+    @Test
+    public void automatisationEscaliers() {
+        InitialisationPage initialisation = new InitialisationPage(driver);
+        HomePage homePage = initialisation.openHomePage(driver);
+        EscaliersPage escaliersPage = homePage.ouvrirEscalierDuPantheon(driver);
+        boolean combatDispo = escaliersPage.CombatPossible(driver);
+        if (combatDispo == true) {
+            CombatPage combatPage = escaliersPage.openCombatPage(driver);
+            combatPage.combattreEscalier(driver);
+        }
+
+    }
 }
 
