@@ -28,7 +28,7 @@ public class CombatPage extends HentaiHeroesPage{
     @FindBy(xpath = "//*[@id=\"new-battle-skip-btn\"]")
     private WebElement passer2;
 
-    @FindBy(xpath = "//*[@id=\"new-battle-skip-btn\"]")
+    @FindBy(xpath = "//*[@id=\"pre-battle\"]/div[2]/div/a")
     private WebElement perform;
 
 
