@@ -59,7 +59,7 @@ public class HomePage  extends HentaiHeroesPage{
     private WebElement aFaire;
 
     @FindBy(xpath = "//*[@id=\"homepage\"]/a[6]/div/span")
-    private WebElement champion;
+    private WebElement cheminDuDieu;
 
     @FindBy(xpath = "//*[@id=\"activities\"]/div/div[2]/h4[3]")
     private WebElement lieuxDePouvoir;
@@ -81,6 +81,9 @@ public class HomePage  extends HentaiHeroesPage{
 
     @FindBy(xpath = "//*[@id=\"contains_all\"]/nav/div[2]/div/a[11]/div/span")
     private WebElement activite2;
+
+    @FindBy(xpath = "//*[@id=\"contains_all\"]/section/div[1]/div[2]/a[1]/img")
+    private WebElement champions;
 
     public HaremPage ouvrirLeHarem(WebDriver driver){
 
@@ -233,8 +236,11 @@ public class HomePage  extends HentaiHeroesPage{
     public ChampionPage ouvrirZoneDesChampions(WebDriver driver){
 
         WebDriverWait webDriverWait = new WebDriverWait(driver, 5);
-        webDriverWait.until(ExpectedConditions.visibilityOf(champion));
-        champion.click();
+        webDriverWait.until(ExpectedConditions.visibilityOf(cheminDuDieu));
+        cheminDuDieu.click();
+        WebDriverWait webDriverWait2 = new WebDriverWait(driver, 5);
+        webDriverWait2.until(ExpectedConditions.visibilityOf(champions));
+        champions.click();
         return new ChampionPage(driver);
     }
 }
