@@ -77,15 +77,32 @@ public class automatisation {
     }
 
     @Test
-    public void automatisationMission() {
+    public void AutomatisationEscalierMission() {
         InitialisationPage initialisation = new InitialisationPage(driver);
         HomePage homePage = initialisation.openHomePage(driver);
+        EscaliersPage escaliersPage = homePage.ouvrirEscalierDuPantheon(driver);
+        boolean combatDispo = escaliersPage.CombatPossible(driver);
+        if (combatDispo == true) {
+            CombatPage combatPage = escaliersPage.openCombatPage(driver);
+            combatPage.combattreEscalier(driver);
+            Combat2(driver);
+        }
+        HomePage homepage2 = escaliersPage.getHeader().openHomePage(driver);
         MissionPage missionPage = homePage.openMissionPage(driver);
         boolean plusDeMission = missionPage.plusDeMission(driver);
         if (plusDeMission) {
             missionPage.lanceMission(driver);
         }
         missionPage.collectMission(driver);
+    }
+    private void Combat2(WebDriver driver) {
+        EscaliersPage escaliersPage = new EscaliersPage(driver);
+        boolean combatDispo = escaliersPage.CombatPossible(driver);
+        if (combatDispo == true) {
+            CombatPage combatPage = escaliersPage.openCombatPage(driver);
+            EscaliersPage escaliersPage2 = combatPage.combattreEscalier(driver);
+            Combat2(driver);
+        }
     }
 
     @Test
@@ -145,20 +162,6 @@ public class automatisation {
         if (championDispo6 == true) {
             championPage.combattreChampion6(driver);
         }
-    }
-
-    @Ignore
-    @Test
-    public void automatisationEscaliers() {
-        InitialisationPage initialisation = new InitialisationPage(driver);
-        HomePage homePage = initialisation.openHomePage(driver);
-        EscaliersPage escaliersPage = homePage.ouvrirEscalierDuPantheon(driver);
-        boolean combatDispo = escaliersPage.CombatPossible(driver);
-        if (combatDispo == true) {
-            CombatPage combatPage = escaliersPage.openCombatPage(driver);
-            combatPage.combattreEscalier(driver);
-        }
-
     }
 }
 
