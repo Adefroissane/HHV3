@@ -158,10 +158,18 @@ public class automatisation {
         if (championDispo5 == true) {
             championPage.combattreChampion5(driver);
         }
-        boolean championDispo6 = championPage.championDispo6(driver);
+        /*boolean championDispo6 = championPage.championDispo6(driver);
         if (championDispo6 == true) {
             championPage.combattreChampion6(driver);
-        }
+        }*/
+    }
+    @Ignore
+    @Test
+    public void LieuxDePouvoir() {
+        InitialisationPage initialisation = new InitialisationPage(driver);
+        HomePage homePage = initialisation.openHomePage(driver);
+        LieuxDePouvoirPage lieuxDePouvoirPage = homePage.openLieuxDePouvoirPage(driver);
+        lieuxDePouvoirPage.Mission(driver);
     }
 }
 

@@ -34,6 +34,7 @@ public class LieuxDePouvoirPage extends HentaiHeroesPage {
         WebDriverWait webDriverWait = new WebDriverWait(driver, 5);
         webDriverWait.until(ExpectedConditions.visibilityOf(repere));
         JavascriptExecutor js = (JavascriptExecutor) driver;
+        //Liste missions terminer
         List<WebElement> myElements = driver.findElements(By.className("purple_button_L"));
         System.out.println("Nombre de mission fini =" + myElements.size());
         try {
@@ -71,7 +72,9 @@ public class LieuxDePouvoirPage extends HentaiHeroesPage {
             ab.printStackTrace();
         }
         JavascriptExecutor js = (JavascriptExecutor) driver;
+        //Liste des boutons visiter
         List<WebElement> myElements = driver.findElements(By.xpath("//*[@id=\"pop_info\"]/div[3]/div[2]/div[*]/div[1]/button[2]"));
+        //liste des timers associés
         List<WebElement> myElements2 = driver.findElements(By.xpath("//*[@id=\"pop_info\"]/div[3]/div[2]/div[*]/div[1]/div[2]"));
         System.out.println("nombre de mission =" + myElements.size());
         int i=0;
@@ -102,6 +105,55 @@ public class LieuxDePouvoirPage extends HentaiHeroesPage {
                 LancerMission(driver);
             }
             i=i+1;
+        }
+    }
+    public void Mission(WebDriver driver) {
+
+        WebDriverWait webDriverWait = new WebDriverWait(driver, 5);
+        webDriverWait.until(ExpectedConditions.visibilityOf(repere));
+        JavascriptExecutor js = (JavascriptExecutor) driver;
+        //Liste missions terminer
+        List<WebElement> myElements = driver.findElements(By.className("purple_button_L"));
+        System.out.println("Nombre de mission fini =" + myElements.size());
+        try {
+            for (WebElement e : myElements) {
+                try {
+                    Thread.sleep(1000);
+                } catch (InterruptedException ab) {
+                    ab.printStackTrace();
+                }
+                js.executeScript("arguments[0].scrollIntoView();", e);
+                if (e.isDisplayed()) {
+                    e.click();
+                    WebDriverWait webDriverWait3 = new WebDriverWait(driver, 5);
+                    webDriverWait3.until(ExpectedConditions.visibilityOf(Ok));
+                    Ok.click();
+                    try {
+                        Thread.sleep(1000);
+                    } catch (InterruptedException ab) {
+                        ab.printStackTrace();
+                    }
+                    e.click();
+                    WebDriverWait webDriverWait5 = new WebDriverWait(driver, 5);
+                    webDriverWait5.until(ExpectedConditions.visibilityOf(assigner));
+                    assigner.click();
+                    WebDriverWait webDriverWait6 = new WebDriverWait(driver, 5);
+                    webDriverWait6.until(ExpectedConditions.visibilityOf(commencer));
+                    commencer.click();
+                    WebDriverWait webDriverWait7 = new WebDriverWait(driver, 5);
+                    webDriverWait7.until(ExpectedConditions.visibilityOf(retour));
+                    retour.click();
+                    Mission(driver);
+                }
+                else
+                {
+                    System.out.println("Mission" + myElements.size() + "pas fini");
+                }
+            }
+        }
+        catch (NoSuchElementException ne)
+        {
+
         }
     }
 }
