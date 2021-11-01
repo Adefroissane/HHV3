@@ -88,7 +88,7 @@ public class automatisation {
             Combat2(driver);
         }
         HomePage homepage2 = escaliersPage.getHeader().openHomePage(driver);
-        MissionPage missionPage = homePage.openMissionPage(driver);
+        MissionPage missionPage = homepage2.openMissionPage(driver);
         boolean plusDeMission = missionPage.plusDeMission(driver);
         if (plusDeMission) {
             missionPage.lanceMission(driver);
@@ -119,7 +119,7 @@ public class automatisation {
         }
     }
 
-    @Ignore
+    /*@Ignore
     @Test
     public void automatisationChampionClub() {
         InitialisationPage initialisation = new InitialisationPage(driver);
@@ -130,7 +130,7 @@ public class automatisation {
         if (bossDispo == true) {
             clubPage.vaincreBossDeClub(driver);
         }
-    }
+    }*/
 
 
     @Test
@@ -162,14 +162,21 @@ public class automatisation {
         if (championDispo6 == true) {
             championPage.combattreChampion6(driver);
         }*/
+        HomePage homepage2 = championPage.getHeader().openHomePage(driver);
+        ClubPage clubPage = homePage.openClubPage(driver);
+        clubPage.pageBoss(driver);
+        boolean bossDispo = clubPage.bossDispo(driver);
+        if (bossDispo == true) {
+            clubPage.vaincreBossDeClub(driver);
+        }
     }
-    @Ignore
+    /*@Ignore
     @Test
     public void LieuxDePouvoir() {
         InitialisationPage initialisation = new InitialisationPage(driver);
         HomePage homePage = initialisation.openHomePage(driver);
         LieuxDePouvoirPage lieuxDePouvoirPage = homePage.openLieuxDePouvoirPage(driver);
         lieuxDePouvoirPage.Mission(driver);
-    }
+    }*/
 }
 
