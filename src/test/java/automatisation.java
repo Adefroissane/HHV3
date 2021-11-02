@@ -142,10 +142,10 @@ public class automatisation {
         if (championDispo == true) {
             championPage.combattreChampion(driver);
         }
-        boolean championDispo2 = championPage.championDispo2(driver);
+        /*boolean championDispo2 = championPage.championDispo2(driver);
         if (championDispo2 == true) {
             championPage.combattreChampion2(driver);
-        }
+        }*/
         boolean championDispo3 = championPage.championDispo3(driver);
         if (championDispo3 == true) {
             championPage.combattreChampion3(driver);
