@@ -138,15 +138,15 @@ public class automatisation {
         InitialisationPage initialisation = new InitialisationPage(driver);
         HomePage homePage = initialisation.openHomePage(driver);
         ChampionPage championPage = homePage.ouvrirZoneDesChampions(driver);
-        /*boolean championDispo = championPage.championDispo(driver);
+        boolean championDispo = championPage.championDispo(driver);
         if (championDispo == true) {
             championPage.combattreChampion(driver);
-        }*/
-        boolean championDispo2 = championPage.championDispo2(driver);
+        }
+        /*boolean championDispo2 = championPage.championDispo2(driver);
         if (championDispo2 == true) {
             championPage.combattreChampion2(driver);
         }
-        /*boolean championDispo3 = championPage.championDispo3(driver);
+        boolean championDispo3 = championPage.championDispo3(driver);
         if (championDispo3 == true) {
             championPage.combattreChampion3(driver);
         }
