@@ -128,32 +128,56 @@ public class LieuxDePouvoirPage extends HentaiHeroesPage {
                     WebDriverWait webDriverWait3 = new WebDriverWait(driver, 5);
                     webDriverWait3.until(ExpectedConditions.visibilityOf(Ok));
                     Ok.click();
-                    try {
-                        Thread.sleep(1000);
-                    } catch (InterruptedException ab) {
-                        ab.printStackTrace();
-                    }
-                    e.click();
-                    WebDriverWait webDriverWait5 = new WebDriverWait(driver, 5);
-                    webDriverWait5.until(ExpectedConditions.visibilityOf(assigner));
-                    assigner.click();
-                    WebDriverWait webDriverWait6 = new WebDriverWait(driver, 5);
-                    webDriverWait6.until(ExpectedConditions.visibilityOf(commencer));
-                    commencer.click();
-                    WebDriverWait webDriverWait7 = new WebDriverWait(driver, 5);
-                    webDriverWait7.until(ExpectedConditions.visibilityOf(retour));
-                    retour.click();
-                    Mission(driver);
+                    RecoltMission(driver);
                 }
                 else
                 {
-                    System.out.println("Mission" + myElements.size() + "pas fini");
+
                 }
             }
         }
         catch (NoSuchElementException ne)
         {
+            try {
+                Thread.sleep(1000);
+            } catch (InterruptedException ab) {
+                ab.printStackTrace();
+            }
+            JavascriptExecutor js2 = (JavascriptExecutor) driver;
+            //Liste des boutons visiter
+            List<WebElement> myElements2 = driver.findElements(By.xpath("//*[@id=\"pop_info\"]/div[3]/div[2]/div[*]/div[1]/button[2]"));
+            //liste des timers associés
+            List<WebElement> myElements3 = driver.findElements(By.xpath("//*[@id=\"pop_info\"]/div[3]/div[2]/div[*]/div[1]/div[2]"));
+            System.out.println("nombre de mission =" + myElements3.size());
+            int i=0;
+            for (WebElement e : myElements)
+            {
+                try {
+                    Thread.sleep(1000);
+                } catch (InterruptedException ab) {
+                    ab.printStackTrace();
+                }
+                js.executeScript("arguments[0].scrollIntoView();", myElements2.get(i));
+                if (myElements2.get(i).isDisplayed()) {
 
+                }
+                else {
+                    WebDriverWait webDriverWait5 = new WebDriverWait(driver, 5);
+                    webDriverWait5.until(ExpectedConditions.visibilityOf(e));
+                    e.click();
+                    WebDriverWait webDriverWait2 = new WebDriverWait(driver, 5);
+                    webDriverWait2.until(ExpectedConditions.visibilityOf(assigner));
+                    assigner.click();
+                    WebDriverWait webDriverWait3 = new WebDriverWait(driver, 5);
+                    webDriverWait3.until(ExpectedConditions.visibilityOf(commencer));
+                    commencer.click();
+                    WebDriverWait webDriverWait4 = new WebDriverWait(driver, 5);
+                    webDriverWait4.until(ExpectedConditions.visibilityOf(retour));
+                    retour.click();
+                    LancerMission(driver);
+                }
+                i=i+1;
+            }
         }
     }
 }
