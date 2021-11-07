@@ -157,7 +157,7 @@ public class LieuxDePouvoirPage extends HentaiHeroesPage {
                 } catch (InterruptedException ab) {
                     ab.printStackTrace();
                 }
-                js.executeScript("arguments[0].scrollIntoView();", myElements2.get(i));
+                js2.executeScript("arguments[0].scrollIntoView();", myElements2.get(i));
                 if (myElements2.get(i).isDisplayed()) {
 
                 }
