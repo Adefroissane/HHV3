@@ -19,22 +19,83 @@ public class HaremPage extends HentaiHeroesPage{
     @FindBy(xpath = "//*[@id=\"harem_whole\"]/div/div/div/a/img")
     private WebElement retour;
 
+    @FindBy(xpath = "/html/body/div[2]/section/div[1]/div/div/div/div[2]/div[2]/div[824]/div/div[1]")
+    private WebElement derniereFille;
+
+    public int liste1(WebDriver driver){
+        int n;
+        JavascriptExecutor js = (JavascriptExecutor) driver;
+        List<WebElement> myElements = driver.findElements(By.className("right"));
+        n = myElements.size();
+        System.out.println("n =" + myElements.size());
+        WebElement e= myElements.get(n - 1);
+        js.executeScript("arguments[0].scrollIntoView(true);", e);
+        try {
+            Thread.sleep(100);
+        } catch (InterruptedException ab) {
+            ab.printStackTrace();
+        }
+        System.out.println(e.getText());
+        WebDriverWait webDriverWait = new WebDriverWait(driver, 30);
+        webDriverWait.until(ExpectedConditions.visibilityOf(e));
+        try {
+            Thread.sleep(500);
+        } catch (InterruptedException ab) {
+            ab.printStackTrace();
+        }
+        return n;
+    }
+
+    public int liste2(WebDriver driver){
+        int m;
+        JavascriptExecutor js = (JavascriptExecutor) driver;
+        List<WebElement> myElements = driver.findElements(By.className("right"));
+        m = myElements.size();
+        System.out.println("m =" + myElements.size());
+        WebElement e= myElements.get(m - 1);
+        js.executeScript("arguments[0].scrollIntoView(true);", e);
+        try {
+            Thread.sleep(100);
+        } catch (InterruptedException ab) {
+            ab.printStackTrace();
+        }
+        System.out.println(e.getText());
+        WebDriverWait webDriverWait = new WebDriverWait(driver, 30);
+        webDriverWait.until(ExpectedConditions.visibilityOf(e));
+        try {
+            Thread.sleep(500);
+        } catch (InterruptedException ab) {
+            ab.printStackTrace();
+        }
+        return m;
+    }
+
+    public void defilement(WebDriver driver){
+        int n = liste1(driver);
+        int m = liste2(driver);
+        if(n != m){
+            defilement(driver);
+        }
+
+    }
+
     public void recolt(WebDriver driver){
         WebDriverWait webDriverWait = new WebDriverWait(driver, 5);
         webDriverWait.until(ExpectedConditions.visibilityOf(repere));
-        List<WebElement> myElements = driver.findElements(By.className("collect_money"));
-        System.out.println("Taille du harem =" + myElements.size());
         JavascriptExecutor js = (JavascriptExecutor) driver;
-        try {
-            for (WebElement e : myElements) {
-                js.executeScript("arguments[0].scrollIntoView();", e);
+        defilement(driver);
+        List<WebElement> myElements2 = driver.findElements(By.className("collect_money"));
+        System.out.println("Taille du harem =" + myElements2.size());
+                try {
+            for (WebElement e2 : myElements2) {
+                js.executeScript("arguments[0].scrollIntoView();", e2);
                 try {
                     Thread.sleep(1000);
                 } catch (InterruptedException ab) {
                     ab.printStackTrace();
                 }
-                if (e.isDisplayed()) {
-                    e.click();
+                if (e2.isDisplayed()) {
+                    e2.click();
                 }
             }
         }

@@ -88,11 +88,41 @@ public class HomePage  extends HentaiHeroesPage{
     @FindBy(xpath = "//*[@id=\"contains_all\"]/section/div[1]/div[2]/a[2]/img")
     private WebElement escalier;
 
+    @FindBy(xpath = "//*[@id=\"type_item\"]/div[4]")
+    private WebElement cadeau;
+
+    @FindBy(xpath = "//*[@id=\"girls_list\"]/div[2]/span[1]")
+    private WebElement arriere;
+
+    @FindBy(css = "#girls_list > div.g1 > div > div.girl-ico.ui-droppable > img")
+    private WebElement derniereFille;
+
+    @FindBy(css = "#girls_list > div.g1 > div > div:nth-child(1) > img")
+    private WebElement premiereFille;
+
     public HaremPage ouvrirLeHarem(WebDriver driver){
 
         WebDriverWait webDriverWait = new WebDriverWait(driver, 5);
         webDriverWait.until(ExpectedConditions.visibilityOf(harem));
         harem.click();
+        return new HaremPage(driver);
+    }
+
+    public HaremPage ouvrirHaremParLeMArche(WebDriver driver){
+
+        WebDriverWait webDriverWait = new WebDriverWait(driver, 5);
+        webDriverWait.until(ExpectedConditions.visibilityOf(marche));
+        marche.click();
+        WebDriverWait webDriverWait2 = new WebDriverWait(driver, 5);
+        webDriverWait2.until(ExpectedConditions.visibilityOf(cadeau));
+        cadeau.click();
+        /*WebDriverWait webDriverWait3 = new WebDriverWait(driver, 5);
+        webDriverWait3.until(ExpectedConditions.visibilityOf(arriere));
+        arriere.click();*/
+        WebDriverWait webDriverWait4 = new WebDriverWait(driver, 5);
+        webDriverWait4.until(ExpectedConditions.visibilityOf(premiereFille));
+        premiereFille.click();
+
         return new HaremPage(driver);
     }
 

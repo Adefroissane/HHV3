@@ -4,6 +4,7 @@ import org.junit.Ignore;
 import org.junit.Test;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.firefox.FirefoxDriver;
 
 public class automatisation {
 
@@ -12,6 +13,7 @@ public class automatisation {
     @Before
     public void init() {
         driver = new ChromeDriver();
+        //driver = new FirefoxDriver();
         //driver.manage().window().fullscreen();
         driver.get("https://www.hentaiheroes.com/");
     }
@@ -33,7 +35,7 @@ public class automatisation {
 
         boolean recoltNecessaire = homePage.recoltHarem(driver);
         if (recoltNecessaire == true) {
-            HaremPage haremPage = homePage.ouvrirLeHarem(driver);
+            HaremPage haremPage = homePage.ouvrirHaremParLeMArche(driver);
             haremPage.recolt(driver);
         }
 
