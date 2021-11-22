@@ -139,8 +139,8 @@ public class automatisation {
     public void automatisationChampion() {
         InitialisationPage initialisation = new InitialisationPage(driver);
         HomePage homePage = initialisation.openHomePage(driver);
-        ChampionPage championPage = homePage.ouvrirZoneDesChampions(driver);
-        /*boolean championDispo = championPage.championDispo(driver);
+        /*ChampionPage championPage = homePage.ouvrirZoneDesChampions(driver);
+        boolean championDispo = championPage.championDispo(driver);
         if (championDispo == true) {
             championPage.combattreChampion(driver);
         }
