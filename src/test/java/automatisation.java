@@ -134,7 +134,7 @@ public class automatisation {
         }
     }*/
 
-
+    @Ignore
     @Test
     public void automatisationChampion() {
         InitialisationPage initialisation = new InitialisationPage(driver);
@@ -181,5 +181,13 @@ public class automatisation {
         LieuxDePouvoirPage lieuxDePouvoirPage = homePage.openLieuxDePouvoirPage(driver);
         lieuxDePouvoirPage.Mission(driver);
     }
+    /*@Ignore
+    @Test
+    public void automatisationChampionClubRepetition() {
+        InitialisationPage initialisation = new InitialisationPage(driver);
+        HomePage homePage = initialisation.openHomePage(driver);
+        ClubPage clubPage = homePage.openClubPage(driver);
+        clubPage.combattreChampion7(driver);
+    }*/
 }
 
