@@ -39,7 +39,7 @@ public class HaremPage extends HentaiHeroesPage{
         WebDriverWait webDriverWait = new WebDriverWait(driver, 30);
         webDriverWait.until(ExpectedConditions.visibilityOf(e));
         try {
-            Thread.sleep(500);
+            Thread.sleep(400);
         } catch (InterruptedException ab) {
             ab.printStackTrace();
         }
@@ -63,7 +63,7 @@ public class HaremPage extends HentaiHeroesPage{
         WebDriverWait webDriverWait = new WebDriverWait(driver, 30);
         webDriverWait.until(ExpectedConditions.visibilityOf(e));
         try {
-            Thread.sleep(500);
+            Thread.sleep(400);
         } catch (InterruptedException ab) {
             ab.printStackTrace();
         }
@@ -90,7 +90,7 @@ public class HaremPage extends HentaiHeroesPage{
             for (WebElement e2 : myElements2) {
                 js.executeScript("arguments[0].scrollIntoView();", e2);
                 try {
-                    Thread.sleep(1000);
+                    Thread.sleep(500);
                 } catch (InterruptedException ab) {
                     ab.printStackTrace();
                 }
