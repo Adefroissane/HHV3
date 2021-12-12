@@ -52,7 +52,7 @@ public class HomePage  extends HentaiHeroesPage{
     @FindBy(xpath = "//*[@id=\"activities\"]/div/div[2]/h4[1]")
     private WebElement mission;
 
-    @FindBy(xpath = "//*[@id=\"homepage\"]/a[10]/div/span")
+    @FindBy(xpath = "//*[@id=\"homepage\"]/a[11]/div/span")
     private WebElement tourDeLaGloire;
 
     @FindBy(xpath = "//*[@id=\"homepage\"]/a[9]/div/span/span")
