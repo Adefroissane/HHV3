@@ -100,6 +100,9 @@ public class HomePage  extends HentaiHeroesPage{
     @FindBy(css = "#girls_list > div.g1 > div > div:nth-child(1) > img")
     private WebElement premiereFille;
 
+    @FindBy(xpath = "//*[@id=\"contains_all\"]/nav/div[2]/div/a[5]/div/span")
+    private WebElement club2;
+
     public HaremPage ouvrirLeHarem(WebDriver driver){
 
         WebDriverWait webDriverWait = new WebDriverWait(driver, 5);
@@ -248,10 +251,12 @@ public class HomePage  extends HentaiHeroesPage{
     }
 
     public ClubPage openClubPage (WebDriver driver) {
-
-        WebDriverWait webDriverWait = new WebDriverWait(driver, 5);
-        webDriverWait.until(ExpectedConditions.visibilityOf(club));
-        club.click();
+        WebDriverWait webDriverWait = new WebDriverWait(driver, 20);
+        webDriverWait.until(ExpectedConditions.visibilityOf(menu));
+        menu.click();
+        WebDriverWait webDriverWait2 = new WebDriverWait(driver, 20);
+        webDriverWait2.until(ExpectedConditions.visibilityOf(club2));
+        club2.click();
         return new ClubPage(driver);
     }
 
