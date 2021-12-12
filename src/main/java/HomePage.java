@@ -22,7 +22,7 @@ public class HomePage  extends HentaiHeroesPage{
     @FindBy(className = "orange_button_L")
     private WebElement toutCollecter;
 
-    @FindBy(xpath = "//*[@id=\"homepage\"]/a[9]/div/span")
+    @FindBy(xpath = "//*[@id=\"homepage\"]/a[10]/div/span")
     private WebElement activite;
 
     @FindBy(xpath = "//*[@id=\"homepage\"]/a[8]/div/span")
