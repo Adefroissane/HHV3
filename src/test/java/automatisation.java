@@ -44,13 +44,13 @@ public class automatisation {
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
-        /*boolean combatNonNull = homePage.getHeader().combatNecessaire(driver);
+        boolean combatNonNull = homePage.getHeader().combatNecessaire(driver);
         if (combatNonNull == true) {
             AventurePage aventurePage = homePage.openAventure(driver);
             LastZonePage lastZonePage = aventurePage.openLastZone(driver);
             CombatPage combatPage = lastZonePage.openCombatPage(driver);
             Combat(driver);
-        }*/
+        }
     }
 
     private void Combat(WebDriver driver) {
