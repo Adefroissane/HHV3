@@ -56,7 +56,7 @@ public class TourDeLaGloirePage extends HentaiHeroesPage {
         int combatRestant = Integer.parseInt(plaf);
 
         //if (ptDeDefi2.getText().equals("0/15")) {
-        if (combatRestant <= 1) {
+        if (combatRestant <= 10) {
             return false;
         } else {
             return true;
