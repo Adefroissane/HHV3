@@ -67,8 +67,8 @@ public class HomePage  extends HentaiHeroesPage{
     @FindBy(xpath = "//*[@id=\"homepage\"]/a[5]/div/span")
     private WebElement marche;
 
-    @FindBy(css = "#seasons_tab_container > div.seasons_controls_holder_global > div.seasons_controls_holder > a > div")
-    private WebElement trouverUnAdversaire;
+    @FindBy(xpath = "//*[@id=\"seasons_tab_container\"]/div[3]/div[1]/a/div")
+    private WebElement trouverAdver;
 
     @FindBy(xpath = "//*[@id=\"homepage\"]/a[7]/div/span")
     private WebElement club;
@@ -241,8 +241,8 @@ public class HomePage  extends HentaiHeroesPage{
             ab.printStackTrace();
         }
         WebDriverWait webDriverWait2 = new WebDriverWait(driver, 30);
-        webDriverWait2.until(ExpectedConditions.visibilityOf(trouverUnAdversaire));
-        trouverUnAdversaire.click();
+        webDriverWait2.until(ExpectedConditions.visibilityOf(trouverAdver));
+        trouverAdver.click();
         return new DuelPage(driver);
     }
 
