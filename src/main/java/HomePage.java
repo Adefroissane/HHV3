@@ -67,7 +67,7 @@ public class HomePage  extends HentaiHeroesPage{
     @FindBy(xpath = "//*[@id=\"homepage\"]/a[5]/div/span")
     private WebElement marche;
 
-    @FindBy(xpath = "//*[@id=\"seasons_tab_container\"]/div[3]/div[1]/a/div")
+    @FindBy(css = "#seasons_tab_container > div.seasons_controls_holder_global > div.seasons_controls_holder > a > div")
     private WebElement trouverUnAdversaire;
 
     @FindBy(xpath = "//*[@id=\"homepage\"]/a[7]/div/span")
