@@ -134,7 +134,7 @@ public class TourDeLaGloirePage extends HentaiHeroesPage {
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
-        //driver.findElement(By.xpath("//*[@id=\"tower_of_fame\"]/div/div[1]/div/a/img")).click();
+
         WebDriverWait webDriverWait = new WebDriverWait(driver, 30);
         webDriverWait.until(ExpectedConditions.visibilityOf(retour));
         try {
