@@ -111,15 +111,15 @@ public class automatisation {
     public void automatisationDuelDefi() {
         InitialisationPage initialisation = new InitialisationPage(driver);
         HomePage homePage = initialisation.openHomePage(driver);
-
+        DuelPage duelPage = homePage.openDuelPage(driver);
+        duelPage.Duel(driver);
         boolean defiAFaire = homePage.defiAFaire(driver);
         if (defiAFaire == true) {
             TourDeLaGloirePage tourDeLaGloirePage = homePage.openTourDeLaGloire(driver);
             tourDeLaGloirePage.lancerDefi(driver);
         }
 
-        DuelPage duelPage = homePage.openDuelPage(driver);
-        duelPage.Duel(driver);
+
     }
 
     /*@Ignore
