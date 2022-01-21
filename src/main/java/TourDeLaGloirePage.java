@@ -43,6 +43,9 @@ public class TourDeLaGloirePage extends HentaiHeroesPage {
     @FindBy(xpath = "//*[@id=\"tower_of_fame\"]/div/div[1]/div/a/img")
     private WebElement retour;
 
+    @FindBy(xpath = "//*[@id=\"breadcrumbs\"]/a/span")
+    private WebElement retour2;
+
     public boolean defiNecessaire(WebDriver driver)
     {
         WebDriverWait webDriverWait = new WebDriverWait(driver, 15);
@@ -127,8 +130,8 @@ public class TourDeLaGloirePage extends HentaiHeroesPage {
             lancerDefi(driver);
         }
         WebDriverWait webDriverWait = new WebDriverWait(driver, 30);
-        webDriverWait.until(ExpectedConditions.visibilityOf(retour));
-        retour.click();
+        webDriverWait.until(ExpectedConditions.visibilityOf(retour2));
+        retour2.click();
     }
 }
 
