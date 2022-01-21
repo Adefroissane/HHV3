@@ -245,8 +245,8 @@ public class HomePage  extends HentaiHeroesPage{
             e.printStackTrace();
         }
 
-        WebDriverWait webDriverWait3 = new WebDriverWait(driver, 30);
-        webDriverWait3.until(ExpectedConditions.visibilityOf(trouverAdver));
+        WebDriverWait webDriverWait2 = new WebDriverWait(driver, 30);
+        webDriverWait2.until(ExpectedConditions.visibilityOf(trouverAdver));
         try {
             Thread.sleep(750);
         } catch (InterruptedException e) {
