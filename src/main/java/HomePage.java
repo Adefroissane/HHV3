@@ -238,12 +238,12 @@ public class HomePage  extends HentaiHeroesPage{
         WebDriverWait webDriverWait = new WebDriverWait(driver, 5);
         webDriverWait.until(ExpectedConditions.visibilityOf(arene));
         arene.click();
-        /*try {
-            Thread.sleep(750);
+        try {
+            Thread.sleep(1000);
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
-        driver.findElement(By.xpath("//*[@id=\"seasons_btn\"]")).click();
+        /*driver.findElement(By.xpath("//*[@id=\"seasons_btn\"]")).click();
         try {
             Thread.sleep(750);
         } catch (InterruptedException e) {
