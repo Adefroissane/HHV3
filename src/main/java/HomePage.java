@@ -238,7 +238,7 @@ public class HomePage  extends HentaiHeroesPage{
         WebDriverWait webDriverWait = new WebDriverWait(driver, 5);
         webDriverWait.until(ExpectedConditions.visibilityOf(arene));
         arene.click();
-        try {
+        /*try {
             Thread.sleep(750);
         } catch (InterruptedException e) {
             e.printStackTrace();
@@ -249,13 +249,23 @@ public class HomePage  extends HentaiHeroesPage{
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
-        driver.findElement(By.xpath("//*[@id=\"seasons_tab_container\"]/div[3]/div[1]/a/div")).click();
-        /*WebDriverWait webDriverWait2 = new WebDriverWait(driver, 30);
+        driver.findElement(By.xpath("//*[@id=\"seasons_tab_container\"]/div[3]/div[1]/a/div")).click();*/
+        WebDriverWait webDriverWait2 = new WebDriverWait(driver, 30);
         webDriverWait2.until(ExpectedConditions.visibilityOf(saison));
+        try {
+            Thread.sleep(750);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
         saison.click();
         WebDriverWait webDriverWait3 = new WebDriverWait(driver, 30);
         webDriverWait3.until(ExpectedConditions.visibilityOf(trouverAdver));
-        trouverAdver.click();*/
+        try {
+            Thread.sleep(750);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+        trouverAdver.click();
         return new DuelPage(driver);
     }
 
