@@ -236,11 +236,11 @@ public class HomePage  extends HentaiHeroesPage{
         webDriverWait.until(ExpectedConditions.visibilityOf(arene));
         arene.click();
         try {
-            Thread.sleep(750);
+            Thread.sleep(1000);
         } catch (InterruptedException ab) {
             ab.printStackTrace();
         }
-        WebDriverWait webDriverWait2 = new WebDriverWait(driver, 30);
+        WebDriverWait webDriverWait2 = new WebDriverWait(driver, 20);
         webDriverWait2.until(ExpectedConditions.visibilityOf(trouverAdver));
         trouverAdver.click();
         return new DuelPage(driver);
