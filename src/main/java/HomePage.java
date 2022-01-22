@@ -69,7 +69,7 @@ public class HomePage  extends HentaiHeroesPage{
     @FindBy(xpath = "//*[@id=\"homepage\"]/a[5]/div/span")
     private WebElement marche;
 
-    @FindBy(className = "blue_button_L")
+    @FindBy(xpath = "//*[@id=\"seasons_tab_container\"]/div[3]/div[1]/a/div")
     private WebElement trouverAdver;
 
     @FindBy(xpath = "//*[@id=\"homepage\"]/a[7]/div/span")
@@ -105,7 +105,7 @@ public class HomePage  extends HentaiHeroesPage{
     @FindBy(xpath = "//*[@id=\"contains_all\"]/nav/div[2]/div/a[5]/div/span")
     private WebElement club2;
 
-    @FindBy(xpath = "//*[@id=\"seasons_btn\"]")
+    @FindBy(xpath = "//*[@id=\"contains_all\"]/nav/div[2]/div/a[13]/div")
     private WebElement saison;
 
     public HaremPage ouvrirLeHarem(WebDriver driver){
@@ -238,30 +238,14 @@ public class HomePage  extends HentaiHeroesPage{
 
     public DuelPage openDuelPage(WebDriver driver) {
         WebDriverWait webDriverWait = new WebDriverWait(driver, 5);
-        webDriverWait.until(ExpectedConditions.visibilityOf(arene));
-        arene.click();
-
-        try {
-            Thread.sleep(1000);
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }
-        int n;
-        List<WebElement> myElements = driver.findElements(By.className("blue_button_L"));
-        n = myElements.size();
-        System.out.println("n =" + myElements.size());
-        WebElement e= myElements.get(0);
-        e.click();
-
-
-        /*WebDriverWait webDriverWait2 = new WebDriverWait(driver, 30);
-        webDriverWait2.until(ExpectedConditions.visibilityOf(trouverAdver));
-        try {
-            Thread.sleep(750);
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }
-        trouverAdver.click();*/
+        webDriverWait.until(ExpectedConditions.visibilityOf(menu));
+        menu.click();
+        WebDriverWait webDriverWait2 = new WebDriverWait(driver, 5);
+        webDriverWait2.until(ExpectedConditions.visibilityOf(saison));
+        saison.click();
+        WebDriverWait webDriverWait3 = new WebDriverWait(driver, 30);
+        webDriverWait3.until(ExpectedConditions.visibilityOf(trouverAdver));
+        trouverAdver.click();
         return new DuelPage(driver);
     }
 
