@@ -117,6 +117,7 @@ public class automatisation {
             TourDeLaGloirePage tourDeLaGloirePage = homePage.openTourDeLaGloire(driver);
             tourDeLaGloirePage.lancerDefi(driver);
         }
+
         DuelPage duelPage = homePage.openDuelPage(driver);
         duelPage.Duel(driver);
 
