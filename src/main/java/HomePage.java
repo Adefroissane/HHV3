@@ -7,6 +7,8 @@ import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
+import java.util.List;
+
 
 public class HomePage  extends HentaiHeroesPage{
 
@@ -244,15 +246,22 @@ public class HomePage  extends HentaiHeroesPage{
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
+        int n;
+        List<WebElement> myElements = driver.findElements(By.className("blue_button_L"));
+        n = myElements.size();
+        System.out.println("n =" + myElements.size());
+        WebElement e= myElements.get(0);
+        e.click();
 
-        WebDriverWait webDriverWait2 = new WebDriverWait(driver, 30);
+
+        /*WebDriverWait webDriverWait2 = new WebDriverWait(driver, 30);
         webDriverWait2.until(ExpectedConditions.visibilityOf(trouverAdver));
         try {
             Thread.sleep(750);
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
-        trouverAdver.click();
+        trouverAdver.click();*/
         return new DuelPage(driver);
     }
 

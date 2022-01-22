@@ -129,7 +129,7 @@ public class TourDeLaGloirePage extends HentaiHeroesPage {
             ok.click();
             lancerDefi(driver);
         }
-        try {
+        /*try {
             Thread.sleep(750);
         } catch (InterruptedException e) {
             e.printStackTrace();
@@ -142,7 +142,7 @@ public class TourDeLaGloirePage extends HentaiHeroesPage {
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
-        retour.click();
+        retour.click();*/
     }
 }
 

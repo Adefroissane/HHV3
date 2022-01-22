@@ -27,7 +27,7 @@ public class automatisation {
         }
         driver.close();
     }
-
+    @Ignore
     @Test
     public void automatisationHaremCombat() {
         InitialisationPage initialisation = new InitialisationPage(driver);
@@ -61,7 +61,7 @@ public class automatisation {
             Combat(driver);
         }
     }
-
+    @Ignore
     @Test
     public void LieuxDePouvoirRecolt() {
         InitialisationPage initialisation = new InitialisationPage(driver);
@@ -69,7 +69,7 @@ public class automatisation {
         LieuxDePouvoirPage lieuxDePouvoirPage = homePage.openLieuxDePouvoirPage(driver);
         lieuxDePouvoirPage.RecoltMission(driver);
     }
-
+    @Ignore
     @Test
     public void LieuxDePouvoirLancement() {
         InitialisationPage initialisation = new InitialisationPage(driver);
@@ -77,7 +77,7 @@ public class automatisation {
         LieuxDePouvoirPage lieuxDePouvoirPage = homePage.openLieuxDePouvoirPage(driver);
         lieuxDePouvoirPage.LancerMission(driver);
     }
-
+    @Ignore
     @Test
     public void AutomatisationEscalierMission() {
         InitialisationPage initialisation = new InitialisationPage(driver);
@@ -106,21 +106,24 @@ public class automatisation {
             Combat2(driver);
         }
     }
-
+    @Ignore
     @Test
-    public void automatisationDuelDefi() {
+    public void automatisationDefi() {
         InitialisationPage initialisation = new InitialisationPage(driver);
         HomePage homePage = initialisation.openHomePage(driver);
-
         boolean defiAFaire = homePage.defiAFaire(driver);
         if (defiAFaire == true) {
             TourDeLaGloirePage tourDeLaGloirePage = homePage.openTourDeLaGloire(driver);
             tourDeLaGloirePage.lancerDefi(driver);
         }
+    }
 
+    @Test
+    public void automatisationDuel() {
+        InitialisationPage initialisation = new InitialisationPage(driver);
+        HomePage homePage = initialisation.openHomePage(driver);
         DuelPage duelPage = homePage.openDuelPage(driver);
         duelPage.Duel(driver);
-
     }
 
     /*@Ignore
@@ -136,7 +139,7 @@ public class automatisation {
         }
     }*/
 
-
+    @Ignore
     @Test
     public void automatisationChampion() {
         InitialisationPage initialisation = new InitialisationPage(driver);
