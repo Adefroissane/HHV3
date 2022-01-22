@@ -69,7 +69,7 @@ public class HomePage  extends HentaiHeroesPage{
     @FindBy(xpath = "//*[@id=\"homepage\"]/a[5]/div/span")
     private WebElement marche;
 
-    @FindBy(className = "blue_button_L")
+    @FindBy(css = "#seasons_tab_container > div.seasons_controls_holder_global > div.seasons_controls_holder > a > div")
     private WebElement trouverAdver;
 
     @FindBy(xpath = "//*[@id=\"homepage\"]/a[7]/div/span")
@@ -245,6 +245,11 @@ public class HomePage  extends HentaiHeroesPage{
         saison.click();
         WebDriverWait webDriverWait3 = new WebDriverWait(driver, 30);
         webDriverWait3.until(ExpectedConditions.visibilityOf(trouverAdver));
+        try {
+            Thread.sleep(5000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
         trouverAdver.click();
         return new DuelPage(driver);
     }
