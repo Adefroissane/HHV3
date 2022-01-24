@@ -6,6 +6,11 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 
+import javax.swing.*;
+import java.awt.*;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
+
 public class automatisation {
 
     WebDriver driver;
@@ -14,7 +19,7 @@ public class automatisation {
     public void init() {
         driver = new ChromeDriver();
         //driver = new FirefoxDriver();
-        driver.manage().window().fullscreen();
+        //driver.manage().window().fullscreen();
         driver.get("https://www.hentaiheroes.com/");
     }
 
@@ -108,9 +113,11 @@ public class automatisation {
     }
 
     @Test
-    public void automatisationDefi() {
+    public void automatisationDefi() throws AWTException {
         InitialisationPage initialisation = new InitialisationPage(driver);
         HomePage homePage = initialisation.openHomePage(driver);
+        DuelPage duelPage = homePage.openDuelPage(driver);
+        duelPage.Duel(driver);
         boolean defiAFaire = homePage.defiAFaire(driver);
         if (defiAFaire == true) {
             TourDeLaGloirePage tourDeLaGloirePage = homePage.openTourDeLaGloire(driver);
@@ -119,7 +126,7 @@ public class automatisation {
     }
     @Ignore
     @Test
-    public void automatisationDuel() {
+    public void automatisationDuel() throws AWTException {
         InitialisationPage initialisation = new InitialisationPage(driver);
         HomePage homePage = initialisation.openHomePage(driver);
         DuelPage duelPage = homePage.openDuelPage(driver);
@@ -173,6 +180,28 @@ public class automatisation {
         HomePage homePage = initialisation.openHomePage(driver);
         ClubPage clubPage = homePage.openClubPage(driver);
         clubPage.combattreChampion7(driver);
+    }
+    @Ignore
+    @Test
+    public void automatisationSelect() {
+        JFrame f = new JFrame();
+        JPanel panel = new JPanel();
+        f.add(panel);
+        panel.addMouseListener(new MouseAdapter() {
+            @Override
+            public void mousePressed(MouseEvent e) {
+                super.mousePressed(e);
+                System.out.println(e.getX() + "," + e.getY());
+            }
+        });
+        f.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        f.setSize(200, 200);
+        f.setVisible(true);
+        try {
+            Thread.sleep(30000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
     }*/
 }
 

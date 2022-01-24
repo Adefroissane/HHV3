@@ -7,6 +7,10 @@ import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
+import java.awt.*;
+import java.awt.event.*;
+import javax.swing.*;
+
 import java.util.List;
 
 
@@ -236,7 +240,7 @@ public class HomePage  extends HentaiHeroesPage{
         return new LieuxDePouvoirPage(driver);
     }
 
-    public DuelPage openDuelPage(WebDriver driver) {
+    public DuelPage openDuelPage(WebDriver driver) throws AWTException {
         WebDriverWait webDriverWait = new WebDriverWait(driver, 5);
         webDriverWait.until(ExpectedConditions.visibilityOf(menu));
         menu.click();
@@ -248,14 +252,18 @@ public class HomePage  extends HentaiHeroesPage{
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
-        WebDriverWait webDriverWait3 = new WebDriverWait(driver, 30);
+        Robot bot = new Robot();
+        bot.mouseMove(287, 390);
+        bot.mousePress(InputEvent.BUTTON1_MASK);
+        bot.mouseRelease(InputEvent.BUTTON1_MASK);
+        /*WebDriverWait webDriverWait3 = new WebDriverWait(driver, 30);
         webDriverWait3.until(ExpectedConditions.visibilityOf(trouverAdver));
         try {
             Thread.sleep(5000);
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
-        trouverAdver.click();
+        trouverAdver.click();*/
         return new DuelPage(driver);
     }
 
