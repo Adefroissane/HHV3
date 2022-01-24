@@ -93,7 +93,7 @@ public class DuelPage extends HentaiHeroesPage {
     }*/
 
     public boolean DuelPossible() {
-        WebDriverWait webDriverWait = new WebDriverWait(driver, 5);
+        WebDriverWait webDriverWait = new WebDriverWait(driver, 30);
         webDriverWait.until(ExpectedConditions.visibilityOf(nbrCombat));
         String plif = nbrCombat.getText();
         StringBuffer plouf = new StringBuffer(plif);
