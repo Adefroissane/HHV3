@@ -93,13 +93,8 @@ public class DuelPage extends HentaiHeroesPage {
     }*/
 
     public boolean DuelPossible() {
-        try {
-            Thread.sleep(5000);
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }
-        //WebDriverWait webDriverWait = new WebDriverWait(driver, 30);
-        //webDriverWait.until(ExpectedConditions.visibilityOf(nbrCombat));
+        WebDriverWait webDriverWait = new WebDriverWait(driver, 30);
+        webDriverWait.until(ExpectedConditions.visibilityOf(nbrCombat));
         String plif = nbrCombat.getText();
         StringBuffer plouf = new StringBuffer(plif);
         //plouf.delete(2, 4);

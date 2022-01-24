@@ -111,20 +111,20 @@ public class automatisation {
             Combat2(driver);
         }
     }
-
+    @Ignore
     @Test
     public void automatisationDuelDefi() throws AWTException {
         InitialisationPage initialisation = new InitialisationPage(driver);
         HomePage homePage = initialisation.openHomePage(driver);
-        DuelPage duelPage = homePage.openDuelPage(driver);
-        duelPage.Duel(driver);
+        //DuelPage duelPage = homePage.openDuelPage(driver);
+        //duelPage.Duel(driver);
         boolean defiAFaire = homePage.defiAFaire(driver);
         if (defiAFaire == true) {
             TourDeLaGloirePage tourDeLaGloirePage = homePage.openTourDeLaGloire(driver);
             tourDeLaGloirePage.lancerDefi(driver);
         }
     }
-    @Ignore
+
     @Test
     public void automatisationDuel() throws AWTException {
         InitialisationPage initialisation = new InitialisationPage(driver);
