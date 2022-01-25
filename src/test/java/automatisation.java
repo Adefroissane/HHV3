@@ -180,7 +180,7 @@ public class automatisation {
         HomePage homePage = initialisation.openHomePage(driver);
         ClubPage clubPage = homePage.openClubPage(driver);
         clubPage.combattreChampion7(driver);
-    }
+    }*/
     @Ignore
     @Test
     public void automatisationSelect() {
@@ -202,6 +202,7 @@ public class automatisation {
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
-    }*/
+    }
+
 }
 
