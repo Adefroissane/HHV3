@@ -1,8 +1,5 @@
-import org.openqa.selenium.By;
+import org.openqa.selenium.*;
 import org.openqa.selenium.Dimension;
-import org.openqa.selenium.NoSuchElementException;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
@@ -248,9 +245,9 @@ public class HomePage  extends HentaiHeroesPage{
         WebDriverWait webDriverWait2 = new WebDriverWait(driver, 5);
         webDriverWait2.until(ExpectedConditions.visibilityOf(saison));
         saison.click();
-        driver.manage().window().fullscreen();
+        //driver.manage().window().fullscreen();
         //driver.manage().window().setSize(new Dimension(1004, 748));
-        System.out.println(driver.manage().window().getSize());
+        //System.out.println(driver.manage().window().getSize());
 
         try {
             Thread.sleep(5000);
@@ -266,14 +263,30 @@ public class HomePage  extends HentaiHeroesPage{
         }
         bot.mousePress(InputEvent.BUTTON1_MASK);
         bot.mouseRelease(InputEvent.BUTTON1_MASK);*/
+        int n;
+        JavascriptExecutor js = (JavascriptExecutor) driver;
+        List<WebElement> myElements = driver.findElements(By.className("blue_button_L"));
+        n = myElements.size();
+        System.out.println("n =" + myElements.size());
+        WebElement e= myElements.get(0);
+        js.executeScript("arguments[0].scrollIntoView(true);", e);
+        try {
+            Thread.sleep(100);
+        } catch (InterruptedException ab) {
+            ab.printStackTrace();
+        }
+        System.out.println(e.getText());
         WebDriverWait webDriverWait3 = new WebDriverWait(driver, 30);
+        webDriverWait3.until(ExpectedConditions.visibilityOf(e));
+
+        /*WebDriverWait webDriverWait3 = new WebDriverWait(driver, 30);
         webDriverWait3.until(ExpectedConditions.visibilityOf(trouverAdver));
         try {
             Thread.sleep(5000);
         } catch (InterruptedException e) {
             e.printStackTrace();
-        }
-        trouverAdver.click();
+        }*/
+        e.click();
         return new DuelPage(driver);
     }
 
