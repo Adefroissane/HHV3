@@ -245,16 +245,19 @@ public class HomePage  extends HentaiHeroesPage{
         WebDriverWait webDriverWait2 = new WebDriverWait(driver, 5);
         webDriverWait2.until(ExpectedConditions.visibilityOf(saison));
         saison.click();
-        //driver.manage().window().fullscreen();
-        //driver.manage().window().setSize(new Dimension(1004, 748));
-        //System.out.println(driver.manage().window().getSize());
+
+        //Classement et saison sont fusionnés dans jenkins et le classement se retrouve devant. Impossibe de cliquer sur "trouver adversaire"
+
+        /*driver.manage().window().fullscreen();
+        driver.manage().window().setSize(new Dimension(1004, 748));
+        System.out.println(driver.manage().window().getSize());
 
         try {
             Thread.sleep(5000);
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
-        /*Robot bot = new Robot();
+        Robot bot = new Robot();
         bot.mouseMove(307, 325);
         try {
             Thread.sleep(5000);
@@ -262,7 +265,7 @@ public class HomePage  extends HentaiHeroesPage{
             e.printStackTrace();
         }
         bot.mousePress(InputEvent.BUTTON1_MASK);
-        bot.mouseRelease(InputEvent.BUTTON1_MASK);*/
+        bot.mouseRelease(InputEvent.BUTTON1_MASK);
         int n;
         JavascriptExecutor js = (JavascriptExecutor) driver;
         List<WebElement> myElements = driver.findElements(By.className("blue_button_L"));
@@ -277,16 +280,11 @@ public class HomePage  extends HentaiHeroesPage{
         }
         System.out.println(e.getText());
         /*WebDriverWait webDriverWait3 = new WebDriverWait(driver, 30);
-        webDriverWait3.until(ExpectedConditions.visibilityOf(e));
+        webDriverWait3.until(ExpectedConditions.visibilityOf(e));*/
 
         WebDriverWait webDriverWait3 = new WebDriverWait(driver, 30);
         webDriverWait3.until(ExpectedConditions.visibilityOf(trouverAdver));
-        try {
-            Thread.sleep(5000);
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }*/
-        e.click();
+        trouverAdver.click();
         return new DuelPage(driver);
     }
 
