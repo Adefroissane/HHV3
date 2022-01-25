@@ -248,26 +248,31 @@ public class HomePage  extends HentaiHeroesPage{
         WebDriverWait webDriverWait2 = new WebDriverWait(driver, 5);
         webDriverWait2.until(ExpectedConditions.visibilityOf(saison));
         saison.click();
-        //driver.manage().window().setSize(new Dimension(720, 480));
+        driver.manage().window().setSize(new Dimension(1004, 748));
         System.out.println(driver.manage().window().getSize());
 
-        /*try {
+        try {
             Thread.sleep(5000);
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
         Robot bot = new Robot();
-        bot.mouseMove(307, 365);
-        bot.mousePress(InputEvent.BUTTON1_MASK);
-        bot.mouseRelease(InputEvent.BUTTON1_MASK);*/
-        WebDriverWait webDriverWait3 = new WebDriverWait(driver, 30);
-        webDriverWait3.until(ExpectedConditions.visibilityOf(trouverAdver));
-        /*try {
+        bot.mouseMove(307, 405);
+        try {
             Thread.sleep(5000);
         } catch (InterruptedException e) {
             e.printStackTrace();
-        }*/
-        trouverAdver.click();
+        }
+        bot.mousePress(InputEvent.BUTTON1_MASK);
+        bot.mouseRelease(InputEvent.BUTTON1_MASK);
+        /*WebDriverWait webDriverWait3 = new WebDriverWait(driver, 30);
+        webDriverWait3.until(ExpectedConditions.visibilityOf(trouverAdver));
+        try {
+            Thread.sleep(5000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+        trouverAdver.click();*/
         return new DuelPage(driver);
     }
 
