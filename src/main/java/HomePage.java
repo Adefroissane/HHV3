@@ -74,7 +74,7 @@ public class HomePage  extends HentaiHeroesPage{
     @FindBy(xpath = "//*[@id=\"homepage\"]/a[5]/div/span")
     private WebElement marche;
 
-    @FindBy(css = "#seasons_tab_container > div.seasons_controls_holder_global > div.seasons_controls_holder > a > div")
+    @FindBy(xpath = "//*[@id=\"seasons_tab_container\"]/div[3]/div[1]/a/div")
     private WebElement trouverAdver;
 
     @FindBy(xpath = "//*[@id=\"homepage\"]/a[7]/div/span")
@@ -257,7 +257,7 @@ public class HomePage  extends HentaiHeroesPage{
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
-        Robot bot = new Robot();
+        /*Robot bot = new Robot();
         bot.mouseMove(307, 325);
         try {
             Thread.sleep(5000);
@@ -265,15 +265,15 @@ public class HomePage  extends HentaiHeroesPage{
             e.printStackTrace();
         }
         bot.mousePress(InputEvent.BUTTON1_MASK);
-        bot.mouseRelease(InputEvent.BUTTON1_MASK);
-        /*WebDriverWait webDriverWait3 = new WebDriverWait(driver, 30);
+        bot.mouseRelease(InputEvent.BUTTON1_MASK);*/
+        WebDriverWait webDriverWait3 = new WebDriverWait(driver, 30);
         webDriverWait3.until(ExpectedConditions.visibilityOf(trouverAdver));
         try {
             Thread.sleep(5000);
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
-        trouverAdver.click();*/
+        trouverAdver.click();
         return new DuelPage(driver);
     }
 
