@@ -1,4 +1,5 @@
 import org.openqa.selenium.By;
+import org.openqa.selenium.Dimension;
 import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -247,6 +248,7 @@ public class HomePage  extends HentaiHeroesPage{
         WebDriverWait webDriverWait2 = new WebDriverWait(driver, 5);
         webDriverWait2.until(ExpectedConditions.visibilityOf(saison));
         saison.click();
+        driver.manage().window().setSize(new Dimension(600, 400));
         try {
             Thread.sleep(5000);
         } catch (InterruptedException e) {
