@@ -248,14 +248,14 @@ public class HomePage  extends HentaiHeroesPage{
         WebDriverWait webDriverWait2 = new WebDriverWait(driver, 5);
         webDriverWait2.until(ExpectedConditions.visibilityOf(saison));
         saison.click();
-        driver.manage().window().setSize(new Dimension(600, 400));
+        driver.manage().window().setSize(new Dimension(800, 600));
         try {
             Thread.sleep(5000);
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
         Robot bot = new Robot();
-        bot.mouseMove(287, 390);
+        bot.mouseMove(307, 365);
         bot.mousePress(InputEvent.BUTTON1_MASK);
         bot.mouseRelease(InputEvent.BUTTON1_MASK);
         /*WebDriverWait webDriverWait3 = new WebDriverWait(driver, 30);
