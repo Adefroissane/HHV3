@@ -248,8 +248,7 @@ public class HomePage  extends HentaiHeroesPage{
         WebDriverWait webDriverWait2 = new WebDriverWait(driver, 5);
         webDriverWait2.until(ExpectedConditions.visibilityOf(saison));
         saison.click();
-
-        driver.manage().window().setSize(new Dimension(720, 480));
+        //driver.manage().window().setSize(new Dimension(720, 480));
         System.out.println(driver.manage().window().getSize());
 
         /*try {
