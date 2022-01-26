@@ -53,7 +53,7 @@ public class HomePage  extends HentaiHeroesPage{
     @FindBy(css = "#home_missions_bar2 > div > div.backbar.borderbar > div")
     private WebElement missionNonDisponible2;
 
-    @FindBy(xpath = "//*[@id=\"activities\"]/div/div[2]/h4[1]")
+    @FindBy(xpath = "//*[@id=\"activities\"]/div/div[2]/h4[2]")
     private WebElement mission;
 
     @FindBy(xpath = "//*[@id=\"homepage\"]/a[11]/div/span")
@@ -65,7 +65,7 @@ public class HomePage  extends HentaiHeroesPage{
     @FindBy(xpath = "//*[@id=\"homepage\"]/a[6]/div/span")
     private WebElement cheminDuDieu;
 
-    @FindBy(xpath = "//*[@id=\"activities\"]/div/div[2]/h4[3]")
+    @FindBy(xpath = "//*[@id=\"activities\"]/div/div[2]/h4[4]")
     private WebElement lieuxDePouvoir;
 
     @FindBy(xpath = "//*[@id=\"homepage\"]/a[5]/div/span")
