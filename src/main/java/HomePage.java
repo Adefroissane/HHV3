@@ -110,6 +110,9 @@ public class HomePage  extends HentaiHeroesPage{
     @FindBy(xpath = "//*[@id=\"contains_all\"]/nav/div[2]/div/a[13]/div")
     private WebElement saison;
 
+    @FindBy(xpath = "//*[@id=\"seasons_btn\"]")
+    private WebElement saison2;
+
     public HaremPage ouvrirLeHarem(WebDriver driver){
 
         WebDriverWait webDriverWait = new WebDriverWait(driver, 5);
@@ -245,6 +248,9 @@ public class HomePage  extends HentaiHeroesPage{
         WebDriverWait webDriverWait2 = new WebDriverWait(driver, 5);
         webDriverWait2.until(ExpectedConditions.visibilityOf(saison));
         saison.click();
+        WebDriverWait webDriverWait3 = new WebDriverWait(driver, 5);
+        webDriverWait3.until(ExpectedConditions.visibilityOf(saison2));
+        saison2.click();
 
         //Classement et saison sont fusionnés dans jenkins et le classement se retrouve devant. Impossibe de cliquer sur "trouver adversaire"
 
@@ -282,8 +288,8 @@ public class HomePage  extends HentaiHeroesPage{
         /*WebDriverWait webDriverWait3 = new WebDriverWait(driver, 30);
         webDriverWait3.until(ExpectedConditions.visibilityOf(e));*/
 
-        WebDriverWait webDriverWait3 = new WebDriverWait(driver, 30);
-        webDriverWait3.until(ExpectedConditions.visibilityOf(trouverAdver));
+        WebDriverWait webDriverWait4 = new WebDriverWait(driver, 30);
+        webDriverWait4.until(ExpectedConditions.visibilityOf(trouverAdver));
         trouverAdver.click();
         return new DuelPage(driver);
     }
