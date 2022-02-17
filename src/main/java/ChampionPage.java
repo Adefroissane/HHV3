@@ -296,8 +296,8 @@ public class ChampionPage extends HentaiHeroesPage {
     public void combattreChampion7(WebDriver driver){
         while (repere.isEnabled()){
             WebDriverWait webDriverWait = new WebDriverWait(driver, 5);
-            webDriverWait.until(ExpectedConditions.visibilityOf(foyerDeVizor));
-            foyerDeVizor.click();
+            webDriverWait.until(ExpectedConditions.visibilityOf(portSalut));
+            portSalut.click();
             WebDriverWait webDriverWait2 = new WebDriverWait(driver, 5);
             webDriverWait2.until(ExpectedConditions.visibilityOf(pasDeRepos));
             pasDeRepos.click();

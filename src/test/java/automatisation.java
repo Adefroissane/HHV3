@@ -180,7 +180,16 @@ public class automatisation {
         HomePage homePage = initialisation.openHomePage(driver);
         ClubPage clubPage = homePage.openClubPage(driver);
         clubPage.combattreChampion7(driver);
+    }
+    @Ignore
+    @Test
+    public void automatisationChampionRepetition() {
+        InitialisationPage initialisation = new InitialisationPage(driver);
+        HomePage homePage = initialisation.openHomePage(driver);
+        ChampionPage championPage = homePage.ouvrirZoneDesChampions(driver);
+        championPage.combattreChampion7(driver);
     }*/
+
     @Ignore
     @Test
     public void automatisationSelect() {
