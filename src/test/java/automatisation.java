@@ -132,7 +132,7 @@ public class automatisation {
         DuelPage duelPage = homePage.openDuelPage(driver);
         duelPage.Duel(driver);
     }
-
+    /*@Ignore
     @Test
     public void automatisationChampion() {
         InitialisationPage initialisation = new InitialisationPage(driver);
@@ -173,7 +173,7 @@ public class automatisation {
         }
     }
 
-    /*@Ignore
+    @Ignore
     @Test
     public void automatisationChampionClubRepetition() {
         InitialisationPage initialisation = new InitialisationPage(driver);
