@@ -87,15 +87,15 @@ public class automatisation {
     public void AutomatisationEscalierMission() {
         InitialisationPage initialisation = new InitialisationPage(driver);
         HomePage homePage = initialisation.openHomePage(driver);
-        EscaliersPage escaliersPage = homePage.ouvrirEscalierDuPantheon(driver);
+        /*EscaliersPage escaliersPage = homePage.ouvrirEscalierDuPantheon(driver);
         boolean combatDispo = escaliersPage.CombatPossible(driver);
         if (combatDispo == true) {
             CombatPage combatPage = escaliersPage.openCombatPage(driver);
             combatPage.combattreEscalier(driver);
             Combat2(driver);
         }
-        HomePage homepage2 = escaliersPage.getHeader().openHomePage(driver);
-        MissionPage missionPage = homepage2.openMissionPage(driver);
+        HomePage homepage2 = escaliersPage.getHeader().openHomePage(driver);*/
+        MissionPage missionPage = homePage.openMissionPage(driver);
         boolean plusDeMission = missionPage.plusDeMission(driver);
         if (plusDeMission) {
             missionPage.lanceMission(driver);
