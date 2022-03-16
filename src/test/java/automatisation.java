@@ -132,7 +132,7 @@ public class automatisation {
         DuelPage duelPage = homePage.openDuelPage(driver);
         duelPage.Duel(driver);
     }
-    @Ignore
+
     @Test
     public void automatisationChampion() {
         InitialisationPage initialisation = new InitialisationPage(driver);
@@ -150,11 +150,11 @@ public class automatisation {
         boolean championDispo3 = championPage.championDispo3(driver);
         if (championDispo3 == true) {
             championPage.combattreChampion3(driver);
-        }*/
+        }
         boolean championDispo4 = championPage.championDispo4(driver);
         if (championDispo4 == true) {
             championPage.combattreChampion4(driver);
-        }/*
+        }
         boolean championDispo5 = championPage.championDispo5(driver);
         if (championDispo5 == true) {
             championPage.combattreChampion5(driver);
