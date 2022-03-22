@@ -26,7 +26,7 @@ public class EscaliersPage extends HentaiHeroesPage {
         String plif = nbrCombat.getText();
         int nombreCombat = Integer.parseInt(plif);
         System.out.println("nbre de combat =" + nombreCombat);
-        if (nombreCombat <= 1) {
+        if (nombreCombat <= 8) {
             return false;
         } else {
             return true;
