@@ -20,16 +20,16 @@ public class HomePage  extends HentaiHeroesPage{
         PageFactory.initElements(driver, this);
     }
 
-    @FindBy(xpath = "//*[@id=\"homepage\"]/div[1]/div[1]/a[2]/div/span")
+    @FindBy(xpath = "//*[@id=\"homepage\"]/div[1]/div[1]/a[1]/div/span")
     private WebElement harem;
 
     @FindBy(className = "orange_button_L")
     private WebElement toutCollecter;
 
-    @FindBy(xpath = "//*[@id=\"homepage\"]/div[1]/div[1]/a[3]/div/span")
+    @FindBy(xpath = "//*[@id=\"homepage\"]/div[1]/div[1]/a[2]/div/span")
     private WebElement activite;
 
-    @FindBy(xpath = "//*[@id=\"homepage\"]/div[1]/div[2]/div[1]/div[2]/div/div[1]/div[2]/a/div/span")
+    @FindBy(xpath = "//*[@id=\"homepage\"]/div[1]/div[1]/div/a/div/span")
     private WebElement arene;
 
     @FindBy(xpath = "//*[@id=\"homepage\"]/div[1]/div[1]/div/a/div/span")
@@ -56,13 +56,13 @@ public class HomePage  extends HentaiHeroesPage{
     @FindBy(xpath = "//*[@id=\"activities\"]/div/div[2]/h4[2]")
     private WebElement mission;
 
-    @FindBy(xpath = "//*[@id=\"homepage\"]/div[1]/div[1]/a[6]/div/span")
+    @FindBy(xpath = "//*[@id=\"homepage\"]/div[1]/div[1]/a[3]/div/span")
     private WebElement tourDeLaGloire;
 
     @FindBy(xpath = "//*[@id=\"homepage\"]/a[9]/div/span/span")
     private WebElement aFaire;
 
-    @FindBy(xpath = "//*[@id=\"homepage\"]/div[1]/div[1]/a[1]/div/span")
+    @FindBy(xpath = "//*[@id=\"homepage\"]/div[1]/div[1]/a[3]/div/span")
     private WebElement cheminDuDieu;
 
     @FindBy(xpath = "//*[@id=\"activities\"]/div/div[2]/h4[4]")
