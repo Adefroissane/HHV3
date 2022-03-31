@@ -62,7 +62,7 @@ public class HomePage  extends HentaiHeroesPage{
     @FindBy(xpath = "//*[@id=\"homepage\"]/a[9]/div/span/span")
     private WebElement aFaire;
 
-    @FindBy(xpath = "//*[@id=\"homepage\"]/div[1]/div[1]/a[3]/div/span")
+    @FindBy(xpath = "//*[@id=\"homepage\"]/div[1]/div[1]/a[6]/div/span")
     private WebElement cheminDuDieu;
 
     @FindBy(xpath = "//*[@id=\"activities\"]/div/div[2]/h4[4]")
@@ -316,7 +316,7 @@ public class HomePage  extends HentaiHeroesPage{
         WebDriverWait webDriverWait = new WebDriverWait(driver, 5);
         webDriverWait.until(ExpectedConditions.visibilityOf(harem));
         try {
-            driver.findElement(By.xpath("//*[@id=\"homepage\"]/div[1]/div[1]/a[6]/span"));
+            driver.findElement(By.xpath("//*[@id=\"homepage\"]/div[1]/div[1]/a[3]/span"));
         } catch (NoSuchElementException e)
         {
             return false;
