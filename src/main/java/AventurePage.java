@@ -13,7 +13,7 @@ public class AventurePage extends HentaiHeroesPage {
         PageFactory.initElements(driver, this);
     }
 
-    @FindBy(css = "#map > a:nth-child(19)")
+    @FindBy(xpath = "//*[@id=\"map\"]/a[10]")
     private WebElement roko;
 
     @FindBy(css = "#contains_all > section > div.previous_world > img")
