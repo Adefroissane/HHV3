@@ -16,7 +16,7 @@ public class HaremPage extends HentaiHeroesPage{
     @FindBy(css = "#harem_left > div.girls_list > div:nth-child(7) > div > div.left > img")
     private WebElement repere;
 
-    @FindBy(xpath = "//*[@id=\"harem_whole\"]/div/div/a/img")
+    @FindBy(xpath = "//*[@id=\"contains_all\"]/header/a[1]/img")
     private WebElement retour;
 
     @FindBy(xpath = "/html/body/div[2]/section/div[1]/div/div/div/div[2]/div[2]/div[824]/div/div[1]")
