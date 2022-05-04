@@ -44,7 +44,7 @@ public class automatisation {
             haremPage.recolt(driver);
         }
 
-        try {
+        /*try {
             Thread.sleep(500);
         } catch (InterruptedException e) {
             e.printStackTrace();
@@ -55,7 +55,7 @@ public class automatisation {
             LastZonePage lastZonePage = aventurePage.openLastZone(driver);
             CombatPage combatPage = lastZonePage.openCombatPage(driver);
             Combat(driver);
-        }
+        }*/
     }
 
     private void Combat(WebDriver driver) {
