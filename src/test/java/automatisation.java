@@ -139,7 +139,7 @@ public class automatisation {
         HomePage homePage = initialisation.openHomePage(driver);
 
         ChampionPage championPage = homePage.ouvrirZoneDesChampions(driver);
-        /*boolean championDispo = championPage.championDispo(driver);
+        boolean championDispo = championPage.championDispo(driver);
         if (championDispo == true) {
             championPage.combattreChampion(driver);
         }
@@ -162,7 +162,7 @@ public class automatisation {
         boolean championDispo6 = championPage.championDispo6(driver);
         if (championDispo6 == true) {
             championPage.combattreChampion6(driver);
-        }*/
+        }
         HomePage homepage2 = championPage.getHeader().openHomePage(driver);
 
         ClubPage clubPage = homePage.openClubPage(driver);
