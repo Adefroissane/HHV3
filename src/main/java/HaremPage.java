@@ -13,7 +13,7 @@ public class HaremPage extends HentaiHeroesPage{
         PageFactory.initElements(driver, this);
     }
 
-    @FindBy(css = "#harem_left > div.girls_list > div:nth-child(7) > div > div.left > img")
+    @FindBy(xpath = "//*[@id=\"harem_left\"]/div[2]/div[1]/div/div[1]/img")
     private WebElement repere;
 
     @FindBy(xpath = "//*[@id=\"contains_all\"]/header/a[1]/img")
