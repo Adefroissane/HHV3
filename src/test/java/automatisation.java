@@ -116,8 +116,8 @@ public class automatisation {
     public void automatisationDuelDefi() throws AWTException {
         InitialisationPage initialisation = new InitialisationPage(driver);
         HomePage homePage = initialisation.openHomePage(driver);
-        //DuelPage duelPage = homePage.openDuelPage(driver);
-        //duelPage.Duel(driver);
+        DuelPage duelPage = homePage.openDuelPage(driver);
+        duelPage.Duel(driver);
         boolean defiAFaire = homePage.defiAFaire(driver);
         if (defiAFaire == true) {
             TourDeLaGloirePage tourDeLaGloirePage = homePage.openTourDeLaGloire(driver);
