@@ -72,11 +72,11 @@ public class AventurePage extends HentaiHeroesPage {
         }
         catch(InterruptedException ae){
             ae.printStackTrace();
-        }*/
+        }
 
         WebDriverWait webDriverWait2 = new WebDriverWait(driver, 5);
         webDriverWait2.until(ExpectedConditions.visibilityOf(precedent));
-        precedent.click();
+        precedent.click();*/
 
         try{
             Thread.sleep(750);
@@ -86,8 +86,8 @@ public class AventurePage extends HentaiHeroesPage {
         }
 
         WebDriverWait webDriverWait3 = new WebDriverWait(driver, 5);
-        webDriverWait3.until(ExpectedConditions.visibilityOf(pandora));
-        pandora.click();
+        webDriverWait3.until(ExpectedConditions.visibilityOf(nike));
+        nike.click();
         return new LastZonePage(driver);
 
     }
