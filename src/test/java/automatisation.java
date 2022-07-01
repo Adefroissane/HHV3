@@ -139,19 +139,19 @@ public class automatisation {
         HomePage homePage = initialisation.openHomePage(driver);
 
         ChampionPage championPage = homePage.ouvrirZoneDesChampions(driver);
-        boolean championDispo = championPage.championDispo(driver);
+        /*boolean championDispo = championPage.championDispo(driver);
         if (championDispo == true) {
             championPage.combattreChampion(driver);
         }
         boolean championDispo2 = championPage.championDispo2(driver);
         if (championDispo2 == true) {
             championPage.combattreChampion2(driver);
-        }
+        }*/
         boolean championDispo3 = championPage.championDispo3(driver);
         if (championDispo3 == true) {
             championPage.combattreChampion3(driver);
         }
-        boolean championDispo4 = championPage.championDispo4(driver);
+        /*boolean championDispo4 = championPage.championDispo4(driver);
         if (championDispo4 == true) {
             championPage.combattreChampion4(driver);
         }
@@ -162,7 +162,7 @@ public class automatisation {
         boolean championDispo6 = championPage.championDispo6(driver);
         if (championDispo6 == true) {
             championPage.combattreChampion6(driver);
-        }
+        }*/
         HomePage homepage2 = championPage.getHeader().openHomePage(driver);
 
         ClubPage clubPage = homePage.openClubPage(driver);
